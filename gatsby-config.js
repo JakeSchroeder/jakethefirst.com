@@ -5,6 +5,7 @@ module.exports = {
     author: `@jakeman`,
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-layout`,
     {
       resolve: `gatsby-plugin-webfonts`,
@@ -57,13 +58,8 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/j-icon.png`,
       },
-    },
-    {
-      resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        enableIdentityWidget: false,
-      }
     }
+   
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

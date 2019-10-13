@@ -1,9 +1,6 @@
 backend:
-  name: bitbucket
-  repo: jake-schroeder-isx/jakeschroeder.me
-  branch: netlify-cms-feature
-  auth_type: implicit
-  app_id: V69QZW9K4r3t8qtMZd
+  name: github
+  repo: JakeSchroeder/jakeschroeder.me
 
 media_folder: static/assets
 public_folder: assets
