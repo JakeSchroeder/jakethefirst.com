@@ -2,13 +2,16 @@ backend:
   name: github
   repo: JakeSchroeder/jakeschroeder.me
 
-media_folder: static/assets
-public_folder: assets
+publish_mode: editorial_workflow
+
+media_folder: static/assets/uploads
+public_folder: /assets/uploads
+site_url: https://jakeschroeder.me
 
 collections:
   - name: Section
     label: Blog
-    folder: blog
+    folder: content
     create: true
     fields:
       - { name: path, label: Path }
