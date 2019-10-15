@@ -1,9 +1,9 @@
 var plugins = [{
-      plugin: require('/Users/jake/dev/jakeschroeder.me/node_modules/gatsby-plugin-layout/gatsby-ssr'),
-      options: {"plugins":[]},
-    },{
       plugin: require('/Users/jake/dev/jakeschroeder.me/node_modules/gatsby-plugin-webfonts/gatsby-ssr'),
       options: {"plugins":[],"fonts":{"google":[{"family":"Rubik","variants":["400","500"]},{"family":"IBM Plex Sans","variants":["500","700"]}]}},
+    },{
+      plugin: require('/Users/jake/dev/jakeschroeder.me/node_modules/gatsby-plugin-layout/gatsby-ssr'),
+      options: {"plugins":[]},
     },{
       plugin: require('/Users/jake/dev/jakeschroeder.me/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
