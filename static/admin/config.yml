@@ -19,21 +19,21 @@ collections:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
 
-  - name: pages
-    label: Pages
-    folder: content/pages
-    create: true
-    fields:
-      - { name: heading, label: Heading }
-      - { name: sub-heading, label: Sub Heading }
-      - { name: intro, label: Intro }
+  # - name: pages
+  #   label: Pages
+  #   folder: content/pages
+  #   create: true
+  #   fields:
+  #     - { name: heading, label: Heading }
+  #     - { name: sub-heading, label: Sub Heading }
+  #     - { name: intro, label: Intro }
 
   - name: education
     label: Education Items
     folder: content/pages/education
     create: true
     fields:
-      - { name: company, label: Company }
-      - { name: course-name, label: Course Name }
-      - { name: completion-date, label: Completion Date, widget: datetime, format: "LLL", timeFormat: false }
+      - { label: "Company", name: "company", widget: "string" }
+      - { label: "Course Title", name: "title", widget: "string" }
+      - { label: "Completion Date", name: "date", widget: "datetime", format: "LLL", timeFormat: false }
 
