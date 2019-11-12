@@ -9,6 +9,7 @@ import {BitBucketIcon, LinkedInIcon, DownloadIcon} from "./Icons";
 
 import Resume from "../../static/jake.schroeder-resume.pdf";
 
+import texture from "../../images/tiny_grid.png";
 
 const Sidebar = styled.aside`
   max-width: 160px;
@@ -23,7 +24,9 @@ const Sidebar = styled.aside`
   
   transform: translateX(${({isOpen}) => (isOpen? `-140px` : `0`)});
   visibility: ${({isOpen}) => (isOpen? `hidden` : `visible`)};
-  
+  background-image: url(${texture});
+  background-position-x: 110%;
+  background-size:12px;
 `;
 
 const Nav = styled.nav`
@@ -51,6 +54,7 @@ const Social = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: white;
 `;
 
 const SocialLink = styled.a`
@@ -168,7 +172,7 @@ const FrameSidebar = ({ isMenuOpen }) => (
               <NavItem><StyledLink activeClassName="active" to={'/projects/'}>Projects</StyledLink></NavItem>
               <NavItem><ResumeDownload href={Resume} target={"_blank"}>Resume</ResumeDownload></NavItem>
               <NavItem><StyledLink activeClassName="active" to={'/education/'}>Education</StyledLink></NavItem>
-              <NavItem><StyledLink className="disabled" disabled={true} to={'/blog'}>Writing</StyledLink></NavItem>
+              <NavItem><StyledLink className="disabled" disabled={true} to={'/blog'}>Ideas</StyledLink></NavItem>
               <NavItem><StyledLink activeClassName="active" to={'/contact/'}>Contact</StyledLink></NavItem>
             </NavList>
 

@@ -112,7 +112,7 @@ const ContactPage = () => (
     <Fragment>
         <Seo title="Contact" />
 
-        <Section border paddingTop={Sizes.xlarge} paddingBottom={Sizes.large} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
+        <Section border paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
             <Container>
                 <SectionHeading>Drop Me a Line...</SectionHeading>
                 <Description>
@@ -125,7 +125,7 @@ const ContactPage = () => (
         </Section>
 
         
-        <Section paddingTop={Sizes.large} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
+        <Section paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
             <Container>
                 <ContactForm name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact">
                             <input type="hidden" name="bot-field" style={{display: 'none'}}/>

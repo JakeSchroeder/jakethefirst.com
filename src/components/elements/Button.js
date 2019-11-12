@@ -14,8 +14,9 @@ const AnchorButton = styled.a`
     justify-content: center;
     padding: 8px 24px;
     border-radius: 6px;
-    box-shadow: none;
-    transition: background .5s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.22);
+    transition: all .5s ease;
+    transform: translateY(0);
     cursor: pointer;
     height: 42px;
     width: 112px;
@@ -26,7 +27,8 @@ const AnchorButton = styled.a`
     &:hover {
         background: #1676C4;
         transition: all .5s ease;
-        box-shadow: inset 0 0 10px rgba(100,100,100,.4);
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.44);
+        transform: translateY(-4px);
     }
 
 `;
@@ -53,7 +55,7 @@ const Button = styled.button`
     &:hover {
         background: #1676C4;
         transition: background .5s ease;
-        box-shadow: inset 0 0 10px rgba(100,100,100,.4);
+        box-shadow: inset 0 0 1px rgba(100,100,100,1);
     }
 
 `;

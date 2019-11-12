@@ -16,7 +16,7 @@ import { LinkButton } from "../components/elements";
 const MeImg = styled(Img)`
   border-radius: 50%;
   margin-bottom: 16px;
-  border: 3px solid ${Black};
+  box-shadow: 0px 0px 10px ${Black};
 
 `;
 
@@ -30,9 +30,9 @@ const SectionHeading = styled.h1`
   }
 `;
 
-const SectionSubHeading = styled.h4`
+const SectionSubHeading = styled.h2`
   color: ${Blue};
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   font-weight: 400;
 `;
 
@@ -68,7 +68,7 @@ const StackContainer = styled.div`
     display: flex;
 
 
-    @media (max-width: 800px) {
+    @media (max-width: 500px) {
    flex-direction: column;
   }
 `;
@@ -183,7 +183,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query {
-    imageOne: file(relativePath: { eq: "me.jpg" }) {
+    imageOne: file(relativePath: { eq: "j-icon.png" }) {
       childImageSharp {
         fixed(width: 150, height: 150) {
           ...GatsbyImageSharpFixed

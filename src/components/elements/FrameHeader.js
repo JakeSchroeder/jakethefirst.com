@@ -6,15 +6,22 @@ import { Typography, Gray, Blue, Green, Black } from "../utilities";
 import { Link } from "gatsby";
 import { MailIcon, PhoneIcon } from "./Icons";
 
+import texture from "../../images/tiny_grid.png";
+
 
 
 const Header = styled.header`
   width: 100%;
   height: 48px;
-  background: white;
+  background: #f7f7f7;
   border-bottom: 1px solid ${Gray};
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  background-size: 12px;
+  background-image: url(${texture});
+
+  box-shadow: 0 3px 3px rgba(0,0,0,.11);
+  z-index: 10;
 `;
 
 const HeaderWrapper = styled.div`
@@ -33,6 +40,10 @@ const HeaderTitle = styled(Link)`
   font-size: ${Typography.medium};
   display: block;
   font-family: ${Typography.bodyFont};
+
+  @media (max-width: 800px) {
+    font-size: ${Typography.small};
+  }
 
 `;
 

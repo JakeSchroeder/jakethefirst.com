@@ -23,7 +23,7 @@ const WorkSection = styled.section`
   }
 
 
-  @media (max-height: 800px) {
+  @media (max-height: 880px) {
     height: auto;
   }
 
