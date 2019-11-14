@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Typography, Gray, Blue, Green, Black } from "../utilities";
+import { Typography, Gray, Blue, Green, Black, DarkBlack } from "../utilities";
 
 
 import { Link } from "gatsby";
@@ -13,13 +13,15 @@ import texture from "../../images/tiny_grid.png";
 const Header = styled.header`
   width: 100%;
   height: 48px;
-  background: #f7f7f7;
+  
   border-bottom: 1px solid ${Gray};
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+
+  background: #f7f7f7;
   background-size: 12px;
   background-image: url(${texture});
-
+  
   box-shadow: 0 3px 3px rgba(0,0,0,.11);
   z-index: 10;
 `;
@@ -157,7 +159,7 @@ const WorkIndicator = styled.div`
 
 const WorkLink = styled(Link)`
   font-size: ${Typography.small};
-  color: ${Black} !important;
+  /* color: ${Black} !important; */
   font-family: ${Typography.bodyFont};
   font-weight: 400;
 

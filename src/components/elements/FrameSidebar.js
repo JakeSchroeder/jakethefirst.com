@@ -18,7 +18,7 @@ const Sidebar = styled.aside`
   
 
   border-right: 1px solid ${Gray};
-  background: white;
+  background: #f7f7f7;
   border-bottom-left-radius: 6px;
   transition: all .2s ease;
   

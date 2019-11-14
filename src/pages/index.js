@@ -8,7 +8,7 @@ import Seo from "../components/utilities/Seo";
 
 import styled from "styled-components";
 
-import { Typography, Gray, Blue, Black, Sizes, Section, Container} from "../components/utilities";
+import { Typography, Gray, Blue, Black, DarkBlack, Sizes, Section, Container} from "../components/utilities";
 import { LinkButton } from "../components/elements";
 
 
@@ -17,7 +17,7 @@ const MeImg = styled(Img)`
   border-radius: 50%;
   margin-bottom: 16px;
   box-shadow: 0px 0px 10px ${Black};
-
+  /* border: 2px solid ${DarkBlack}; */
 `;
 
 const SectionHeading = styled.h1`

@@ -124,6 +124,14 @@ const StyledBackgroundSection = styled(BackgroundImage)`
   border-radius: 6px;
   border: 1px solid ${Black};
   box-shadow: -5px 5px 16px 0px rgba(100,100,100,0.55);
+  transition: all .3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transition: all .3s ease;
+    filter: blur(3px);
+  }
+
 `;
 
 
