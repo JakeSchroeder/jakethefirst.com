@@ -6,7 +6,7 @@ import { Typography, Gray, Blue, Green, Black } from "../utilities";
 import { Link } from "gatsby";
 import { MailIcon, PhoneIcon } from "./Icons";
 
-import texture from "../../images/tiny_grid.png";
+import texture from "../../images/funky-lines.png";
 
 
 
