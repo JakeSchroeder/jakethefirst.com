@@ -127,7 +127,7 @@ const ContactPage = () => (
         
         <Section paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
             <Container>
-                <ContactForm name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact">
+                <ContactForm name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact/">
                             <input type="hidden" name="bot-field" style={{display: 'none'}}/>
                 <input type="hidden" name="form-name" value="contact"/>
                     <FlexWrapper>

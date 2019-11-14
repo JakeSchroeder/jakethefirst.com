@@ -27,7 +27,7 @@ const AnchorButton = styled.a`
     &:hover {
         background: #1676C4;
         transition: all .5s ease;
-        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.44);
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.33);
         transform: translateY(-4px);
     }
 
