@@ -28,7 +28,7 @@ const Sidebar = styled.aside`
   visibility: ${({isOpen}) => (isOpen? `hidden` : `visible`)};
   background-image: url(${texture});
   background-position-x: 100%;
-  background-size: 64px;
+  background-size: 96px;
 `;
 
 const Nav = styled.nav`
@@ -174,7 +174,7 @@ const FrameSidebar = ({ isMenuOpen }) => (
               <NavItem><StyledLink activeClassName="active" to={'/projects/'}>Projects</StyledLink></NavItem>
               <NavItem><ResumeDownload href={Resume} target={"_blank"}>Resume</ResumeDownload></NavItem>
               <NavItem><StyledLink activeClassName="active" to={'/education/'}>Education</StyledLink></NavItem>
-              <NavItem><StyledLink className="disabled" disabled={true} to={'/blog'}>Ideas</StyledLink></NavItem>
+              {/* <NavItem><StyledLink className="disabled" disabled={true} to={'/blog'}>Ideas</StyledLink></NavItem> */}
               <NavItem><StyledLink activeClassName="active" to={'/contact/'}>Contact</StyledLink></NavItem>
             </NavList>
 

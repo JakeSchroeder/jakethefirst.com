@@ -6,7 +6,10 @@ import { Typography, Gray, Blue, Green, Black, DarkBlack } from "../utilities";
 import { Link } from "gatsby";
 import { MailIcon, PhoneIcon } from "./Icons";
 
-import texture from "../../images/tiny_grid.png";
+// import texture from "../../images/tiny_grid.png";
+
+
+import texture from "../../images/grid_noise.png";
 
 
 const Header = styled.header`
@@ -14,11 +17,9 @@ const Header = styled.header`
   height: 48px;
   
   border-bottom: 1px solid ${Gray};
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
 
   background: #f7f7f7;
-  background-size: 12px;
+  background-size: 132px;
   background-image: url(${texture});
   
   box-shadow: 0 3px 3px rgba(0,0,0,.09);

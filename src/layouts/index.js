@@ -14,7 +14,7 @@ import { useMediaPredicate } from "react-media-hook";
 
 const FrameWrapper = styled.div`
   
-  padding: ${Sizes.xlarge} ${Sizes.xxlarge};
+  /* padding: ${Sizes.xlarge} ${Sizes.xxlarge}; */
   height: 100vh;
   width: 100%;
   display: flex;
@@ -33,23 +33,18 @@ const Frame = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* min-width: 1000px;
-  max-width: 1000px;
-  min-height: 700px;
-  max-height: 700px; */
   height: 100%;
   width: 100%;
   background: #fff;
-  max-width: 1600px;
-  border-radius: 12px;
+
   box-shadow: 0px 3px 12px rgba(0,0,0,.18);
   
   @media (max-width: 800px) {
-    min-width: 100%;
+    /* min-width: 100%;
     max-width: 100%;
     min-height: 100%;
-    max-height: 100%;
-    border-radius: 0;
+    max-height: 100%; */
+
   }
 `;
 

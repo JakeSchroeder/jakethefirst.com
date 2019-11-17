@@ -11,13 +11,12 @@ import {Typography, Gray, Blue, Black, Sizes, Section, Container} from "../compo
 import {LinkButton} from "../components/elements";
 
 
-
 const WorkSection = styled.section`
   height: 50%;
   border-bottom: 1px solid ${Gray};
 
 
-  @media (max-width: 800px) {
+  @media (max-width: 1100px) {
  
     height: auto;
   }
@@ -34,7 +33,7 @@ const StyledContainer = styled(Container)`
   height: 100%;
   display: flex;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1100px) {
    flex-direction: column;
   }
 
@@ -42,7 +41,7 @@ const StyledContainer = styled(Container)`
 
 const Column = styled.div`
   width: 50%;
-  padding: ${Sizes.large};
+  padding: ${Sizes.xlarge};
   border-left: ${({border}) => (border ? `1px solid ${Gray}`: `0`)};
   display: flex;
   align-items: center;
@@ -51,7 +50,7 @@ const Column = styled.div`
 
 
 
-  @media (max-width: 800px) {
+  @media (max-width: 1100px) {
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -115,7 +114,7 @@ const TagItems = styled.p`
 const StyledBackgroundSection = styled(BackgroundImage)`
   min-height: 320px;
   max-height: 350px;
-  height: 90%;
+  height: 70%;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -132,6 +131,12 @@ const StyledBackgroundSection = styled(BackgroundImage)`
     filter: blur(3px);
   }
 
+  
+  @media (max-width: 1100px) {
+    height: 100%;
+  
+  }
+
 `;
 
 
@@ -142,7 +147,7 @@ const Tags = ({children}) => (
   </TagWrapper>
 );
 
-const WorkItem = ({img, isReversed, title, border, description, link, tags }) => (
+const WorkItem = ({img, isReversed, title, border, description, link, tags, project }) => (
   <WorkSection>
     <StyledContainer>
       <Column reversed={isReversed}>
@@ -150,7 +155,7 @@ const WorkItem = ({img, isReversed, title, border, description, link, tags }) =>
       </Column>
       <Column border={border}>
         <WorkContent>
-          <WorkType>Project</WorkType>
+          <WorkType>{project}</WorkType>
           <WorkTitle>{title}</WorkTitle>
           <WorkDescription>
             {description}
@@ -169,12 +174,12 @@ const ProjectsPage = ({data, className}) => (
   <Fragment>
     <Seo title="Projects" />
       
-      <WorkItem img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.isophexScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"Isophex Marketing Site"} border description={"Isophex is an affordable Chicago/NYC based Website Design practice. I designed this site to feel clean and professional in order to emphasis client work. I developed the site using Zurb Foundation UI framework and deployed the solution using Netlify for Continuous Integration/Hosting."} link={"https://isophex.com"} tags={"Foundation, Netlify"}/>
-      <WorkItem isReversed img={<StyledBackgroundSection Tag="div" className={className} fluid={data.heliosScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"Helios IP Main Site"} description={"Helios Intellectual Property is a services technologies company that specializes in IP management. I designed this site in Adobe XD and adopted some UI concepts from Digital Ocean. I developed the site using GatsbyJS, a react framework for making static progressive web apps. It is hosted on Netlify CI/CD."} link={"https://heliosipm.com"} tags={"Foundation, Netlify"}/>
-      <WorkItem  img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.insightsScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"Helios Insights Blog"}  border description={"Discover the latest in IP Law. Access featured articles, download industry research or browse our support knowledge base."} link={"https://heliosinsights.netlify.com"} tags={"GatsbyJS, Netlify"}/>
-      <WorkItem isReversed img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.dmsScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"The Digital Marketing School"}  description={"Helios Intellectual Property is a services technologies company that specializes in IP management."} link={"https://digitalmarketing.school"} tags={"Wordpress, S3"}/>
-      <WorkItem img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.onestopScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"One Stop Properties"} border description={"Find NYC industrial, commercial property management, lease, garage, storage, truck yard, repair shop, manufacturing & office space."} link={"https://stageonestop.wpengine.com"} tags={"Wordpress, WP Engine"}/>
-      <WorkItem isReversed img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.paintingScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"Scroll Painting"}  description={"A website that showcases water color paintings by Suvi Karjalainen."} link={"https://scrollpainting.org"} tags={"Bootstrap, PHP, MediaTemple"}/>
+      <WorkItem img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.isophexScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>}  title={"Isophex Marketing Site"} border description={"I created Isophex to be an affordable web development practice delivering custom web solutions. I designed this site to feel clean and professional with an emphasis on successful client case studies. I utilized the Zurb Foundation UI framework for the Frontend and deployed to Netlify for the hosting."} link={"https://isophex.com"} tags={"Foundation, Netlify"}/>
+      <WorkItem isReversed img={<StyledBackgroundSection Tag="div" className={className} fluid={data.heliosScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"Helios IP Main Site"} description={"Helios Intellectual Property is a services technologies company that specializes in IP management. I designed this site to feel disruptive and cutting edge, more like a software company than a legal services company. I developed the site using plain old vanilla html, css, and js. It is hosted on Netlify."} link={"https://heliosipm.com"} tags={"Vanilla, Netlify"}/>
+      <WorkItem  img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.insightsScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>}  title={"Helios Insights Blog"}  border description={"Access featured articles, download industry research or browse a support knowledge base. I designed the site to feel responsive, reactive and easy to use. The Frontend is developed using Gatsby, a React framework. Authentication is handled by GoTrue API in combination with Netlify for hosting."} link={"https://heliosinsights.netlify.com"} tags={"Gatsby, Netlify"}/>
+      <WorkItem isReversed img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.dmsScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} project={"Development"} title={"The Digital Marketing School"}  description={"A learning platform for people interested in becoming an expert in SEO, marketing and content creation. I collaborated with other developers on the Frontend, modifying WordPress templates with custom CSS and PHP. The entire solution is hosted on WPEngine."} link={"https://digitalmarketing.school"} tags={"Wordpress, WP Engine"}/>
+      <WorkItem img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.onestopScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"One Stop Properties"} border description={"The place to find industrial or commercial properties in the greater NYC area. I worked on the site’s redesign. I aimed to create a more fully featured solution complete with a new theme and custom backend for easy property updates. It is built with wordpress and hosted on WPEngine."} link={"https://onestopspaces.com"} tags={"Wordpress, WP Engine"}/>
+      <WorkItem isReversed img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.paintingScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"Scroll Painting"}  description={"A digital showcase of watercolor paintings by Suvi Karjalainen. I worked closely with Suvi to design this site to be minimal yet dynamic. I developed the Frontend with bootstrap UI frameowrk. I originally built a barebones cms on the backend using PHP, the solution is now hosted on Netlify."} link={"https://scrollpainting.org"} tags={"Bootstrap, PHP, MediaTemple"}/>
       <WorkItem img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.mediawikiScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"Docket Engine Wiki"} border description={"Helios Intellectual Property is a services technologies company that specializes in IP management."} link={"https://www.ipdocketengine.com"} tags={"MediaWiki, MediaTemple"}/>
       <WorkItem isReversed img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.tractionScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"Traction2Vision"} description={"Helping Business Leaders Get What They Want Out of Their Businesses."} link={"https://traction2vision.netlify.com"} tags={"Jekyll, Netlify"}/>
       <WorkItem img={<StyledBackgroundSection  Tag="div" className={className} fluid={data.terminalScreen.childImageSharp.fluid} backgroundColor={`#040e18`}/>} title={"Terminal Emulator"} border description={"I built a terminal ui that you can resize, collapse, and drag n drop. Try writing bash commands to it! "} link={"https://jakeschroeder.github.io"} tags={"JS, Github Pages"}/>
@@ -183,6 +188,9 @@ const ProjectsPage = ({data, className}) => (
   </Fragment>
 );
 
+WorkItem.defaultProps = {
+  project: "Design / Development"
+};
 
 export default ProjectsPage;
 

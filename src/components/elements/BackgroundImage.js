@@ -36,14 +36,14 @@ const BackgroundSection = ({ className }) => (
   />
 );
 
-const StyledBackgroundSection = styled(BackgroundSection)`
+// const StyledBackgroundSection = styled(BackgroundSection)`
 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 6px;
-  border: 1px solid ${Black};
-  box-shadow: -5px 5px 16px 0px rgba(100,100,100,0.55);
-`;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   border-radius: 6px;
+//   border: 1px solid ${Black};
+//   box-shadow: -5px 5px 16px 0px rgba(100,100,100,0.55);
+// `;
 
 export default StyledBackgroundSection;
