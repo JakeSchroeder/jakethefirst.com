@@ -13,6 +13,7 @@ import GlobalStyle from "../components/utilities/Global";
 import { useMediaPredicate } from "react-media-hook";
 
 const FrameWrapper = styled.div`
+  
   padding: ${Sizes.xlarge} ${Sizes.xxlarge};
   height: 100vh;
   width: 100%;
@@ -21,6 +22,7 @@ const FrameWrapper = styled.div`
   align-items: center;
 
   @media (max-width: 800px) {
+    
     padding: 0;
   
   }
@@ -39,7 +41,6 @@ const Frame = styled.div`
   width: 100%;
   background: #fff;
   max-width: 1600px;
-  
   border-radius: 12px;
   box-shadow: 0px 3px 12px rgba(0,0,0,.18);
   

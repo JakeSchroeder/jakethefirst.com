@@ -9,7 +9,9 @@ import {BitBucketIcon, LinkedInIcon, DownloadIcon} from "./Icons";
 
 import Resume from "../../static/jake.schroeder-resume.pdf";
 
-import texture from "../../images/funky-lines.png";
+import texture from "../../images/grid_noise.png";
+
+
 
 const Sidebar = styled.aside`
   max-width: 160px;
@@ -25,8 +27,8 @@ const Sidebar = styled.aside`
   transform: translateX(${({isOpen}) => (isOpen? `-140px` : `0`)});
   visibility: ${({isOpen}) => (isOpen? `hidden` : `visible`)};
   background-image: url(${texture});
-  background-position-x: 150%;
-  background-size:420px;
+  background-position-x: 100%;
+  background-size: 64px;
 `;
 
 const Nav = styled.nav`

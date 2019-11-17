@@ -6,8 +6,7 @@ import { Typography, Gray, Blue, Green, Black, DarkBlack } from "../utilities";
 import { Link } from "gatsby";
 import { MailIcon, PhoneIcon } from "./Icons";
 
-import texture from "../../images/funky-lines.png";
-
+import texture from "../../images/tiny_grid.png";
 
 
 const Header = styled.header`
@@ -22,18 +21,19 @@ const Header = styled.header`
   background-size: 12px;
   background-image: url(${texture});
   
-  box-shadow: 0 3px 3px rgba(0,0,0,.11);
+  box-shadow: 0 3px 3px rgba(0,0,0,.09);
   z-index: 10;
 `;
 
 const HeaderWrapper = styled.div`
+
   width: 100%;
   height: 100%;
-  
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 32px 0 16px;
+
 `;
 
 const HeaderTitle = styled(Link)`
@@ -71,7 +71,7 @@ const StyledMenuButton = styled.div`
   cursor: pointer;
  
  & > div > span {
-    background: ${Blue};
+  background: ${Gray};
  }
   
   &:hover > div > span {
@@ -120,6 +120,10 @@ const Line = styled.span`
 const IconLink = styled.a`
   display: block;
   margin-left: 16px;
+
+  & path {
+    fill: ${DarkBlack}
+  }
 
   &:hover path {
     fill: ${Black};
