@@ -19,7 +19,9 @@ const FilterSection = styled.section`
   /* border-bottom: 1px solid ${Gray}; */
 
   @media (max-width: 800px) {
+
     padding: 32px;
+		
   }
   
 `;
@@ -33,7 +35,7 @@ const CVList = styled.ul`
 
 const StyledCVItem = styled.li`
 	
-	padding: 32px 64px;
+	padding: 64px;
 	border-bottom: 1px solid ${Gray};
 	margin: 0;
 	height: calc(100% / 5);
@@ -51,7 +53,7 @@ const StyledCVItem = styled.li`
 `;
 
 const StyledContainer = styled(Container)`
-height: 100%;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -121,35 +123,21 @@ const CVItem = ({ image, subTitle, title, date, link, buttonText }) => (
 	
 	<StyledCVItem>
 		<StyledContainer>
-		<FLexWrapper>
-			{image}
-
-			<ContentWrapper>
-				<CVSubTitle>{subTitle}</CVSubTitle>
-				<CVTitle>{title}</CVTitle>
-				<CVDate>{date}</CVDate>
-			</ContentWrapper>
-
-		</FLexWrapper>
-
-		<LinkButton className={"linkedButton"} href={link} target={"_blank"}>{buttonText}</LinkButton>
+			<FLexWrapper>
+				{image}
+				<ContentWrapper>
+					<CVSubTitle>{subTitle}</CVSubTitle>
+					<CVTitle>{title}</CVTitle>
+					<CVDate>{date}</CVDate>
+				</ContentWrapper>
+			</FLexWrapper>
+			<LinkButton className={"linkedButton"} href={link} target={"_blank"}>{buttonText}</LinkButton>
 		</StyledContainer>	
 	</StyledCVItem> 
 );
 
 
 const EducationPage = ({data}) => {
-
-	const [filterTerm, setfilterTerm] = useState({value: 'All'});
-
-	
-
-	console.log(filterTerm);
-
-	// const handleChange = (event) => {
-  //   setfilterTerm((event)=> { value: event.target.value});
-  // }
-
 
 	return (
 		<Fragment>

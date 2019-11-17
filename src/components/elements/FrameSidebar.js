@@ -9,26 +9,21 @@ import {BitBucketIcon, LinkedInIcon, DownloadIcon} from "./Icons";
 
 import Resume from "../../static/jake.schroeder-resume.pdf";
 
-import texture from "../../images/grid_noise.png";
-
 
 
 const Sidebar = styled.aside`
   max-width: 160px;
   width: 100%;
   height: 100%;
-  
 
   border-right: 1px solid ${Gray};
-  background: #f7f7f7;
+  background-color: #f8fafc;
   border-bottom-left-radius: 6px;
   transition: all .2s ease;
   
   transform: translateX(${({isOpen}) => (isOpen? `-140px` : `0`)});
   visibility: ${({isOpen}) => (isOpen? `hidden` : `visible`)};
-  background-image: url(${texture});
-  background-position-x: 100%;
-  background-size: 96px;
+
 `;
 
 const Nav = styled.nav`

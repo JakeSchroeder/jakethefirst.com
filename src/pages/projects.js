@@ -29,7 +29,8 @@ const WorkSection = styled.section`
 `;
 
 const StyledContainer = styled(Container)`
-  max-width: 1400px;
+
+  max-width: 1328px;
   height: 100%;
   display: flex;
 
@@ -47,7 +48,6 @@ const Column = styled.div`
   align-items: center;
   justify-content: center;
   order: ${({reversed}) => (reversed ? `1`: `0`)};
-
 
 
   @media (max-width: 1100px) {
