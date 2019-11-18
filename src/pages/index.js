@@ -13,7 +13,7 @@ import { LinkButton } from "../components/elements";
 
 const Column = styled.div`
   width: 50%;
-  padding: ${Sizes.xlarge};
+  /* padding: ${Sizes.xlarge}; */
   display: flex;
   align-items: flex-start;
   flex-direction: column;
