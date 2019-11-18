@@ -14,6 +14,11 @@ import { LinkButton } from "../components/elements";
 const StyledSection = styled(Section)`
   padding: 0;
   height: 50%;
+
+  @media (max-width: 1100px) {
+ 
+ height: auto;
+}
 `;
 
 const StyledContainer = styled(Container)`
@@ -119,7 +124,7 @@ const BottomWrapper = styled.div`
 
 const MeImg = styled(Img)`
   display: block;
-
+width: 100%;
   border-radius: 50%;
   margin-bottom: 32px;
   /* box-shadow: 0px 0px 10px ${Black}; */
@@ -145,15 +150,13 @@ const SectionHeading = styled.h1`
 
 const SectionSubHeading = styled.p`
   text-align: left;
-  color: ${Blue};
+  color: ${Black};
   font-weight: 400;
   /* padding-top: 64px; */
 
-  @media (max-width: 800px) {
-    padding-top: 0;
+  &.mb {
     margin-bottom: 16px;
   }
-
 
 
 `;
@@ -249,7 +252,7 @@ const IndexPage = ({ data }) => (
           <TopWrapper>
             <MeImg fixed={data.imageOne.childImageSharp.fixed} alt={"a pic of jake's face"} />
             <SectionHeading>UX Designer<br/>Frontend Developer</SectionHeading>
-            <SectionSubHeading>Based in <StyledLink style={{marginRight: 0}} href="https://goo.gl/maps/cK3G8HNKap9xgXqp6" target="_blank" rel="nofollow">Chicago</StyledLink>, IL</SectionSubHeading>
+            <SectionSubHeading className="mb">Based in <StyledLink style={{marginRight: 0}} href="https://goo.gl/maps/cK3G8HNKap9xgXqp6" target="_blank" rel="nofollow">Chicago</StyledLink>, IL</SectionSubHeading>
           </TopWrapper>
           <BottomWrapper>
             <SectionSubHeading ><StyledLink href="https://www.linkedin.com/in/jake-schroeder/" target="_blank" rel="nofollow">Linkedin</StyledLink><StyledLink href="https://www.instagram.com/jakeman001/" target="_blank" rel="nofollow">Instagram</StyledLink><StyledLink href="https://dribbble.com/KidUnknown">Dribble</StyledLink><StyledLink href="https://github.com/JakeSchroeder">Github</StyledLink></SectionSubHeading>
