@@ -11,34 +11,58 @@ import styled from "styled-components";
 import { Typography, Gray, Blue, Black, DarkBlack, Sizes, Section, Container} from "../components/utilities";
 import { LinkButton } from "../components/elements";
 
+const Column = styled.div`
+  width: 50%;
+  /* padding: ${Sizes.xlarge}; */
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
 
+  .left {
+    justify-content: space-between;
+
+  }
+
+`;
+
+const StyledContainer = styled(Container)`
+  display:flex;
+  flex-direction: row;
+  align-items: flex-end;
+`;
 
 const MeImg = styled(Img)`
+  display: block;
+
   border-radius: 50%;
-  margin-bottom: 16px;
-  box-shadow: 0px 0px 10px ${Black};
+  margin-bottom: 32px;
+  /* box-shadow: 0px 0px 10px ${Black}; */
   /* border: 2px solid ${DarkBlack}; */
 `;
 
 const SectionHeading = styled.h1`
-  font-size: 32px;
-  margin-bottom: 16px;
-  font-weight: 500;
+  text-align: left;
+  font-size: 48px;
+  margin-bottom: 32px;
+  font-weight: 700;
 
   @media (max-width: 800px) {
     font-size: 24px;
   }
 `;
 
-const SectionSubHeading = styled.h2`
+const SectionSubHeading = styled.p`
+  text-align: left;
   color: ${Blue};
-  margin-bottom: 32px;
   font-weight: 400;
+  padding-top: 64px
 `;
 
 const Description = styled.p`
   text-align: left;
-
+  padding-left: 16px;
+  border-left: 1px solid ${Gray};
 `;
 
 const StyledLink = styled.a`
@@ -47,19 +71,18 @@ const StyledLink = styled.a`
   position: relative;
   display: inline-block;
 
-  &:hover {
     
-    &:after {
-      content: '';
-      width: 100%;
-      height: 2px;
-      background: ${Blue};
-      display: block;
-      position: absolute;
-      bottom: 0px;
-      border-radius: 2px;
-    }
+  &:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: ${Blue};
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 2px;
   }
+
 
   
 `;
@@ -117,16 +140,25 @@ const IndexPage = ({ data }) => (
   <Fragment>
     <Seo title="Me" />
       <Section border paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
-        <Container>
-        <MeImg fixed={data.imageOne.childImageSharp.fixed} alt={"a pic of jake's face"} />
-        <SectionHeading>UX Designer / Frontend Developer</SectionHeading>
-        <SectionSubHeading>Based in <StyledLink href="https://goo.gl/maps/cK3G8HNKap9xgXqp6" target="_blank" rel="nofollow">Chicago</StyledLink>, IL</SectionSubHeading>
-        <Description>
+        <StyledContainer>
+          <Column className="left">
+         
+            <MeImg fixed={data.imageOne.childImageSharp.fixed} alt={"a pic of jake's face"} />
+            <SectionHeading>UX Designer<br/>Frontend Developer</SectionHeading>
+            
+        
+            
+              <SectionSubHeading>Based in <StyledLink href="https://goo.gl/maps/cK3G8HNKap9xgXqp6" target="_blank" rel="nofollow">Chicago</StyledLink>, IL</SectionSubHeading>
+            
+          </Column>
+          <Column>
+          <Description>
             Hello World! My name is Jake Schroeder and I am a designer/developer making web apps in <StyledLink href="https://reactjs.org/" target="_blank" rel="nofollow">ReactJS</StyledLink>. I am currently attending DePaul University majoring in User Experience
             Design and minoring in Software Engineering. I transferred after my freshman year at Parsons School of Design. I own my own freelance web practice called <StyledLink href="https://isophex.com" target="_blank" rel="nofollow">Isophex</StyledLink> and I do contract work for <StyledLink href="https://heliosip.com" target="_blank" rel="nofollow">Helios IPM</StyledLink>. When i'm not developing, I spend most of my time listening to music, working out at the gym and
             of course, honing my cooking skills in the kitchen. Oh and don't forget to check out the <StyledLink href={"https://bitbucket.org/jake-schroeder-isx/jakeschroeder.me/src/master/"} target={"_blank"} rel={"nofollow"}>Source Code</StyledLink> for this project.
           </Description>
-          </Container>
+          </Column>
+        </StyledContainer>
       </Section>
 
      <Section paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
@@ -185,7 +217,7 @@ export const pageQuery = graphql`
   query {
     imageOne: file(relativePath: { eq: "j-icon.png" }) {
       childImageSharp {
-        fixed(width: 150, height: 150) {
+        fixed(width: 128, height: 128) {
           ...GatsbyImageSharpFixed
         }
       }

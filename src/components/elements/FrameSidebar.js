@@ -12,6 +12,7 @@ import Resume from "../../static/jake.schroeder-resume.pdf";
 
 
 const Sidebar = styled.aside`
+
   max-width: 160px;
   width: 100%;
   height: 100%;
