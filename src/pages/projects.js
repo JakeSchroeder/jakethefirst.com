@@ -15,12 +15,9 @@ const WorkSection = styled.section`
   height: 50%;
   border-bottom: 1px solid ${Gray};
 
-
   @media (max-width: 1100px) {
- 
     height: auto;
   }
-
 
   @media (max-height: 880px) {
     height: auto;
@@ -43,8 +40,7 @@ const StyledContainer = styled(Container)`
 const Column = styled.div`
   width: 50%;
   padding: ${Sizes.xlarge};
-  /* border-right: ${({border}) => (border ? `1px solid ${Gray}`: `0`)}; */
-  border-right: 1px solid ${Gray};
+  border-right: ${({border}) => (border ? `1px solid ${Gray}`: `0`)};
   display: flex;
   align-items: center;
   justify-content: center;

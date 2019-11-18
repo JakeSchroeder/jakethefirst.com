@@ -9,10 +9,16 @@ import { Typography, Gray, Blue, Black, Sizes, Section, Container } from "../com
 
 import { LinkButton, NormalButton } from "../components/elements/Button";
 
-const SectionHeading = styled.h2`
+const SectionHeading = styled.h1`
     font-weight: 600;
     margin-bottom: 16px;
     text-align: center;
+    font-size: 48px;
+
+    @media (max-width: 1245px) {
+    font-size: 40px;
+    
+  }
 `;
 
 const Description = styled.p`

@@ -16,14 +16,22 @@ const StyledSection = styled(Section)`
   height: 50%;
 
   @media (max-width: 1100px) {
- 
- height: auto;
-}
+    height: auto;
+  }
+
+  @media (max-height: 880px) {
+    height: auto;
+  }
+
+  &.full {
+    height: 100%;
+  }
+
 `;
 
 const StyledContainer = styled(Container)`
 
-  max-width: 1328px;
+  max-width: 1200px;
   height: 100%;
   display: flex;
 
@@ -44,6 +52,8 @@ const Column = styled.div`
   /* order: ${({reversed}) => (reversed ? `1`: `0`)}; */
   border-right: ${({border}) => (border ? `1px solid ${Gray}`: `0`)};
   
+  padding-bottom: ${({border}) => (border ? `0`: `${Sizes.xlarge}`)};
+
 
   &.justify-col {
     flex-direction: column;
@@ -54,12 +64,14 @@ const Column = styled.div`
   }
  
   @media (max-width: 1100px) {
-    padding: ${Sizes.large};
     width: 100%;
     height: 100%;
     margin: 0 auto;
     border: 0;
     order: 0;
+
+
+
   }
 
 
@@ -112,9 +124,11 @@ const TopWrapper = styled.div`
   justify-content: flex-start;
   /* margin-top: -32px */
   height: 100%;
+  
 `
 
 const BottomWrapper = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -124,7 +138,7 @@ const BottomWrapper = styled.div`
 
 const MeImg = styled(Img)`
   display: block;
-width: 100%;
+  width: 100%;
   border-radius: 50%;
   margin-bottom: 32px;
   /* box-shadow: 0px 0px 10px ${Black}; */
@@ -134,7 +148,7 @@ width: 100%;
 const SectionHeading = styled.h1`
   text-align: left;
   font-size: 48px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   font-weight: 700;
   white-space: nowrap;
 
@@ -154,9 +168,9 @@ const SectionSubHeading = styled.p`
   font-weight: 400;
   /* padding-top: 64px; */
 
-  &.mb {
+  /* &.mb {
     margin-bottom: 16px;
-  }
+  } */
 
 
 `;
@@ -199,8 +213,8 @@ const StackContainer = styled.div`
     display: flex;
 
 
-    @media (max-width: 500px) {
-   flex-direction: column;
+  @media (max-width: 800px) {
+    flex-direction: column;
   }
 `;
 
@@ -241,75 +255,88 @@ const StackWrapper = styled.div`
   }
 `;
 
+const ColumnInner = styled.div`
+  display: flex;
+  width: 100%;
+  @media (max-width: 800px) {
+    flex-direction: column;
 
+  }
+
+`;
 
 const IndexPage = ({ data }) => (
   <Fragment>
     <Seo title="Me" />
       <StyledSection border paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
       <StyledContainer>
-        <Column className="justify-col" border>
+        <Column className="justify-col">
           <TopWrapper>
             <MeImg fixed={data.imageOne.childImageSharp.fixed} alt={"a pic of jake's face"} />
             <SectionHeading>UX Designer<br/>Frontend Developer</SectionHeading>
-            <SectionSubHeading className="mb">Based in <StyledLink style={{marginRight: 0}} href="https://goo.gl/maps/cK3G8HNKap9xgXqp6" target="_blank" rel="nofollow">Chicago</StyledLink>, IL</SectionSubHeading>
+           
           </TopWrapper>
           <BottomWrapper>
-            <SectionSubHeading ><StyledLink href="https://www.linkedin.com/in/jake-schroeder/" target="_blank" rel="nofollow">Linkedin</StyledLink><StyledLink href="https://www.instagram.com/jakeman001/" target="_blank" rel="nofollow">Instagram</StyledLink><StyledLink href="https://dribbble.com/KidUnknown">Dribble</StyledLink><StyledLink href="https://github.com/JakeSchroeder">Github</StyledLink></SectionSubHeading>
+          <SectionSubHeading className="mb">Based in <StyledLink style={{marginRight: 0}} href="https://goo.gl/maps/cK3G8HNKap9xgXqp6" target="_blank" rel="nofollow">Chicago</StyledLink>, IL</SectionSubHeading>
           </BottomWrapper>
         </Column>
 
         <Column className="align-end">
-        <Description>
-        I am passionate about bringing together leading UX Design and effective Frontend Development to deliver highly usable and pragmatic solutions. I am constantly working to improve my skills by exploring the latest design trends, frameworks and technologies. My strength is in understanding business requirements and translating them into well designed, valuable solutions. <br/> <br/>
-My best projects are focused on applying the latest UX concepts that effectively reconcile creative design with practical functionality, communicating professionalism and a unique modern aesthetic that is both exciting and usable. With strong interpersonal instincts, I enjoy working closely with business owners to fully understand their business objectives as the focus of our solution. 
-          </Description>
+        <BottomWrapper>
+            <SectionSubHeading ><StyledLink href="https://www.linkedin.com/in/jake-schroeder/" target="_blank" rel="nofollow">Linkedin</StyledLink><StyledLink href="https://www.instagram.com/jakeman001/" target="_blank" rel="nofollow">Instagram</StyledLink><StyledLink href="https://dribbble.com/KidUnknown">Dribbble</StyledLink><StyledLink href="https://github.com/JakeSchroeder">Github</StyledLink></SectionSubHeading>
+          </BottomWrapper>
+        
         </Column>
 
       </StyledContainer>
       
         </StyledSection>
 
-      <StyledSection paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
+      <StyledSection className="full" paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
       <StyledContainer>
         <Column border>
-
-        <StackWrapper>
-          <StackHeader>UXD Stack</StackHeader>
-            <StackList>
-
-              <StackItem>Prototyping</StackItem>
-              <StackItem >Adobe XD</StackItem>
-              <StackItem >Sketch</StackItem>
-              <StackItem >Adobe Photoshop</StackItem>
-              <StackItem >Adobe Illustrator</StackItem>
-              <StackItem >Adobe After Effects</StackItem>
-              <StackItem >Cinema 4D</StackItem>
-
-            </StackList>
-          </StackWrapper>
-
-          <StackWrapper>
-            <StackHeader>Frontend Stack</StackHeader>
-              <StackList>
-
-                <StackItem>ReactJS</StackItem>
-                <StackItem>Gatsby JS</StackItem>
-                <StackItem >Next JS</StackItem>
-                <StackItem >Typescript</StackItem>
-                <StackItem >Styled Components</StackItem>
-                <StackItem >Netlify</StackItem>
-                <StackItem >Now</StackItem>
-                <StackItem >Algolia</StackItem>
-
-
-              </StackList>
-            </StackWrapper>
+       
+            <Description>
+        I am passionate about bringing together leading UX Design and effective Frontend Development to deliver highly usable and pragmatic solutions. I am constantly working to improve my skills by exploring the latest design trends, frameworks and technologies. My strength is in understanding business requirements and translating them into well designed, valuable solutions. <br/> <br/>
+My best projects are focused on applying the latest UX concepts that effectively reconcile creative design with practical functionality, communicating professionalism and a unique modern aesthetic that is both exciting and usable. With strong interpersonal instincts, I enjoy working closely with business owners to fully understand their business objectives as the focus of our solution. 
+          </Description>
 
 
           </Column>
           <Column>
-         
+
+          <ColumnInner>
+              <StackWrapper>
+                <StackHeader>UXD Stack</StackHeader>
+                  <StackList>
+
+                    <StackItem>Prototyping</StackItem>
+                    <StackItem >Adobe XD</StackItem>
+                    <StackItem >Sketch</StackItem>
+                    <StackItem >Adobe Photoshop</StackItem>
+                    <StackItem >Adobe Illustrator</StackItem>
+                    <StackItem >Adobe After Effects</StackItem>
+                    <StackItem >Cinema 4D</StackItem>
+
+                  </StackList>
+              </StackWrapper>
+
+              <StackWrapper>
+                <StackHeader>Frontend Stack</StackHeader>
+                  <StackList>
+
+                    <StackItem>ReactJS</StackItem>
+                    <StackItem>Gatsby JS</StackItem>
+                    <StackItem >Next JS</StackItem>
+                    <StackItem >Typescript</StackItem>
+                    <StackItem >Styled Components</StackItem>
+                    <StackItem >Netlify</StackItem>
+                    <StackItem >Now</StackItem>
+
+
+                  </StackList>
+                </StackWrapper>
+              </ColumnInner>
           </Column>
 
         </StyledContainer>
@@ -323,7 +350,7 @@ export const pageQuery = graphql`
   query {
     imageOne: file(relativePath: { eq: "j-icon.png" }) {
       childImageSharp {
-        fixed(width: 128, height: 128) {
+        fixed(width: 100, height: 100) {
           ...GatsbyImageSharpFixed
         }
       }
