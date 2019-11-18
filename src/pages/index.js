@@ -13,7 +13,7 @@ import { LinkButton } from "../components/elements";
 
 const Column = styled.div`
   width: 50%;
-  /* padding: ${Sizes.xlarge}; */
+  padding: ${Sizes.xlarge};
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -22,6 +22,11 @@ const Column = styled.div`
   .left {
     justify-content: space-between;
 
+  }
+
+  @media (max-width: 800px) {
+   margin-bottom: 16px;
+  
   }
 
 `;
@@ -46,6 +51,7 @@ const SectionHeading = styled.h1`
   font-size: 48px;
   margin-bottom: 32px;
   font-weight: 700;
+  white-space: nowrap;
 
   @media (max-width: 800px) {
     font-size: 24px;
@@ -64,6 +70,10 @@ const Description = styled.p`
   padding-left: 16px;
   border-left: 1px solid ${Gray};
 `;
+
+/* const Top = styled.div`
+  
+`; */
 
 const StyledLink = styled.a`
   color: ${Blue};
