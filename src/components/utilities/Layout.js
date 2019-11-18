@@ -17,7 +17,7 @@ export const Section = styled.section`
   padding-bottom: ${({paddingBottom}) => (paddingBottom)};
   padding-right: ${({paddingRight}) => (paddingRight)};
   padding-left: ${({paddingLeft}) => (paddingLeft)};
-
+  
   text-align: center;
   border-bottom: ${({border}) => (border) ? `1px solid ${Gray}` : `0`};
 
