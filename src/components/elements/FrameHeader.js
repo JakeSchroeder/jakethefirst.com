@@ -170,6 +170,10 @@ const IconLink = styled.a`
   &:hover path {
     fill: ${Black};
   }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
   
 `;
 
@@ -178,9 +182,7 @@ const WorkWrapper = styled.div`
   align-items: center;
   margin-top: -6px;
   
-  @media (max-width: 800px) {
-    display: none;
-  }
+
 `;
 
 const WorkIndicator = styled.div`
@@ -233,6 +235,11 @@ const MenuButton = ({ onClick, isOpen }) => (
 
 const MenuText = styled.p`
   color: ${Blue};
+  margin-left: -16px;
+
+  /* @media(max-width: 800px) {
+    display: none;
+  } */
 `;
 
 

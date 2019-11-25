@@ -10,8 +10,6 @@ import FrameSidebar from "../components/elements/FrameSidebar"
 
 import GlobalStyle from "../components/utilities/Global";
 
-import { useMediaPredicate } from "react-media-hook";
-
 const FrameWrapper = styled.div`
   
   /* padding: ${Sizes.xlarge} ${Sizes.xxlarge}; */
@@ -77,9 +75,7 @@ const MainContent = styled.main`
 
 const Layout = ({ children }) => {
 
-  const isMobile = useMediaPredicate("(max-width: 800px)");
-
-  const [isMenuToggled, setMenuToggle] = useState(isMobile);
+  const [isMenuToggled, setMenuToggle] = useState(true);
   const toggleMenu = () => setMenuToggle(!isMenuToggled);
 
   

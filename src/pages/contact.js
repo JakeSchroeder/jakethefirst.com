@@ -178,13 +178,15 @@ const Column = styled.div`
     border: 0;
     order: 0;
 
+    padding: ${Sizes.large};
+
     &:nth-of-type(even) {
-     padding-top: 32px;
+     padding-top: 16px;
 
     }
 
     &:nth-of-type(odd) {
-      padding-bottom: 32px;
+      padding-bottom: 16px;
     
     }
 

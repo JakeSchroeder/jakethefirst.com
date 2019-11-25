@@ -13,6 +13,7 @@ import { LinkButton } from "../components/elements";
 
 const StyledSection = styled(Section)`
   padding: 0;
+  height: auto;
   /* height: 50%; */
 /* 
   @media (max-width: 1100px) {
@@ -69,6 +70,8 @@ const Column = styled.div`
     margin: 0 auto;
     border: 0;
     order: 0;
+
+    padding: ${Sizes.large};
 
     &:nth-of-type(even) {
        padding-top: 16px;

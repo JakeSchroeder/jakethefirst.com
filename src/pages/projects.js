@@ -54,11 +54,11 @@ const Column = styled.div`
     order: 0;
 
     &:nth-of-type(even) {
-     padding-top: 32px;
+     padding-top: 16px;
     }
 
     &:nth-of-type(odd) {
-      padding-bottom: 32px;
+      padding-bottom: 16px;
     }
 
   }
@@ -91,12 +91,21 @@ const VisitWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media(max-width: 800px) {
+    flex-direction: column;
+  }
+
 `;
 
 
 const TagWrapper = styled.div`
   display: flex;
   align-items: center;
+
+  @media(max-width: 800px) {
+    margin-top: 16px;
+  }
 
 `;
 
