@@ -13,8 +13,8 @@ import { LinkButton } from "../components/elements";
 
 const StyledSection = styled(Section)`
   padding: 0;
-  height: 50%;
-
+  /* height: 50%; */
+/* 
   @media (max-width: 1100px) {
     height: auto;
 
@@ -22,7 +22,7 @@ const StyledSection = styled(Section)`
 
   @media (max-height: 880px) {
     height: auto;
-  }
+  } */
 
   &.full {
     height: 100%;
@@ -124,13 +124,10 @@ const SectionHeading = styled.h1`
   /* white-space: nowrap; */
 
 
-  
   @media (max-width: 900px) {
     font-size: 56px;
     
   }
-
-
 `;
 
 const SectionSubHeading = styled.p`

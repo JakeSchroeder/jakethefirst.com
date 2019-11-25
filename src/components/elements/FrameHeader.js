@@ -64,6 +64,7 @@ const HeaderImg = styled(Img)`
   border-radius: 50%;
   vertical-align: middle;
   transition: margin .2s ease;
+  margin-left: 0;
  
 
   @media (min-width: 800px) {
