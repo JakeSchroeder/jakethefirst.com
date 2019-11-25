@@ -12,7 +12,7 @@ import { LinkButton, NormalButton } from "../components/elements/Button";
 const SectionHeading = styled.h1`
     font-weight: 600;
     margin-bottom: 16px;
-    text-align: center;
+    /* text-align: center; */
     font-size: 48px;
 
     @media (max-width: 1245px) {
@@ -21,8 +21,20 @@ const SectionHeading = styled.h1`
   }
 `;
 
+
+const StyledContainer = styled(Container)`
+
+  height: 100%;
+  display: flex;
+
+  @media (max-width: 1100px) {
+   flex-direction: column;
+  }
+
+`;
+
 const Description = styled.p`
-    text-align: center;
+    /* text-align: center; */
 `;
 
 const InputFieldSet = styled.div`
@@ -41,12 +53,39 @@ const InputFieldSet = styled.div`
 
 `;
 
+
+const StyledLink = styled.a`
+  color: ${Black};
+  transition: all .3s ease-in-out;
+  position: relative;
+  display: inline-block;
+
+  margin-right: 16px;
+
+  &:hover {
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: ${Blue};
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      border-radius: 2px;
+    }
+
+  }
+  
+`;
+
 const FlexWrapper = styled.div`
     display: flex;
 `;
 
 const ContactForm = styled.form`
     /* margin-top: ${Sizes.large}; */
+    width: 100%;
 `;
 
 const InputLabel = styled.label`
@@ -107,10 +146,53 @@ const SuccessMsg = styled.p`
 `;
 
 const ContactEmail = styled.a`
-    text-align: center;
+    /* text-align: center; */
     margin-top: 16px;
     display: block;
     color: ${Blue};
+    margin-bottom: 16px;
+`;
+
+const Column = styled.div`
+  width: 50%;
+  padding: ${Sizes.xlarge};
+  /* border-right: ${({border}) => (border ? `1px solid ${Gray}`: `0`)}; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  order: ${({reversed}) => (reversed ? `1`: `0`)};
+/* 
+  &:nth-of-type(even) {
+     padding-left: 32px;
+    }
+
+    &:nth-of-type(odd) {
+      padding-right: 32px;
+    } */
+
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: 0;
+    order: 0;
+
+    &:nth-of-type(even) {
+     padding-top: 32px;
+
+    }
+
+    &:nth-of-type(odd) {
+      padding-bottom: 32px;
+    
+    }
+
+  }
+`;
+
+const ContentWrapper = styled.div`
+    text-align: left;
 `;
 
 
@@ -118,20 +200,63 @@ const ContactPage = () => (
     <Fragment>
         <Seo title="Contact" />
 
-        <Section border paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
-            <Container>
-                <SectionHeading>Drop Me a Line...</SectionHeading>
-                <Description>
-                    Fill out the form below if you have any inquries/questions about anything or just want to chat, feel free to reach out.
-                </Description>
-                <ContactEmail href="mailto:jake.schroeder@isophex.com">
-                    jake.schroeder@isophex.com
-                </ContactEmail>
-            </Container>
+        <Section>
+            <StyledContainer>
+                <Column>
+                    <ContentWrapper>
+                        <SectionHeading>Thank You!</SectionHeading>
+                        <Description>
+                            I appreciate you checking out my personal site. I hope you found what you are looking for, if you have any inquries/questions about anything or just want to chat, feel free to reach out.
+                        </Description>
+                        <ContactEmail href="mailto:jake.schroeder@isophex.com">
+                            jake.schroeder@isophex.com
+                        </ContactEmail>
+                        {/* <StyledLink href="https://www.linkedin.com/in/jake-schroeder/" target="_blank" rel="nofollow">Linkedin</StyledLink><StyledLink href="https://www.instagram.com/jakeman001/" target="_blank" rel="nofollow">Instagram</StyledLink><StyledLink href="https://dribbble.com/KidUnknown">Dribbble</StyledLink><StyledLink href="https://github.com/JakeSchroeder">Github</StyledLink> */}
+                    </ContentWrapper>
+                </Column>
+                <Column>
+                <ContactForm name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact/">
+                                <input type="hidden" name="bot-field" style={{display: 'none'}}/>
+                    <input type="hidden" name="form-name" value="contact"/>
+                        <FlexWrapper>
+                            <InputFieldSet mR>
+                                <InputLabel htmlFor="userFirstName">First Name</InputLabel>
+                                <ContactInput id="userFirstName" name="firstName" type="text" />
+                            </InputFieldSet>
+
+                            <InputFieldSet mL>
+                                <InputLabel htmlFor="userLastName">Last Name</InputLabel>
+                                <ContactInput id="userLastName" name="lastName" type="text" />
+                            </InputFieldSet>
+
+
+                        </FlexWrapper>
+
+                        <InputFieldSet>
+                            <InputLabel htmlFor="userEmail">Email</InputLabel>
+                            <ContactInput id="userEmail" type="email" name="email" />
+                        </InputFieldSet>
+
+                        <InputFieldSet>
+                            <InputLabel htmlFor="userMessage">Message</InputLabel>
+                            <ContactArea id="userMessage" name="message" type="text" />
+                        </InputFieldSet>
+
+                        <InputFieldSet className={"flexed"}>
+                            <NormalButton name="submit" type="submit">Submit</NormalButton>
+                        </InputFieldSet>
+
+
+
+                    </ContactForm>
+                
+                </Column>
+            </StyledContainer>
+            
         </Section>
 
         
-        <Section paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
+        {/* <Section paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xlarge} paddingRight={Sizes.xlarge}>
             <Container>
                 <ContactForm name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact/">
                             <input type="hidden" name="bot-field" style={{display: 'none'}}/>
@@ -169,7 +294,7 @@ const ContactPage = () => (
                 </ContactForm>
             </Container>
 
-        </Section>
+        </Section> */}
 
     </Fragment>
 );

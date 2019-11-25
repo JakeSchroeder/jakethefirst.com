@@ -37,7 +37,9 @@ const Frame = styled.div`
   width: 100%;
   background: #fff;
 
-  box-shadow: 0px 3px 12px rgba(0,0,0,.18);
+  /* border: 1px solid ${Gray}; */
+
+  /* box-shadow: 0px 3px 12px rgba(0,0,0,.18); */
   
   @media (max-width: 800px) {
     /* min-width: 100%;
@@ -49,7 +51,7 @@ const Frame = styled.div`
 `;
 
 const FlexWrapper = styled.div`
-  width: calc(100% + 160px);
+  width: calc(100% + 220px);
   height: calc(100% - 48px);
   display: flex;
 
@@ -60,13 +62,13 @@ const MainContent = styled.main`
     height: 100%;
 
     transition: all .2s ease;
-    transform: translateX(${({ isMenuOpen }) => (isMenuOpen ? `-160px` : `0`)});
+    transform: translateX(${({ isMenuOpen }) => (isMenuOpen ? `-220px` : `0`)});
 
     overflow-y: auto;
     
     
     @media (min-width: 800px) {
-      margin-right: ${({ isMenuOpen }) => (isMenuOpen ? 0 : `160px`)};
+      margin-right: ${({ isMenuOpen }) => (isMenuOpen ? 0 : `220px`)};
     }
     
 `;

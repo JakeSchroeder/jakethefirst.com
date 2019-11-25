@@ -10,9 +10,11 @@ import styled from "styled-components";
 import {Typography, Gray, Blue, Black, Sizes, Section, Container} from "../components/utilities";
 import {LinkButton} from "../components/elements";
 
+import {ExternalLinkIcon} from "../components/elements/Icons";
+
 
 const WorkSection = styled.section`
-  height: 50%;
+  
   border-bottom: 1px solid ${Gray};
 
   @media (max-width: 1100px) {
@@ -27,9 +29,9 @@ const WorkSection = styled.section`
 
 const StyledContainer = styled(Container)`
 
-  max-width: 1328px;
   height: 100%;
   display: flex;
+  
 
   @media (max-width: 1100px) {
    flex-direction: column;
@@ -40,12 +42,9 @@ const StyledContainer = styled(Container)`
 const Column = styled.div`
   width: 50%;
   padding: ${Sizes.xlarge};
-  border-right: ${({border}) => (border ? `1px solid ${Gray}`: `0`)};
   display: flex;
   align-items: center;
-  justify-content: center;
   order: ${({reversed}) => (reversed ? `1`: `0`)};
-
 
   @media (max-width: 1100px) {
     width: 100%;
@@ -53,9 +52,16 @@ const Column = styled.div`
     margin: 0 auto;
     border: 0;
     order: 0;
+
+    &:nth-of-type(even) {
+     padding-top: 32px;
+    }
+
+    &:nth-of-type(odd) {
+      padding-bottom: 32px;
+    }
+
   }
-
-
 `;
 
 const WorkContent = styled.div`
@@ -66,18 +72,18 @@ const WorkContent = styled.div`
 
 const WorkType = styled.h4`
   color: ${Blue};
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   font-weight: 500;
 `;
 
 const WorkTitle = styled.h2`
-margin-bottom: 8px;
+margin-bottom: 16px;
 
 	font-weight: 600;
 `;
 
 const WorkDescription = styled.p`
-  margin-bottom: 12px;
+  margin-bottom: 32px;
   font-size: ${Typography.body};
 `;
 
@@ -110,7 +116,7 @@ const TagItems = styled.p`
 
 const StyledBackgroundSection = styled(BackgroundImage)`
   min-height: 320px;
-  max-height: 350px;
+  /* max-height: 350px; */
   height: 70%;
   width: 100%;
   background-position: center;
@@ -119,19 +125,60 @@ const StyledBackgroundSection = styled(BackgroundImage)`
   /* object-fit: contain; */
   border-radius: 6px;
   border: 1px solid ${Black};
-  box-shadow: -5px 5px 16px 0px rgba(100,100,100,0.55);
-  transition: all .3s ease;
-  cursor: pointer;
+  /* box-shadow: -5px 5px 16px 0px rgba(100,100,100,0.55); */
 
-  &:hover {
-    transition: all .3s ease;
-    filter: blur(3px);
-  }
 
   
   @media (max-width: 1100px) {
     height: 100%;
   
+  }
+
+`;
+
+const LinkWrap = styled.a`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease;
+  cursor: pointer;
+  z-index: 1;
+  
+  
+  &:hover {
+
+    & + div {
+      transition: all .3s ease;
+    filter: blur(3px);
+    }
+ 
+
+    
+
+    & div {
+      opacity: 1;
+    }
+
+  }
+
+`;
+
+const LinkSVGWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 100;
+
+  & svg {
+    transform: scale(3);
+    
   }
 
 `;
@@ -148,9 +195,14 @@ const WorkItem = ({img, isReversed, title, border, description, link, tags, proj
   <WorkSection>
     <StyledContainer>
       <Column reversed={isReversed}>
-        {img}
+        <LinkWrap target={"_blank"} rel={"nofollow"} href={link}>
+          {img}
+          <LinkSVGWrapper>
+            <ExternalLinkIcon/>
+          </LinkSVGWrapper>
+        </LinkWrap>
       </Column>
-      <Column border={border}>
+      <Column>
         <WorkContent>
           <WorkType>{project}</WorkType>
           <WorkTitle>{title}</WorkTitle>
@@ -158,7 +210,7 @@ const WorkItem = ({img, isReversed, title, border, description, link, tags, proj
             {description}
           </WorkDescription>
           <VisitWrapper>
-            <LinkButton href={link} target={"_blank"}>Visit Site</LinkButton>
+            <LinkButton href={link} target={"_blank"} rel={"nofollow"}>Visit Site</LinkButton>
             <Tags>{tags}</Tags>
           </VisitWrapper>
         </WorkContent>

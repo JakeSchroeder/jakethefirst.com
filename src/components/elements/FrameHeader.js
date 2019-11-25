@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Typography, Gray, Blue, Green, Black, DarkBlack } from "../utilities";
+import { Typography, Gray, Blue, Green, Black, DarkBlack, Container} from "../utilities";
+import Img from "gatsby-image";
 
-
-import { Link } from "gatsby";
+import { StaticQuery, graphql, Link } from "gatsby";
 import { MailIcon, PhoneIcon } from "./Icons";
 
 // import texture from "../../images/tiny_grid.png";
@@ -14,8 +14,10 @@ import texture from "../../images/grid_noise.png";
 
 const Header = styled.header`
   width: 100%;
-  height: 48px;
-  
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid ${Gray};
 
   background: #f7f7f7;
@@ -26,6 +28,11 @@ const Header = styled.header`
   z-index: 10;
 `;
 
+const StyledContainer = styled(Container)`
+  width: 100%;
+`;
+
+
 const HeaderWrapper = styled.div`
 
   width: 100%;
@@ -33,33 +40,65 @@ const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 32px 0 16px;
+  padding: 0 64px;
 
 `;
 
 const HeaderTitle = styled(Link)`
+  /* padding-left: 64px; */
   color: ${Blue};
   font-weight: 500;
   font-size: ${Typography.medium};
   display: block;
-  font-family: ${Typography.bodyFont};
-
+  font-family: ${Typography.headingFont};
   @media (max-width: 800px) {
     font-size: ${Typography.small};
   }
 
+
+`;
+
+const HeaderImg = styled(Img)`
+  width: 100%;
+  border: 2px solid ${Gray};
+  border-radius: 50%;
+  vertical-align: middle;
+  transition: margin .2s ease;
+ 
+
+  @media (min-width: 800px) {
+    margin-left: ${({ isOpen }) => (isOpen ? `-20px` : `220px`)};
+  }
+
+`;
+
+const HeaderLink = styled(Link)`
+  display: block;
+  width: 100%;
 `;
 
 const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
+  width: calc(100% / 3);
+  justify-content: flex-start;
+
+`;
+
+const HeaderCenter = styled.div`
+  display: flex;
+  align-items: center;
+  width: calc(100% / 3);
+  justify-content: center;
 `;
 
 const HeaderRight = styled.div`
   display: flex;
   align-items: center;
-  justify-items: center;
+  width: calc(100% / 3);
+  justify-content: flex-end;
   margin-top: 6px;
+
 `;
 
 const StyledMenuButton = styled.div`
@@ -72,7 +111,7 @@ const StyledMenuButton = styled.div`
   cursor: pointer;
  
  & > div > span {
-  background: ${Gray};
+  background: ${Blue};
  }
   
   &:hover > div > span {
@@ -85,6 +124,7 @@ const MenuButtonWrapper = styled.div`
   width: 20px;
   height: 18px;
   position: relative;
+  margin-left: -24px;
 `;
 
 const Line = styled.span`
@@ -163,7 +203,7 @@ const WorkIndicator = styled.div`
 `;
 
 const WorkLink = styled(Link)`
-  font-size: ${Typography.small};
+ 
   /* color: ${Black} !important; */
   font-family: ${Typography.bodyFont};
   font-weight: 400;
@@ -190,33 +230,61 @@ const MenuButton = ({ onClick, isOpen }) => (
 
 );
 
+const MenuText = styled.p`
+  color: ${Blue};
+`;
+
 
 const FrameHeader = ({ isMenuOpen, setMenuOpen }) => (
-    <Header>
-      <HeaderWrapper>
-        <HeaderLeft>
-            <MenuButton onClick={setMenuOpen} isOpen={isMenuOpen} />
-          <HeaderTitle to={"/"}>Jake Schroeder</HeaderTitle>
-        </HeaderLeft>
+    <StaticQuery
+    query={
+      graphql`
+      query {
+        imageOne: file(relativePath: { eq: "j-icon.png" }) {
+          childImageSharp {
+            fixed(width: 52, height: 52) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+      `}
+      render={data => (
+        <Header>
+          <StyledContainer>
+            <HeaderWrapper>
+              <HeaderLeft>
+                  <MenuButton onClick={setMenuOpen} isOpen={isMenuOpen}/>
+                  <MenuText>Menu</MenuText>
+              </HeaderLeft>
 
-        <HeaderRight>
+              <HeaderCenter>
+              {/* <HeaderTitle to={"/"}>Jake Schroeder</HeaderTitle> */}
+                <Link to={"/"}>
+                  <HeaderImg isOpen={isMenuOpen} fixed={data.imageOne.childImageSharp.fixed} alt={"a pic of jake's face"}/>
+                </Link>
+              </HeaderCenter>
 
-          <WorkWrapper>
-            <WorkIndicator />
-            <WorkLink to={"/contact/"}>Hire Me</WorkLink>
-          </WorkWrapper>
+              <HeaderRight>
 
-          <IconLink href={"tel:1-630-880-2317"}>
-            <PhoneIcon />
-          </IconLink>
+                <WorkWrapper>
+                  <WorkIndicator />
+                  <WorkLink to={"/contact/"}>Hire Me</WorkLink>
+                </WorkWrapper>
 
-          <IconLink href={"mailto:jake.schroeder@isophex.com"}>
-            <MailIcon />
-          </IconLink>
+                <IconLink href={"tel:1-630-880-2317"}>
+                  <PhoneIcon />
+                </IconLink>
 
-        </HeaderRight>
-      </HeaderWrapper>
-    </Header>
+                <IconLink href={"mailto:jake.schroeder@isophex.com"}>
+                  <MailIcon />
+                </IconLink>
+
+              </HeaderRight>
+            </HeaderWrapper>
+          </StyledContainer>
+      </Header>
+    )}/>
 );
 
 export default FrameHeader;

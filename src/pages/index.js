@@ -17,6 +17,7 @@ const StyledSection = styled(Section)`
 
   @media (max-width: 1100px) {
     height: auto;
+
   }
 
   @media (max-height: 880px) {
@@ -31,7 +32,7 @@ const StyledSection = styled(Section)`
 
 const StyledContainer = styled(Container)`
 
-  max-width: 1200px;
+  /* max-width: 100%; */
   height: 100%;
   display: flex;
 
@@ -52,8 +53,7 @@ const Column = styled.div`
   /* order: ${({reversed}) => (reversed ? `1`: `0`)}; */
   border-right: ${({border}) => (border ? `1px solid ${Gray}`: `0`)};
   
-  padding-bottom: ${({border}) => (border ? `0`: `${Sizes.xlarge}`)};
-
+  /* padding-bottom: ${({border}) => (border ? `0`: `${Sizes.xlarge}`)}; */
 
   &.justify-col {
     flex-direction: column;
@@ -65,11 +65,18 @@ const Column = styled.div`
  
   @media (max-width: 1100px) {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     margin: 0 auto;
     border: 0;
     order: 0;
 
+    &:nth-of-type(even) {
+       padding-top: 16px;
+    }
+
+    &:nth-of-type(odd) {
+      padding-bottom: 16px;
+    }
 
 
   }
@@ -79,49 +86,12 @@ const Column = styled.div`
 
 `;
 
-// const Column = styled.div`
-//   width: 50%;
-//   /* padding: ${Sizes.xlarge}; */
-//   display: flex;
-//   align-items: flex-start;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   height: 100%;
-
-//   .left {
-//     justify-content: flex-start;
-
-//   }
-
-//   @media (max-width: 800px) {
-//    margin-bottom: 16px;
-//    width: 100%;
-//   }
-
-// `;
-
-// const StyledContainer = styled(Container)`
-//   display:flex;
-//   flex-direction: row;
-//   align-items: flex-end;
-//   height: 100%;
-//   @media (max-width: 800px) {
-//    margin-bottom: 16px;
-//   flex-direction: column;
-//   }
-// /* 
-//   @media (max-width: 945px) {
-//     flex-direction: column;
-
-//   } */
-
-// `;
 
 const TopWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: flex-end;
   /* margin-top: -32px */
   height: 100%;
   
@@ -147,15 +117,16 @@ const MeImg = styled(Img)`
 
 const SectionHeading = styled.h1`
   text-align: left;
-  font-size: 48px;
+  /* color: ${Blue}; */
+  font-size: 64px;
   margin-bottom: 32px;
   font-weight: 700;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 
 
   
-  @media (max-width: 1245px) {
-    font-size: 40px;
+  @media (max-width: 900px) {
+    font-size: 56px;
     
   }
 
@@ -168,9 +139,9 @@ const SectionSubHeading = styled.p`
   font-weight: 400;
   /* padding-top: 64px; */
 
-  /* &.mb {
+  &.mb {
     margin-bottom: 16px;
-  } */
+  }
 
 
 `;
@@ -230,11 +201,12 @@ const StackList = styled.ul`
 `;
 
 const StackHeader = styled.h3`
-  font-size: ${Typography.medium};
+  font-size: ${Typography.large};
   text-align: left;
   font-family: ${Typography.headingFont};
-  margin-bottom: 16px;
-  font-weight: 500;
+  margin-bottom: 32px;
+  line-height: 1.4;
+  font-weight: 400;
 `;
 
 const StackItem = styled.li`
@@ -268,24 +240,30 @@ const ColumnInner = styled.div`
 const IndexPage = ({ data }) => (
   <Fragment>
     <Seo title="Me" />
-      <StyledSection border paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
+      <StyledSection border>
       <StyledContainer>
         <Column className="justify-col">
           <TopWrapper>
-            <MeImg fixed={data.imageOne.childImageSharp.fixed} alt={"a pic of jake's face"} />
-            <SectionHeading>UX Designer<br/>Frontend Developer</SectionHeading>
-           
+            {/* <MeImg fixed={data.imageOne.childImageSharp.fixed} alt={"a pic of jake's face"} /> */}
+            
+            <SectionHeading>Jake Schroeder</SectionHeading>
+            <StackHeader>UX Designer<br/>Frontend Developer</StackHeader>
+            
           </TopWrapper>
           <BottomWrapper>
-          <SectionSubHeading className="mb">Based in <StyledLink style={{marginRight: 0}} href="https://goo.gl/maps/cK3G8HNKap9xgXqp6" target="_blank" rel="nofollow">Chicago</StyledLink>, IL</SectionSubHeading>
+          <SectionSubHeading>Based in <StyledLink style={{marginRight: 0}} href="https://goo.gl/maps/cK3G8HNKap9xgXqp6" target="_blank" rel="nofollow">Chicago</StyledLink>, IL</SectionSubHeading>
           </BottomWrapper>
         </Column>
 
         <Column className="align-end">
-        <BottomWrapper>
-            <SectionSubHeading ><StyledLink href="https://www.linkedin.com/in/jake-schroeder/" target="_blank" rel="nofollow">Linkedin</StyledLink><StyledLink href="https://www.instagram.com/jakeman001/" target="_blank" rel="nofollow">Instagram</StyledLink><StyledLink href="https://dribbble.com/KidUnknown">Dribbble</StyledLink><StyledLink href="https://github.com/JakeSchroeder">Github</StyledLink></SectionSubHeading>
+          <BottomWrapper>
+              <SectionSubHeading>
+                <StyledLink href="https://www.linkedin.com/in/jake-schroeder/" target="_blank" rel="nofollow">Linkedin</StyledLink>
+                <StyledLink href="https://www.instagram.com/jakeman001/" target="_blank" rel="nofollow">Instagram</StyledLink>
+                <StyledLink href="https://dribbble.com/KidUnknown">Dribbble</StyledLink>
+                <StyledLink href="https://github.com/JakeSchroeder">Github</StyledLink>
+              </SectionSubHeading>
           </BottomWrapper>
-        
         </Column>
 
       </StyledContainer>
@@ -310,13 +288,12 @@ My best projects are focused on applying the latest UX concepts that effectively
                 <StackHeader>UXD Stack</StackHeader>
                   <StackList>
 
-                    <StackItem>Prototyping</StackItem>
-                    <StackItem >Adobe XD</StackItem>
-                    <StackItem >Sketch</StackItem>
-                    <StackItem >Adobe Photoshop</StackItem>
-                    <StackItem >Adobe Illustrator</StackItem>
-                    <StackItem >Adobe After Effects</StackItem>
-                    <StackItem >Cinema 4D</StackItem>
+                    <StackItem><StyledLink href="https://www.adobe.com/products/xd.html" target={"_blank"}>Adobe XD</StyledLink></StackItem>
+                    <StackItem><StyledLink href="https://www.figma.com/" target="_blank" rel="nofollow">Figma</StyledLink></StackItem>
+                    <StackItem><StyledLink href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="nofollow">Adobe Photoshop</StyledLink></StackItem>
+                    <StackItem><StyledLink href="https://www.adobe.com/products/illustrator.html" target="_blank" rel="nofollow">Adobe Illustrator</StyledLink></StackItem>
+                    <StackItem><StyledLink href="https://www.adobe.com/products/aftereffects.html" target="_blank" rel="nofollow">Adobe After Effects</StyledLink></StackItem>
+                    <StackItem><StyledLink href="https://www.maxon.net/en-us/products/cinema-4d/overview/" target="_blank" rel="nofollow">Cinema 4D</StyledLink></StackItem>
 
                   </StackList>
               </StackWrapper>
@@ -325,13 +302,12 @@ My best projects are focused on applying the latest UX concepts that effectively
                 <StackHeader>Frontend Stack</StackHeader>
                   <StackList>
 
-                    <StackItem>ReactJS</StackItem>
-                    <StackItem>Gatsby JS</StackItem>
-                    <StackItem >Next JS</StackItem>
-                    <StackItem >Typescript</StackItem>
-                    <StackItem >Styled Components</StackItem>
-                    <StackItem >Netlify</StackItem>
-                    <StackItem >Now</StackItem>
+                    <StackItem ><StyledLink href="https://www.typescriptlang.org/" target="_blank" rel="nofollow">TypeScript</StyledLink></StackItem>
+                    <StackItem><StyledLink href="https://www.gatsbyjs.org/" target="_blank" rel="nofollow">GatsbyJS</StyledLink></StackItem>
+                    <StackItem ><StyledLink href="https://nextjs.org/" target="_blank" rel="nofollow">NextJS</StyledLink></StackItem>
+                    <StackItem ><StyledLink href="https://www.styled-components.com/" target="_blank" rel="nofollow">Styled Components</StyledLink></StackItem>
+                    <StackItem ><StyledLink href="https://www.netlify.com/" target="_blank" rel="nofollow">Netlify</StyledLink></StackItem>
+                    <StackItem ><StyledLink href="https://zeit.co/" target="_blank" rel="nofollow">Zeit Now</StyledLink></StackItem>
 
 
                   </StackList>

@@ -13,7 +13,7 @@ import Resume from "../../static/jake.schroeder-resume.pdf";
 
 const Sidebar = styled.aside`
 
-  max-width: 160px;
+  max-width: 220px;
   width: 100%;
   height: 100%;
 
@@ -82,7 +82,7 @@ const SocialLink = styled.a`
 
 const NavItem = styled.li`
   margin-bottom: 0;
-  padding: 6px 16px 6px 32px;
+  padding: 6px 16px 6px 64px;
 
   width: 100%;
 

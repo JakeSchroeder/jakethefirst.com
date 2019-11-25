@@ -32,8 +32,8 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     
-    background: linear-gradient(180deg,#9dccee,#fff);
-    background-size: 100% 100%;
+    /* background: linear-gradient(180deg,#9dccee,#fff);
+    background-size: 100% 100%; */
     color: #415D6E;
     font-display: swap;
   }
