@@ -14,13 +14,8 @@ import { LinkButton } from "../components/elements";
 const StyledSection = styled(Section)`
   padding: 0;
   height: auto;
-  /* height: 50%; */
 
-  @media (max-height: 880px) {
-    height: 100%;
-  }
-
-  &.full {
+  &.large {
     height: 100%;
   }
 
@@ -133,6 +128,7 @@ const SectionSubHeading = styled.p`
   color: ${Black};
   font-weight: 400;
   /* padding-top: 64px; */
+  margin-top: 16px;
 
   &.mb {
     margin-bottom: 16px;
@@ -199,7 +195,7 @@ const StackHeader = styled.h3`
   font-size: ${Typography.large};
   text-align: left;
   font-family: ${Typography.headingFont};
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   line-height: 1.4;
   font-weight: 400;
 `;
@@ -207,7 +203,7 @@ const StackHeader = styled.h3`
 const StackItem = styled.li`
   text-align: left;
 
-
+  line-height: 2.49;  
 
 `;
 
@@ -243,11 +239,9 @@ const IndexPage = ({ data }) => (
             
             <SectionHeading>Jake Schroeder</SectionHeading>
             <StackHeader>UX Designer<br/>Frontend Developer</StackHeader>
-            
+            <SectionSubHeading>Based in <StyledLink style={{marginRight: 0}} href="https://goo.gl/maps/cK3G8HNKap9xgXqp6" target="_blank" rel="nofollow">Chicago</StyledLink>, IL</SectionSubHeading>
           </TopWrapper>
-          <BottomWrapper>
-          <SectionSubHeading>Based in <StyledLink style={{marginRight: 0}} href="https://goo.gl/maps/cK3G8HNKap9xgXqp6" target="_blank" rel="nofollow">Chicago</StyledLink>, IL</SectionSubHeading>
-          </BottomWrapper>
+
         </Column>
 
         <Column className="align-end">
@@ -265,7 +259,7 @@ const IndexPage = ({ data }) => (
       
         </StyledSection>
 
-      <StyledSection className="full" paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xxlarge} paddingRight={Sizes.xxlarge}>
+      <StyledSection className="large">
       <StyledContainer>
         <Column border>
        

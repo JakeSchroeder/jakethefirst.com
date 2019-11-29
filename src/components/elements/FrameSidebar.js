@@ -53,12 +53,13 @@ const Social = styled.div`
   align-items: center;
   justify-content: space-between;
   background: white;
+  height: 80px;
 `;
 
 const SocialLink = styled.a`
   width: 50%;
   height: 100%;
-  padding: 16px;
+  /* padding: 16px; */
   display: flex;
   align-items: center;
   justify-content: center;

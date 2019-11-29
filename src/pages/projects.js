@@ -7,7 +7,7 @@ import Seo from "../components/utilities/Seo";
 
 import styled from "styled-components";
 
-import {Typography, Gray, Blue, Black, Sizes, Section, Container} from "../components/utilities";
+import {Typography, Gray, Blue, Black, Sizes, Section, Container, DarkBlack} from "../components/utilities";
 import {LinkButton} from "../components/elements";
 
 import {ExternalLinkIcon} from "../components/elements/Icons";
@@ -125,15 +125,15 @@ const TagItems = styled.p`
 
 const StyledBackgroundSection = styled(BackgroundImage)`
   min-height: 320px;
-  max-height: 350px;
-  height: 80%;
+  height: 100%;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   /* object-fit: contain; */
   border-radius: 6px;
-  border: 1px solid ${Black};
+  border: 1px solid ${DarkBlack};
+  transition: all .3s ease;
   /* box-shadow: -5px 5px 16px 0px rgba(100,100,100,0.55); */
 
 
@@ -159,9 +159,9 @@ const LinkWrap = styled.a`
   
   &:hover {
 
-    & + div {
+    & > div:first-child {
       transition: all .3s ease;
-    filter: blur(3px);
+    filter: blur(5px);
     }
  
 
@@ -184,11 +184,12 @@ const LinkSVGWrapper = styled.div`
   justify-content: center;
   opacity: 0;
   z-index: 100;
+  transition: all .3s ease;
 
-  & svg {
+  /* & svg {
     transform: scale(3);
     
-  }
+  } */
 
 `;
 
@@ -264,7 +265,7 @@ export const squareImage = graphql`
 
 export const PageQuery = graphql`
   query {
-    heliosScreen: file(relativePath: { eq: "heliosipmscreen.png" }) {
+    heliosScreen: file(relativePath: { eq: "heliosipmscreen-test.png" }) {
       ...bgImage
     }
     insightsScreen: file(relativePath: { eq: "heliosinsights.png" }) {
@@ -279,7 +280,7 @@ export const PageQuery = graphql`
     mediawikiScreen: file(relativePath: { eq: "mediawiki.png" }) {
       ...bgImage
     }
-    isophexScreen: file(relativePath: { eq: "isophex.png" }) {
+    isophexScreen: file(relativePath: { eq: "isophexscreen.png" }) {
       ...bgImage
     }
     paintingScreen: file(relativePath: { eq: "scrollpainting.png" }) {
