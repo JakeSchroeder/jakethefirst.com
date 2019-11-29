@@ -61,8 +61,6 @@ const Column = styled.div`
     border: 0;
     order: 0;
 
-    padding: ${Sizes.large};
-
     &:nth-of-type(even) {
        padding-top: 16px;
     }
@@ -72,10 +70,15 @@ const Column = styled.div`
     }
 
 
+
   }
 
 
-
+  @media (max-width: 800px) {
+      padding: ${Sizes.large};
+      /* height: 100%; */
+      height: auto;
+    }
 
 `;
 
