@@ -19,6 +19,10 @@ const StyledSection = styled(Section)`
     height: 100%;
   }
 
+  @media (max-width: 800px) {
+    height: 100%;
+  }
+
 `;
 
 const StyledContainer = styled(Container)`
