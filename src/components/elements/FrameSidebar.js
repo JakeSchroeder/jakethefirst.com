@@ -82,8 +82,8 @@ const SocialLink = styled.a`
 
 const NavItem = styled.li`
   margin-bottom: 0;
-  padding: 8px 16px 8px 64px;
-
+  padding: 0px 16px 0px 64px;
+  line-height: 2.49;
   width: 100%;
 
   

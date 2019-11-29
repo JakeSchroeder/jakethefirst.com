@@ -15,15 +15,10 @@ const StyledSection = styled(Section)`
   padding: 0;
   height: auto;
   /* height: 50%; */
-/* 
-  @media (max-width: 1100px) {
-    height: auto;
-
-  }
 
   @media (max-height: 880px) {
-    height: auto;
-  } */
+    height: 100%;
+  }
 
   &.full {
     height: 100%;

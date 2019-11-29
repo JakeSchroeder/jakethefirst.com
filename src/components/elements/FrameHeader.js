@@ -280,13 +280,13 @@ const FrameHeader = ({ isMenuOpen, setMenuOpen }) => (
                   <WorkLink to={"/contact/"}>Hire Me</WorkLink>
                 </WorkWrapper>
 
-                <IconLink href={"tel:1-630-880-2317"}>
+                {/* <IconLink href={"tel:1-630-880-2317"}>
                   <PhoneIcon />
                 </IconLink>
 
                 <IconLink href={"mailto:jake.schroeder@isophex.com"}>
                   <MailIcon />
-                </IconLink>
+                </IconLink> */}
 
               </HeaderRight>
             </HeaderWrapper>

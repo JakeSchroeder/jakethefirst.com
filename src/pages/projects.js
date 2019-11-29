@@ -125,8 +125,8 @@ const TagItems = styled.p`
 
 const StyledBackgroundSection = styled(BackgroundImage)`
   min-height: 320px;
-  /* max-height: 350px; */
-  height: 70%;
+  max-height: 350px;
+  height: 80%;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
