@@ -14,14 +14,18 @@ import { LinkButton } from "../components/elements";
 const StyledSection = styled(Section)`
   padding: 0;
 
-  &.full {
+  @media(min-width: 800px) {
+    &.full {
     height: 100%;
 
     & > div {
       height: 100%;
     }
 
+    }
   }
+
+
 
 `;
 
