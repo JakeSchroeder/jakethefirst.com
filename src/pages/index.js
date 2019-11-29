@@ -14,8 +14,13 @@ import { LinkButton } from "../components/elements";
 const StyledSection = styled(Section)`
   padding: 0;
 
-  &.large {
+  &.full {
     height: 100%;
+
+    & > div {
+      height: 100%;
+    }
+
   }
 
 `;
@@ -259,53 +264,54 @@ const IndexPage = ({ data }) => (
       
         </StyledSection>
 
-      <StyledSection className="large">
-      <StyledContainer>
-        <Column border>
-       
-            <Description>
-        I am passionate about bringing together leading UX Design and effective Frontend Development to deliver highly usable and pragmatic solutions. I am constantly working to improve my skills by exploring the latest design trends, frameworks and technologies. My strength is in understanding business requirements and translating them into well designed, valuable solutions. <br/> <br/>
-My best projects are focused on applying the latest UX concepts that effectively reconcile creative design with practical functionality, communicating professionalism and a unique modern aesthetic that is both exciting and usable. With strong interpersonal instincts, I enjoy working closely with business owners to fully understand their business objectives as the focus of our solution. 
-          </Description>
+      <StyledSection className="full">
+      
+        <StyledContainer>
+          <Column border>
+        
+              <Description>
+          I am passionate about bringing together leading UX Design and effective Frontend Development to deliver highly usable and pragmatic solutions. I am constantly working to improve my skills by exploring the latest design trends, frameworks and technologies. My strength is in understanding business requirements and translating them into well designed, valuable solutions. <br/> <br/>
+  My best projects are focused on applying the latest UX concepts that effectively reconcile creative design with practical functionality, communicating professionalism and a unique modern aesthetic that is both exciting and usable. With strong interpersonal instincts, I enjoy working closely with business owners to fully understand their business objectives as the focus of our solution. 
+            </Description>
 
 
-          </Column>
+            </Column>
 
-          <Column>
+            <Column>
 
-          <ColumnInner>
-              <StackWrapper>
-                <StackHeader>UXD Stack</StackHeader>
-                  <StackList>
+            <ColumnInner>
+                <StackWrapper>
+                  <StackHeader>UXD Stack</StackHeader>
+                    <StackList>
 
-                    <StackItem><StyledLink href="https://www.adobe.com/products/xd.html" target={"_blank"}>Adobe XD</StyledLink></StackItem>
-                    <StackItem><StyledLink href="https://www.figma.com/" target="_blank" rel="nofollow">Figma</StyledLink></StackItem>
-                    <StackItem><StyledLink href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="nofollow">Adobe Photoshop</StyledLink></StackItem>
-                    <StackItem><StyledLink href="https://www.adobe.com/products/illustrator.html" target="_blank" rel="nofollow">Adobe Illustrator</StyledLink></StackItem>
-                    <StackItem><StyledLink href="https://www.adobe.com/products/aftereffects.html" target="_blank" rel="nofollow">Adobe After Effects</StyledLink></StackItem>
-                    <StackItem><StyledLink href="https://www.maxon.net/en-us/products/cinema-4d/overview/" target="_blank" rel="nofollow">Cinema 4D</StyledLink></StackItem>
+                      <StackItem><StyledLink href="https://www.adobe.com/products/xd.html" target={"_blank"}>Adobe XD</StyledLink></StackItem>
+                      <StackItem><StyledLink href="https://www.figma.com/" target="_blank" rel="nofollow">Figma</StyledLink></StackItem>
+                      <StackItem><StyledLink href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="nofollow">Adobe Photoshop</StyledLink></StackItem>
+                      <StackItem><StyledLink href="https://www.adobe.com/products/illustrator.html" target="_blank" rel="nofollow">Adobe Illustrator</StyledLink></StackItem>
+                      <StackItem><StyledLink href="https://www.adobe.com/products/aftereffects.html" target="_blank" rel="nofollow">Adobe After Effects</StyledLink></StackItem>
+                      <StackItem><StyledLink href="https://www.maxon.net/en-us/products/cinema-4d/overview/" target="_blank" rel="nofollow">Cinema 4D</StyledLink></StackItem>
 
-                  </StackList>
-              </StackWrapper>
-
-              <StackWrapper>
-                <StackHeader>Frontend Stack</StackHeader>
-                  <StackList>
-
-                    <StackItem ><StyledLink href="https://www.typescriptlang.org/" target="_blank" rel="nofollow">TypeScript</StyledLink></StackItem>
-                    <StackItem><StyledLink href="https://www.gatsbyjs.org/" target="_blank" rel="nofollow">GatsbyJS</StyledLink></StackItem>
-                    <StackItem ><StyledLink href="https://nextjs.org/" target="_blank" rel="nofollow">NextJS</StyledLink></StackItem>
-                    <StackItem ><StyledLink href="https://www.styled-components.com/" target="_blank" rel="nofollow">Styled Components</StyledLink></StackItem>
-                    <StackItem ><StyledLink href="https://www.netlify.com/" target="_blank" rel="nofollow">Netlify</StyledLink></StackItem>
-                    <StackItem ><StyledLink href="https://zeit.co/" target="_blank" rel="nofollow">Zeit Now</StyledLink></StackItem>
-
-
-                  </StackList>
+                    </StackList>
                 </StackWrapper>
-              </ColumnInner>
-          </Column>
 
-        </StyledContainer>
+                <StackWrapper>
+                  <StackHeader>Frontend Stack</StackHeader>
+                    <StackList>
+
+                      <StackItem ><StyledLink href="https://www.typescriptlang.org/" target="_blank" rel="nofollow">TypeScript</StyledLink></StackItem>
+                      <StackItem><StyledLink href="https://www.gatsbyjs.org/" target="_blank" rel="nofollow">GatsbyJS</StyledLink></StackItem>
+                      <StackItem ><StyledLink href="https://nextjs.org/" target="_blank" rel="nofollow">NextJS</StyledLink></StackItem>
+                      <StackItem ><StyledLink href="https://www.styled-components.com/" target="_blank" rel="nofollow">Styled Components</StyledLink></StackItem>
+                      <StackItem ><StyledLink href="https://www.netlify.com/" target="_blank" rel="nofollow">Netlify</StyledLink></StackItem>
+                      <StackItem ><StyledLink href="https://zeit.co/" target="_blank" rel="nofollow">Zeit Now</StyledLink></StackItem>
+
+
+                    </StackList>
+                  </StackWrapper>
+                </ColumnInner>
+            </Column>
+
+          </StyledContainer>
     </StyledSection>
   </Fragment>
 );
