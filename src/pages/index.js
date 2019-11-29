@@ -13,13 +13,8 @@ import { LinkButton } from "../components/elements";
 
 const StyledSection = styled(Section)`
   padding: 0;
-  height: auto;
 
   &.large {
-    height: 100%;
-  }
-
-  @media (max-width: 800px) {
     height: 100%;
   }
 
@@ -27,8 +22,6 @@ const StyledSection = styled(Section)`
 
 const StyledContainer = styled(Container)`
 
-  /* max-width: 100%; */
-  height: 100%;
   display: flex;
 
   @media (max-width: 1100px) {
@@ -60,8 +53,8 @@ const Column = styled.div`
  
   @media (max-width: 1100px) {
     width: 100%;
-    /* height: 100%; */
-    margin: 0 auto;
+  
+    /* margin: 0 auto; */
     border: 0;
     order: 0;
 
@@ -80,8 +73,7 @@ const Column = styled.div`
 
   @media (max-width: 800px) {
       padding: ${Sizes.large};
-      /* height: 100%; */
-      height: auto;
+
     }
 
 `;
@@ -93,13 +85,13 @@ const TopWrapper = styled.div`
   align-items: flex-start;
   justify-content: flex-end;
   /* margin-top: -32px */
-  height: 100%;
+
   
 `
 
 const BottomWrapper = styled.div`
   width: 100%;
-  height: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
