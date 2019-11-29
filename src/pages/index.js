@@ -227,6 +227,7 @@ const StackWrapper = styled.div`
 
 const ColumnInner = styled.div`
   display: flex;
+  height: 100%;
   width: 100%;
   @media (max-width: 800px) {
     flex-direction: column;
@@ -277,6 +278,7 @@ My best projects are focused on applying the latest UX concepts that effectively
 
 
           </Column>
+
           <Column>
 
           <ColumnInner>
