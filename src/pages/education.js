@@ -178,7 +178,7 @@ export default EducationPage;
 export const squareImage = graphql`
   fragment squareImage on File {
     childImageSharp {
-        fixed(width: 64, height: 64) {
+        fixed(width: 96, height: 96) {
           ...GatsbyImageSharpFixed
       }
     }

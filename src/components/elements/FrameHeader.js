@@ -68,7 +68,7 @@ const HeaderImg = styled(Img)`
  
 
   @media (min-width: 800px) {
-    margin-left: ${({ isOpen }) => (isOpen ? `-20px` : `202px`)};
+    margin-left: ${({ isOpen }) => (isOpen ? `0` : `220px`)};
   }
 
 `;

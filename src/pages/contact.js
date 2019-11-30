@@ -9,6 +9,13 @@ import { Typography, Gray, Blue, Black, Sizes, Section, Container } from "../com
 
 import { LinkButton, NormalButton } from "../components/elements/Button";
 
+
+const StyledSection = styled(Section)`
+        @media(min-width: 800px) {
+        height: 100%;
+    }
+`;
+
 const SectionHeading = styled.h1`
     font-weight: 600;
     margin-bottom: 16px;
@@ -26,6 +33,8 @@ const StyledContainer = styled(Container)`
 
   height: 100%;
   display: flex;
+
+
 
   @media (max-width: 1100px) {
    flex-direction: column;
@@ -156,7 +165,7 @@ const ContactEmail = styled.a`
 const Column = styled.div`
   width: 50%;
   padding: ${Sizes.xlarge};
-  /* border-right: ${({border}) => (border ? `1px solid ${Gray}`: `0`)}; */
+  border-right: ${({border}) => (border ? `1px solid ${Gray}`: `0`)};
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -178,7 +187,7 @@ const Column = styled.div`
     border: 0;
     order: 0;
 
-    padding: ${Sizes.large};
+
 
     &:nth-of-type(even) {
      padding-top: 16px;
@@ -191,6 +200,15 @@ const Column = styled.div`
     }
 
   }
+
+
+
+  @media (max-width: 800px) {
+      padding: ${Sizes.large};
+
+    }
+
+
 `;
 
 const ContentWrapper = styled.div`
@@ -202,9 +220,9 @@ const ContactPage = () => (
     <Fragment>
         <Seo title="Contact" />
 
-        <Section>
+        <StyledSection>
             <StyledContainer>
-                <Column>
+                <Column border>
                     <ContentWrapper>
                         <SectionHeading>Thank You!</SectionHeading>
                         <Description>
@@ -255,7 +273,7 @@ const ContactPage = () => (
                 </Column>
             </StyledContainer>
             
-        </Section>
+        </StyledSection>
 
         
         {/* <Section paddingTop={Sizes.xlarge} paddingBottom={Sizes.xlarge} paddingLeft={Sizes.xlarge} paddingRight={Sizes.xlarge}>
