@@ -312,19 +312,19 @@ const IndexPage = ({ data }) => (
               <StackList>
                 <StackItem>
                   <StyledLink
-                    href="https://www.adobe.com/products/xd.html"
-                    target={"_blank"}
-                  >
-                    Adobe XD
-                  </StyledLink>
-                </StackItem>
-                <StackItem>
-                  <StyledLink
                     href="https://www.figma.com/"
                     target="_blank"
                     rel="nofollow"
                   >
                     Figma
+                  </StyledLink>
+                </StackItem>
+                <StackItem>
+                  <StyledLink
+                    href="https://www.adobe.com/products/xd.html"
+                    target={"_blank"}
+                  >
+                    Adobe XD
                   </StyledLink>
                 </StackItem>
                 <StackItem>
