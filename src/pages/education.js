@@ -38,7 +38,7 @@ const StyledCVItem = styled.li`
 	padding: 64px;
 	border-bottom: 1px solid ${Gray};
 	margin: 0;
-	height: calc(100% / 5);
+	height: calc(100% / 4);
 	width: 100%;
 
 	@media (max-width: 800px) {
@@ -155,7 +155,20 @@ const EducationPage = ({data}) => {
 				<CVList>
 			
 					<CVItem date={"09.12.18 - Current"} image={<CVIcon fixed={data.depaulImage.childImageSharp.fixed} alt={"Depaul University icon"}/>} subTitle={"DePaul University"} title={"User Experience Design"} link={"https://www.cdm.depaul.edu/academics/Pages/BS-In-User-Experience-Design.aspx"} buttonText={"See Major"} />
-					<CVItem date={"Completed 08.16.17"} image={<CVIcon fixed={data.parsonsImage.childImageSharp.fixed} alt={"the new school icon"}/>} subTitle={"Parsons School of Design"} title={"Design and Technology"} link={"https://www.newschool.edu/parsons/bfa-design-technology/"} buttonText={"See Major"} />
+					<CVItem date={"Transferred 08.16.17"} image={<CVIcon fixed={data.parsonsImage.childImageSharp.fixed} alt={"the new school icon"}/>} subTitle={"Parsons School of Design"} title={"Design and Technology"} link={"https://www.newschool.edu/parsons/bfa-design-technology/"} buttonText={"See Major"} />
+					<CVItem date={"Completed 02.11.19"} image={<CVIcon fixed={data.treehouseImage.childImageSharp.fixed} alt={"treehouse icon"}/>} subTitle={"Treehouse"} title={"Ruby on Rails 5"} link={"https://teamtreehouse.com/jakeschroeder"} buttonText={"See Course"} />
+					<CVItem date={"Completed 01.26.19"} image={<CVIcon fixed={data.treehouseImage.childImageSharp.fixed} alt={"treehouse icon"}/>} subTitle={"Treehouse"} title={"SQL Fundamentals"} link={"https://teamtreehouse.com/jakeschroeder"} buttonText={"See Course"} />
+					<CVItem date={"Completed 01.04.19"} image={<CVIcon fixed={data.treehouseImage.childImageSharp.fixed} alt={"treehouse icon"}/>} subTitle={"Treehouse"} title={"Building Web Apps with Sinatra"} link={"https://teamtreehouse.com/jakeschroeder"} buttonText={"See Course"} />
+					<CVItem date={"Completed 11.18.18"} image={<CVIcon fixed={data.treehouseImage.childImageSharp.fixed} alt={"treehouse icon"}/>} subTitle={"Treehouse"} title={"Ruby Basics"} link={"https://teamtreehouse.com/jakeschroeder"} buttonText={"See Course"} />
+					<CVItem date={"Completed 03.19.18"} image={<CVIcon fixed={data.udemyImage.childImageSharp.fixed} alt={"udemy icon"}/>} subTitle={"Treehouse"} title={"Modern React with Redux"} link={"https://www.udemy.com/react-redux/?xref=one_sided_share"} buttonText={"See Course"} />
+					<CVItem date={"Completed 03.07.18"} image={<CVIcon fixed={data.treehouseImage.childImageSharp.fixed} alt={"treehouse icon"}/>} subTitle={"Treehouse"} title={"Animating SVG with CSS"} link={"https://teamtreehouse.com/jakeschroeder"} buttonText={"See Course"} />
+					<CVItem date={"Completed 02.12.18"} image={<CVIcon fixed={data.treehouseImage.childImageSharp.fixed} alt={"treehouse icon"}/>} subTitle={"Treehouse"} title={"WordPress Theme Development"} link={"https://teamtreehouse.com/jakeschroeder"} buttonText={"See Course"} />
+					<CVItem date={"Completed 02.04.18"} image={<CVIcon fixed={data.treehouseImage.childImageSharp.fixed} alt={"treehouse icon"}/>} subTitle={"Treehouse"} title={"WordPress Basics"} link={"https://teamtreehouse.com/jakeschroeder"} buttonText={"See Course"} />
+					<CVItem date={"Completed 01.26.18"} image={<CVIcon fixed={data.treehouseImage.childImageSharp.fixed} alt={"treehouse icon"}/>} subTitle={"Treehouse"} title={"PHP Basics"} link={"https://teamtreehouse.com/jakeschroeder"} buttonText={"See Course"} />
+					<CVItem date={"Completed 01.04.18"} image={<CVIcon fixed={data.treehouseImage.childImageSharp.fixed} alt={"treehouse icon"}/>} subTitle={"Treehouse"} title={"AngularJS Basics (1.x)"} link={"https://teamtreehouse.com/jakeschroeder"} buttonText={"See Course"} />
+					<CVItem date={"Completed 04.30.17"} image={<CVIcon fixed={data.udemyImage.childImageSharp.fixed} alt={"udemy icon"}/>} subTitle={"Udemy"} title={"Complete Blender Creator"} link={"https://www.udemy.com/blendertutorial/?xref=one_sided_share"} buttonText={"See Course"} />
+					<CVItem date={"Completed 04.11.17"} image={<CVIcon fixed={data.udemyImage.childImageSharp.fixed} alt={"udemy icon"}/>} subTitle={"Udemy"} title={"Complete C# Unity Developer 2D"} link={"https://www.udemy.com/unitycourse/?xref=one_sided_share"} buttonText={"See Course"} />
+					<CVItem date={"Completed 03.08.17"} image={<CVIcon fixed={data.udemyImage.childImageSharp.fixed} alt={"udemy icon"}/>} subTitle={"Udemy"} title={"Three.js & WebGL 3D"} link={"https://www.udemy.com/course/threejs-programming/?xref=one_sided_share"} buttonText={"See Course"} />
 					<CVItem date={"Completed 01.12.17"} image={<CVIcon fixed={data.udemyImage.childImageSharp.fixed} alt={"udemy icon"}/>} subTitle={"Udemy"} title={"Become an Android Developer"} link={"https://www.udemy.com/course/become-an-android-developer-from-scratch/?xref=one_sided_share"} buttonText={"See Course"} />
 					<CVItem date={"Completed 12.15.16"} image={<CVIcon fixed={data.treehouseImage.childImageSharp.fixed} alt={"treehouse icon"}/>} subTitle={"Treehouse"} title={"JavaScript and the DOM"} link={"https://teamtreehouse.com/jakeschroeder"} buttonText={"See Course"} />
 					<CVItem date={"Completed 12.06.16"} image={<CVIcon fixed={data.skillshareImage.childImageSharp.fixed} alt={"skill share icon"}/>} subTitle={"Skill Share"} title={"Creating Pictograms with Purpose"} link={"https://skl.sh/2Hkm4BN"} buttonText={"See Course"} />
@@ -176,10 +189,13 @@ const EducationPage = ({data}) => {
 export default EducationPage;
 
 export const squareImage = graphql`
+
   fragment squareImage on File {
     childImageSharp {
-        fixed(width: 96, height: 96) {
-          ...GatsbyImageSharpFixed
+		
+		fixed(width: 96, height: 96, quality: 100) {
+		...GatsbyImageSharpFixed
+		
       }
     }
   }
