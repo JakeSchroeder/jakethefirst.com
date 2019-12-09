@@ -193,6 +193,27 @@ const Column = styled.div`
   }
 `;
 
+const Social = styled.div``;
+
+const SectionSubHeading = styled.p`
+  text-align: left;
+  color: ${Black};
+  font-weight: 400;
+  /* padding-top: 64px; */
+  margin-top: 16px;
+
+  &.mb {
+    margin-bottom: 16px;
+  }
+`;
+
+// const StyledLink = styled.a`
+//   color: ${Black};
+//   transition: all 0.3s ease-in-out;
+//   position: relative;
+//   display: inline-block;
+// `;
+
 const ContentWrapper = styled.div`
   text-align: left;
 `;
@@ -214,6 +235,30 @@ const ContactPage = () => (
               jake.schroeder@isophex.com
             </ContactEmail>
             {/* <StyledLink href="https://www.linkedin.com/in/jake-schroeder/" target="_blank" rel="nofollow">Linkedin</StyledLink><StyledLink href="https://www.instagram.com/jakeman001/" target="_blank" rel="nofollow">Instagram</StyledLink><StyledLink href="https://dribbble.com/KidUnknown">Dribbble</StyledLink><StyledLink href="https://github.com/JakeSchroeder">Github</StyledLink> */}
+            <Social>
+              <SectionSubHeading>
+                <StyledLink
+                  href="https://www.linkedin.com/in/jake-schroeder/"
+                  target="_blank"
+                  rel="nofollow"
+                >
+                  Linkedin
+                </StyledLink>
+                <StyledLink
+                  href="https://www.instagram.com/jakeman001/"
+                  target="_blank"
+                  rel="nofollow"
+                >
+                  Instagram
+                </StyledLink>
+                <StyledLink href="https://dribbble.com/KidUnknown">
+                  Dribbble
+                </StyledLink>
+                <StyledLink href="https://github.com/JakeSchroeder">
+                  Github
+                </StyledLink>
+              </SectionSubHeading>
+            </Social>
           </ContentWrapper>
         </Column>
         <Column>
