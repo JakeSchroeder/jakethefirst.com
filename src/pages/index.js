@@ -371,20 +371,20 @@ const IndexPage = ({ data }) => (
               <StackList>
                 <StackItem>
                   <StyledLink
-                    href="https://www.typescriptlang.org/"
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
                     target="_blank"
                     rel="nofollow"
                   >
-                    TypeScript
+                    Javascript
                   </StyledLink>
                 </StackItem>
                 <StackItem>
                   <StyledLink
-                    href="https://www.gatsbyjs.org/"
+                    href="https://www.reactjs.org/"
                     target="_blank"
                     rel="nofollow"
                   >
-                    GatsbyJS
+                    ReactJS
                   </StyledLink>
                 </StackItem>
                 <StackItem>
