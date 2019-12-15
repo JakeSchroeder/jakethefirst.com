@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { Gray, Sizes } from "../components/utilities";
 
 import FrameHeader from "../components/elements/FrameHeader";
-import FrameSidebar from "../components/elements/FrameSidebar"
+import FrameSidebar from "../components/elements/FrameSidebar";
 
 import GlobalStyle from "../components/utilities/Global";
 
@@ -50,66 +50,44 @@ const Frame = styled.div`
 
 const FlexWrapper = styled.div`
   width: calc(100% + 220px);
-  height: calc(100% - 48px);
+  height: calc(100% - 80px);
   display: flex;
-
 `;
 
 const MainContent = styled.main`
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    transition: all .2s ease;
-    transform: translateX(${({ isMenuOpen }) => (isMenuOpen ? `-220px` : `0`)});
+  transition: all 0.2s ease;
+  transform: translateX(${({ isMenuOpen }) => (isMenuOpen ? `-220px` : `0`)});
 
-    overflow-y: auto;
-    
-    
-    @media (min-width: 800px) {
-      margin-right: ${({ isMenuOpen }) => (isMenuOpen ? 0 : `220px`)};
-    }
-    
+  overflow-y: auto;
+
+  @media (min-width: 800px) {
+    margin-right: ${({ isMenuOpen }) => (isMenuOpen ? 0 : `220px`)};
+  }
 `;
 
-
-
 const Layout = ({ children }) => {
-
   const [isMenuToggled, setMenuToggle] = useState(true);
   const toggleMenu = () => setMenuToggle(!isMenuToggled);
-
-  
 
   return (
     <>
       <GlobalStyle />
-        <FrameWrapper>
-          <Frame>
-            <FrameHeader isMenuOpen={isMenuToggled} setMenuOpen={toggleMenu} />
-            <FlexWrapper>
-              <FrameSidebar isMenuOpen={isMenuToggled} />
-              <MainContent id="main-content" isMenuOpen={isMenuToggled}>
-             
-                  {children}
-               
-              </MainContent>
-            </FlexWrapper>
-          </Frame>
-        </FrameWrapper>
+      <FrameWrapper>
+        <Frame>
+          <FrameHeader isMenuOpen={isMenuToggled} setMenuOpen={toggleMenu} />
+          <FlexWrapper>
+            <FrameSidebar isMenuOpen={isMenuToggled} />
+            <MainContent id="main-content" isMenuOpen={isMenuToggled}>
+              {children}
+            </MainContent>
+          </FlexWrapper>
+        </Frame>
+      </FrameWrapper>
     </>
-  )
-
+  );
 };
 
 export default Layout;
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { Black, Gray, DarkBlack} from "./Colors";
+import { createGlobalStyle } from "styled-components";
+import { Black, Gray, DarkBlack } from "./Colors";
 import { Typography } from "./";
 
 const GlobalStyle = createGlobalStyle`
@@ -64,7 +64,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
-
+  button {
+    outline: none;
+  }
  
 
 

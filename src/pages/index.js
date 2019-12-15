@@ -51,7 +51,7 @@ const Column = styled.div`
   justify-content: flex-end;
   /* order: ${({ reversed }) => (reversed ? `1` : `0`)}; */
   border-right: ${({ border }) => (border ? `1px solid ${Gray}` : `0`)};
-  
+
   /* padding-bottom: ${({ border }) => (border ? `0` : `${Sizes.xlarge}`)}; */
 
   &.justify-col {
@@ -61,10 +61,10 @@ const Column = styled.div`
   &.align-end {
     align-items: flex-end;
   }
- 
+
   @media (max-width: 1100px) {
     width: 100%;
-  
+
     /* margin: 0 auto; */
     border: 0;
     order: 0;
@@ -77,10 +77,7 @@ const Column = styled.div`
       padding-bottom: 16px;
     }
 
-
-
   }
-
 
   @media (max-width: 800px) {
       padding: ${Sizes.large};
