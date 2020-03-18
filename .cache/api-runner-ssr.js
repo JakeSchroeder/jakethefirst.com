@@ -1,17 +1,17 @@
 var plugins = [{
-      plugin: require('/Users/jake/dev/jakeschroeder.me/node_modules/gatsby-plugin-webfonts/gatsby-ssr'),
+      plugin: require('/Users/jakeman/jake-dev/jakeschroeder.me/node_modules/gatsby-plugin-webfonts/gatsby-ssr'),
       options: {"plugins":[],"fonts":{"google":[{"family":"Rubik","variants":["400","500"]},{"family":"IBM Plex Sans","variants":["500","700"]}]}},
     },{
-      plugin: require('/Users/jake/dev/jakeschroeder.me/node_modules/gatsby-plugin-layout/gatsby-ssr'),
+      plugin: require('/Users/jakeman/jake-dev/jakeschroeder.me/node_modules/gatsby-plugin-layout/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/jake/dev/jakeschroeder.me/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('/Users/jakeman/jake-dev/jakeschroeder.me/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/jake/dev/jakeschroeder.me/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/Users/jakeman/jake-dev/jakeschroeder.me/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/jake/dev/jakeschroeder.me/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      plugin: require('/Users/jakeman/jake-dev/jakeschroeder.me/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"jakeschroeder.me","short_name":"starter","start_url":"/","background_color":"#1C98FF","theme_color":"#1C98FF","display":"minimal-ui","icon":"src/images/j-icon.png"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
