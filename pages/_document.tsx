@@ -1,9 +1,10 @@
-import { Box, ColorModeScript, theme } from "@chakra-ui/react";
+import { ColorModeScript, Container, theme } from "@chakra-ui/react";
 import { Html, Head, Main, NextScript } from "next/document";
+import Header from "../components/navigation/header";
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"

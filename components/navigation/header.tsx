@@ -8,7 +8,7 @@ const Header: FC = () => {
 
   return (
     <>
-      <HStack justifyContent="space-between" alignItems="center" w="100%" pt="8">
+      <HStack justifyContent="space-between" alignItems="center" w="100%" pt="10">
         <HStack>
           <svg xmlns="http://www.w3.org/2000/svg" width="46px" height="25px" fill="none" viewBox="0 0 46 25">
             <path fill="#0D51FF" d="M2.204 0H0v24.031h2.204V0z"></path>
