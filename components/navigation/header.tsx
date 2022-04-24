@@ -26,7 +26,7 @@ const Header: FC = () => {
             ></path>
           </svg>
           <Heading as="h3" fontSize="lg" fontWeight="medium">
-            Jake Schroeder
+            <Link href="/">Jake Schroeder</Link>
           </Heading>
         </HStack>
         <UnorderedList listStyleType="none" display={["none", "none", "flex"]} textAlign="left" p="0" m="0">

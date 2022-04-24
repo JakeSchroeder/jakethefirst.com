@@ -6,8 +6,17 @@ import TitleSection from "../components/sections/title";
 import AboutSection from "../components/sections/about";
 import DescriptionSection from "../components/sections/description";
 import Footer from "../components/navigation/footer";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 5000);
+  }, []);
+
   return (
     <>
       <Head>
@@ -15,6 +24,7 @@ const Home: NextPage = () => {
         <meta name="description" content="User Experience Designer, Software Engineer, Personal Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <TitleSection />
       <AboutSection />
       <DescriptionSection />
