@@ -61,9 +61,11 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
               {logo}
               <Heading fontSize="xl" as="h4" fontWeight="medium" ref={percentageTextRef}></Heading>
             </HStack>
-            <Heading textAlign="center" as="h1" fontSize={{ base: "14vw", sm: "7vw", lg: "5vw" }}>
-              Jake Schroeder
-            </Heading>
+            <motion.div>
+              <Heading textAlign="center" as="h1" fontSize={{ base: "14vw", sm: "7vw", lg: "5vw" }}>
+                Jake Schroeder
+              </Heading>
+            </motion.div>
             <Flex flexDir={{ base: "column", sm: "row" }} justifyContent="space-between" alignItems="center" w="100%">
               <Heading fontSize="xl" as="h4" fontWeight="medium" whiteSpace="nowrap">
                 UX Desginer

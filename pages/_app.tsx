@@ -29,7 +29,14 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             <Loader setIsLoading={setIsLoading} />
           </motion.div>
         ) : (
-          <Container maxW="1440px" h="100%" px={{ base: "4", sm: "10" }}>
+          <Container
+            maxW="1440px"
+            h="100%"
+            px={{ base: "4", sm: "10" }}
+            display="flex"
+            justifyContent="space-between"
+            flexDirection="column"
+          >
             <Header />
             <Component {...pageProps} />
             <Footer />

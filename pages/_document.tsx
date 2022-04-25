@@ -7,8 +7,8 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
           rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap"
         />
       </Head>
       <body>

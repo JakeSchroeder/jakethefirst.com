@@ -14,9 +14,9 @@ import colors from "./colors";
 // import Button from './components/button'
 
 const breakpoints = {
-  sm: "572px",
+  sm: "580px",
   md: "600px",
-  lg: "1010px",
+  lg: "900px",
   xl: "1200px",
   "2xl": "1536px",
   container: "1600px",

@@ -14,12 +14,18 @@ const AboutSection: FC = () => {
   return (
     <Grid
       py={{ base: "8", mid: "6vh" }}
-      templateColumns={{ base: "1fr 1fr", mid: "1.35fr 1fr 1fr" }}
+      templateColumns={{ base: "1fr 1fr", lg: "1.3fr 1fr 1fr", mid: "1.35fr 1fr 1fr" }}
+      borderTop={["0", "1px solid #C7C7C7"]}
       borderBottom="1px solid"
       borderColor="border"
       alignItems="center"
+      borderTopColor="border"
     >
-      <GridItem rowSpan={{ base: 1, md: 2, mid: 1 }} colSpan={{ base: 2, md: 1, mid: 1 }} pb={{ base: "8", md: "0" }}>
+      <GridItem
+        rowSpan={{ base: 1, sm: 2, lg: 1, mid: 1 }}
+        colSpan={{ base: 2, sm: 1, md: 1, mid: 1 }}
+        pb={{ base: "8", sm: "0" }}
+      >
         <SlideFade in={isOpen} offsetY="20px">
           <Heading
             as="h2"
@@ -27,9 +33,9 @@ const AboutSection: FC = () => {
             fontWeight={{ base: "black", sm: "medium" }}
             lineHeight="1.3"
           >
-            <Flex flexDirection={{ base: "column", lg: "row" }}>
+            <Flex flexDirection={{ base: "column", mid: "row" }}>
               <Text>UX Designer</Text>
-              <Text px="2" display={{ base: "none", lg: "block" }}>
+              <Text px="2" display={{ base: "none", mid: "block" }}>
                 {" "}
                 /{" "}
               </Text>
@@ -38,7 +44,7 @@ const AboutSection: FC = () => {
           </Heading>
         </SlideFade>
       </GridItem>
-      <GridItem colSpan={{ base: 2, md: 1, mid: 1 }} display="flex" alignItems="center">
+      <GridItem colSpan={{ base: 2, sm: 1, md: 1, mid: 1 }} display="flex" alignItems="center">
         <SlideFade in={isOpen} offsetY="20px">
           <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
             Seeking Employment
@@ -59,7 +65,12 @@ const AboutSection: FC = () => {
         </SlideFade>
       </GridItem>
 
-      <GridItem colSpan={{ base: 2, md: 1, mid: 1 }} display="flex" alignItems="center" pt={{ base: "4", sm: "0" }}>
+      <GridItem
+        colSpan={{ base: 2, sm: 1, md: 1, mid: 1 }}
+        display="flex"
+        alignItems="center"
+        pt={{ base: "4", sm: "0" }}
+      >
         <SlideFade in={isOpen} offsetY="20px">
           <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
             &quot;Theoretical +

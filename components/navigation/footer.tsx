@@ -10,6 +10,8 @@ const Footer: FC = () => {
       justifyContent="space-between"
       alignItems="center"
       color="blackAlpha.500"
+      borderTop="1px solid"
+      borderColor="border"
     >
       <Text fontSize="sm" textAlign={{ base: "center", md: "left" }}>
         Copyright © 2022 Jake Schroeder. All Rights Reserved.

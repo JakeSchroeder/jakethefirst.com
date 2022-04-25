@@ -2,9 +2,14 @@ import { Flex, Heading, SlideFade, useDisclosure } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import { Typewriter, useTypewriter } from "react-simple-typewriter";
 import { TypewriterProps } from "react-simple-typewriter/dist/Hooks/useTypewriter";
+import { motion } from "framer-motion";
+
+const variants = {
+  visible: { opacity: 1 },
+  hidden: { opacity: 0 },
+};
 
 const TitleSection: FC = () => {
-  const { isOpen, onToggle } = useDisclosure();
   const { text, count } = useTypewriter({
     words: ["Inspiration.", "Creativity.", "Abstraction.", "Life."],
     loop: false,
@@ -14,14 +19,8 @@ const TitleSection: FC = () => {
     typeSpeed: 140,
   } as TypewriterProps);
 
-  useEffect(() => {
-    requestAnimationFrame(() => {
-      onToggle();
-    });
-  }, []);
-
   return (
-    <Flex borderBottom="1px solid" borderColor="border" display={{ base: "none", sm: "flex" }}>
+    <Flex display={{ base: "none", sm: "flex" }}>
       <Heading
         color="#3A3A3A"
         display="flex"
@@ -30,28 +29,25 @@ const TitleSection: FC = () => {
         py={{ base: "8", mid: "6vh" }}
         fontWeight="black"
       >
-        <SlideFade in={isOpen} offsetY="20px">
-          Powered by&nbsp;
-        </SlideFade>
-        <SlideFade
-          in={isOpen}
-          offsetY="20px"
+        <motion.div
+          key="loader"
+          variants={variants}
           transition={{
-            enter: {
-              delay: 0.5,
-            },
+            duration: 8,
+            delay: 5,
           }}
         >
-          <Typewriter
-            words={["Inspiration.", "Creativity.", "Abstraction.", "Code."]}
-            loop={false}
-            cursor
-            cursorStyle="_"
-            typeSpeed={140}
-            deleteSpeed={100}
-            delaySpeed={1500}
-          />
-        </SlideFade>
+          Powered by&nbsp;
+        </motion.div>
+        <Typewriter
+          words={["Inspiration.", "Creativity.", "Abstraction.", "Code."]}
+          loop={false}
+          cursor
+          cursorStyle="_"
+          typeSpeed={140}
+          deleteSpeed={100}
+          delaySpeed={1500}
+        />
       </Heading>
     </Flex>
   );

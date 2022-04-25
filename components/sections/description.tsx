@@ -1,4 +1,4 @@
-import { Grid, GridItem, Heading, HStack, List, ListItem, Text } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, HStack, List, ListItem, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { FC } from "react";
 
@@ -8,17 +8,22 @@ const DescriptionSection: FC = () => {
       gap={{ base: "0", mid: "5%" }}
       templateColumns={{ base: "1fr", mid: "1.3fr  1fr 1fr" }}
       py={{ base: "8", mid: "6vh" }}
-      borderBottom="1px solid"
-      borderColor="border"
     >
-      <GridItem borderBottom={{ base: "1px solid", mid: "0" }} borderColor="border" pb={{ base: "8", mid: "0" }}>
+      <GridItem
+        borderBottom={{ base: "1px solid", md: "0", mid: "0" }}
+        borderColor="border"
+        pb={{ base: "8", mid: "0" }}
+      >
         <Text>
-          I’m Jake, passionate about bringing together leading UX Design and effective Frontend Development to deliver
-          highly usable and pragmatic solutions. I am constantly working to improve my skills by exploring the latest
-          design trends, frameworks and technologies. My strength is in understanding business requirements and
-          translating them into well designed, valuable solutions with practical functionality, communicating
-          professionalism and a unique modern aesthetic that is both exciting and usable. With strong interpersonal
-          instincts, I enjoy working closely with business owners to fully.
+          <Box as="span" display="inline" fontSize="lg" fontWeight="bold" pr="2">
+            I’m Jake,
+          </Box>
+          passionate about bringing together leading UX Design and effective Frontend Development to deliver highly
+          usable and pragmatic solutions. I am constantly working to improve my skills by exploring the latest design
+          trends, frameworks and technologies. My strength is in understanding business requirements and translating
+          them into well designed, valuable solutions with practical functionality, communicating professionalism and a
+          unique modern aesthetic that is both exciting and usable. With strong interpersonal instincts, I enjoy working
+          closely with business owners to fully.
         </Text>
       </GridItem>
       <GridItem colSpan={2} pt={{ base: "8", mid: "0" }}>
