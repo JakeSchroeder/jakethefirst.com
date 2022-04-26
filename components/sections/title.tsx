@@ -12,7 +12,7 @@ const variants = {
 const TitleSection: FC = () => {
   const { text, count } = useTypewriter({
     words: ["Inspiration.", "Creativity.", "Abstraction.", "Life."],
-    loop: false,
+    loop: 1,
     cursor: true,
     delaySpeed: 1500,
     deleteSpeed: 100,
@@ -25,7 +25,7 @@ const TitleSection: FC = () => {
         color="#3A3A3A"
         display="flex"
         as="h1"
-        fontSize={{ base: "14vw", sm: "6vw", mid: "105px" }}
+        fontSize={{ base: "14vw", sm: "5.85vw", mid: "100px" }}
         py={{ base: "8", mid: "6vh" }}
         fontWeight="black"
       >
@@ -41,7 +41,7 @@ const TitleSection: FC = () => {
         </motion.div>
         <Typewriter
           words={["Inspiration.", "Creativity.", "Abstraction.", "Code."]}
-          loop={false}
+          loop={1}
           cursor
           cursorStyle="_"
           typeSpeed={140}

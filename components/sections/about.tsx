@@ -13,7 +13,7 @@ const AboutSection: FC = () => {
 
   return (
     <Grid
-      py={{ base: "8", mid: "6vh" }}
+      py={{ base: "8", md: "6vh" }}
       templateColumns={{ base: "1fr 1fr", lg: "1.3fr 1fr 1fr", mid: "1.35fr 1fr 1fr" }}
       borderTop={["0", "1px solid #C7C7C7"]}
       borderBottom="1px solid"

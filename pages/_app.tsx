@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Start from "../components/loading/start";
 import { AnimateSharedLayout, AnimatePresence, isValidMotionProp, motion } from "framer-motion";
 import Loader from "../components/loading/loader";
+import Head from "next/head";
 
 const ChakraAnimBox = chakra(motion.div, {
   shouldForwardProp: isValidMotionProp,
@@ -22,28 +23,33 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   // }, []);
 
   return (
-    <ChakraProvider theme={theme}>
-      <AnimatePresence>
-        {isLoading ? (
-          <motion.div key="loader">
-            <Loader setIsLoading={setIsLoading} />
-          </motion.div>
-        ) : (
-          <Container
-            maxW="1440px"
-            h="100%"
-            px={{ base: "4", sm: "10" }}
-            display="flex"
-            justifyContent="space-between"
-            flexDirection="column"
-          >
-            <Header />
-            <Component {...pageProps} />
-            <Footer />
-          </Container>
-        )}
-      </AnimatePresence>
-    </ChakraProvider>
+    <>
+      <Head>
+        <meta name="viewport" content="initial-scale=1.0 , minimum-scale=1.0" />
+      </Head>
+      <ChakraProvider theme={theme}>
+        <AnimatePresence>
+          {isLoading ? (
+            <motion.div key="loader">
+              <Loader setIsLoading={setIsLoading} />
+            </motion.div>
+          ) : (
+            <Container
+              maxW="1440px"
+              h="100%"
+              px={{ base: "4", sm: "10" }}
+              display="flex"
+              justifyContent="space-between"
+              flexDirection="column"
+            >
+              <Header />
+              <Component {...pageProps} />
+              <Footer />
+            </Container>
+          )}
+        </AnimatePresence>
+      </ChakraProvider>
+    </>
   );
 }
 
