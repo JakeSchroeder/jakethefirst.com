@@ -26,7 +26,15 @@ const AboutSection: FC = () => {
         colSpan={{ base: 2, sm: 1, md: 1, mid: 1 }}
         pb={{ base: "8", sm: "0" }}
       >
-        <SlideFade in={isOpen} offsetY="20px">
+        <SlideFade
+          in={isOpen}
+          offsetY="20px"
+          transition={{
+            enter: {
+              delay: 1,
+            },
+          }}
+        >
           <Heading
             as="h2"
             fontSize={{ base: "8vw", sm: "2xl" }}
@@ -45,12 +53,28 @@ const AboutSection: FC = () => {
         </SlideFade>
       </GridItem>
       <GridItem colSpan={{ base: 2, sm: 1, md: 1, mid: 1 }} display="flex" alignItems="center">
-        <SlideFade in={isOpen} offsetY="20px">
+        <SlideFade
+          transition={{
+            enter: {
+              delay: 1,
+            },
+          }}
+          in={isOpen}
+          offsetY="20px"
+        >
           <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
             Seeking Employment
           </Heading>
         </SlideFade>
-        <SlideFade in={isOpen} offsetY="20px">
+        <SlideFade
+          in={isOpen}
+          offsetY="20px"
+          transition={{
+            enter: {
+              delay: 1.5,
+            },
+          }}
+        >
           <Text
             display={{ base: "block", mid: "block" }}
             pl="2"
@@ -71,7 +95,15 @@ const AboutSection: FC = () => {
         alignItems="center"
         pt={{ base: "4", sm: "0" }}
       >
-        <SlideFade in={isOpen} offsetY="20px">
+        <SlideFade
+          in={isOpen}
+          offsetY="20px"
+          transition={{
+            enter: {
+              delay: 1,
+            },
+          }}
+        >
           <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
             &quot;Theoretical +
             <Box display={{ base: "none", mid: "none" }}>
@@ -80,7 +112,15 @@ const AboutSection: FC = () => {
             Pragmatic&quot;
           </Heading>
         </SlideFade>
-        <SlideFade in={isOpen} offsetY="20px">
+        <SlideFade
+          in={isOpen}
+          offsetY="20px"
+          transition={{
+            enter: {
+              delay: 1.5,
+            },
+          }}
+        >
           <Text
             display={{ base: "block", mid: "block" }}
             pl="2"

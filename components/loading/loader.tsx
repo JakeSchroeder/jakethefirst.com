@@ -1,4 +1,4 @@
-import { Box, Center, Container, Flex, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Box, Center, Container, Fade, Flex, Heading, HStack, SlideFade, VStack } from "@chakra-ui/react";
 import { animate, motion } from "framer-motion";
 import { MotionConfig } from "framer-motion";
 import { FC, useEffect, useRef } from "react";
@@ -33,9 +33,9 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
     const node = percentageTextRef.current;
 
     const controls = animate(0, 100, {
-      duration: 4,
+      duration: 5,
       onUpdate(value) {
-        node!.textContent = value.toFixed(0);
+        node!.textContent = `${value.toFixed(0)}%`;
       },
     });
 
@@ -47,55 +47,96 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
   return (
     <motion.div
       style={{ width: "100%", height: "100%", position: "fixed" }}
-      initial={{ opacity: 1 }}
+      key="overlay"
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{
-        ease: "easeInOut",
-        duration: 1,
-      }}
     >
       <Center w="100%" h="100%" bg="brand">
         <Container maxW="1440px" h="100%" w="100%" px={{ base: "4", sm: "10" }}>
-          <VStack w="100%" h="100%" justifyContent="space-between" py="8" color="white">
-            <HStack justifyContent="space-between" alignItems="center" w="100%">
-              {logo}
-              <Heading fontSize="xl" as="h4" fontWeight="medium" ref={percentageTextRef}></Heading>
-            </HStack>
-            <motion.div>
+          <VStack w="100%" h="100%" justifyContent="space-between" py="10" color="white">
+            <motion.div
+              key="overlay-header"
+              style={{ width: "100%" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{
+                delay: 1,
+              }}
+              // transition={{
+              //   ease: "easeInOut",
+              //   duration: 2,
+              // }}
+            >
+              <HStack justifyContent="space-between" alignItems="center" w="100%">
+                {logo}
+                <Heading fontSize="xl" as="h4" fontWeight="medium" ref={percentageTextRef}></Heading>
+              </HStack>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{
+                enter: {
+                  duration: 2,
+                },
+                exit: {
+                  duration: 2,
+                },
+              }}
+            >
               <Heading textAlign="center" as="h1" fontSize={{ base: "14vw", sm: "7vw", lg: "5vw" }}>
                 Jake Schroeder
               </Heading>
             </motion.div>
-            <Flex flexDir={{ base: "column", sm: "row" }} justifyContent="space-between" alignItems="center" w="100%">
-              <Heading fontSize="xl" as="h4" fontWeight="medium" whiteSpace="nowrap">
-                UX Desginer
-              </Heading>
-              <motion.div
-                style={{ display: "flex" }}
-                initial={{
-                  width: "8%",
-                }}
-                animate={{
-                  width: "100%",
-                }}
-                transition={{
-                  duration: 4,
-                }}
-                onAnimationComplete={() => setIsLoading(false)}
-              >
-                <Box
-                  order={{ base: 3, sm: 0 }}
-                  h="2px"
-                  bg="white"
-                  w="100%"
-                  mx={{ base: "0", sm: "8" }}
-                  mt={{ base: "4", sm: "0" }}
-                ></Box>
-              </motion.div>
-              <Heading fontSize="xl" as="h4" fontWeight="medium" whiteSpace="nowrap">
-                Software Engineer
-              </Heading>
-            </Flex>
+            <motion.div
+              style={{ width: "100%" }}
+              initial={{ y: "200px" }}
+              animate={{ y: 0 }}
+              exit={{ y: "200px" }}
+              transition={{
+                delay: 2,
+                enter: {
+                  duration: 2,
+                },
+                exit: {
+                  duration: 1,
+                },
+              }}
+            >
+              <Flex flexDir={{ base: "column", sm: "row" }} justifyContent="space-between" alignItems="center" w="100%">
+                <Heading fontSize="xl" as="h4" fontWeight="medium" whiteSpace="nowrap">
+                  UX Desginer
+                </Heading>
+                <motion.div
+                  style={{ display: "flex" }}
+                  initial={{
+                    width: "8%",
+                  }}
+                  animate={{
+                    width: "100%",
+                  }}
+                  transition={{
+                    duration: 7,
+                    delay: 1,
+                  }}
+                  onAnimationComplete={() => setIsLoading(false)}
+                >
+                  <Box
+                    order={{ base: 3, sm: 0 }}
+                    h="2px"
+                    bg="white"
+                    w="100%"
+                    mx={{ base: "0", sm: "8" }}
+                    mt={{ base: "4", sm: "0" }}
+                  ></Box>
+                </motion.div>
+                <Heading fontSize="xl" as="h4" fontWeight="medium" whiteSpace="nowrap">
+                  Software Engineer
+                </Heading>
+              </Flex>
+            </motion.div>
           </VStack>
         </Container>
       </Center>
