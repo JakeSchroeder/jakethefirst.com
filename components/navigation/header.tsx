@@ -34,13 +34,13 @@ const Header: FC = () => {
             <Link href="/projects">Projects</Link>
           </ListItem>
           <ListItem fontSize="md" fontWeight="normal" ml="8">
-            <Link href="/projects">About</Link>
+            <Link href="/about">About</Link>
           </ListItem>
           <ListItem fontSize="md" fontWeight="normal" ml="8">
-            <Link href="/projects">Blog</Link>
+            <Link href="/blog">Blog</Link>
           </ListItem>
           <ListItem fontSize="md" fontWeight="normal" ml="8">
-            <Link href="/projects">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </ListItem>
         </UnorderedList>
 

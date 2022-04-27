@@ -33,9 +33,9 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
     const node = percentageTextRef.current;
 
     const controls = animate(0, 100, {
-      duration: 5,
+      duration: 7,
       onUpdate(value) {
-        node!.textContent = `${value.toFixed(0)}%`;
+        node!.textContent = `${value.toFixed(0)}/100`;
       },
     });
 
@@ -50,6 +50,9 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
       key="overlay"
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      transition={{
+        delay: 1,
+      }}
     >
       <Center w="100%" h="100%" bg="brand">
         <Container maxW="1440px" h="100%" w="100%" px={{ base: "4", sm: "10" }}>
@@ -61,12 +64,8 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{
-                delay: 1,
+                duration: 1,
               }}
-              // transition={{
-              //   ease: "easeInOut",
-              //   duration: 2,
-              // }}
             >
               <HStack justifyContent="space-between" alignItems="center" w="100%">
                 {logo}
@@ -78,12 +77,7 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{
-                enter: {
-                  duration: 2,
-                },
-                exit: {
-                  duration: 2,
-                },
+                duration: 1,
               }}
             >
               <Heading textAlign="center" as="h1" fontSize={{ base: "14vw", sm: "7vw", lg: "5vw" }}>
@@ -91,18 +85,13 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
               </Heading>
             </motion.div>
             <motion.div
+              key="overlay-progress"
               style={{ width: "100%" }}
-              initial={{ y: "200px" }}
-              animate={{ y: 0 }}
-              exit={{ y: "200px" }}
+              initial={{ opacity: 0, y: "200px" }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: "200px" }}
               transition={{
-                delay: 2,
-                enter: {
-                  duration: 2,
-                },
-                exit: {
-                  duration: 1,
-                },
+                duration: 1,
               }}
             >
               <Flex flexDir={{ base: "column", sm: "row" }} justifyContent="space-between" alignItems="center" w="100%">
@@ -112,14 +101,14 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
                 <motion.div
                   style={{ display: "flex" }}
                   initial={{
-                    width: "8%",
+                    width: "0%",
                   }}
                   animate={{
                     width: "100%",
                   }}
                   transition={{
-                    duration: 7,
                     delay: 1,
+                    duration: 7,
                   }}
                   onAnimationComplete={() => setIsLoading(false)}
                 >

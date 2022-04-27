@@ -1,6 +1,5 @@
 import { ColorModeScript, Container, theme } from "@chakra-ui/react";
 import { Html, Head, Main, NextScript } from "next/document";
-import Header from "../components/navigation/header";
 
 export default function Document() {
   return (
