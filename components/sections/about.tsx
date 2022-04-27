@@ -3,14 +3,6 @@ import Link from "next/link";
 import { FC, useEffect } from "react";
 
 const AboutSection: FC = () => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  useEffect(() => {
-    requestAnimationFrame(() => {
-      onToggle();
-    });
-  }, []);
-
   return (
     <Grid
       py={{ base: "8", md: "6vh" }}
@@ -27,7 +19,7 @@ const AboutSection: FC = () => {
         pb={{ base: "8", sm: "0" }}
       >
         <SlideFade
-          in={isOpen}
+          in={true}
           offsetY="20px"
           transition={{
             enter: {
@@ -59,7 +51,7 @@ const AboutSection: FC = () => {
               delay: 1,
             },
           }}
-          in={isOpen}
+          in={true}
           offsetY="20px"
         >
           <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
@@ -67,7 +59,7 @@ const AboutSection: FC = () => {
           </Heading>
         </SlideFade>
         <SlideFade
-          in={isOpen}
+          in={true}
           offsetY="20px"
           transition={{
             enter: {
@@ -96,7 +88,7 @@ const AboutSection: FC = () => {
         pt={{ base: "4", sm: "0" }}
       >
         <SlideFade
-          in={isOpen}
+          in={true}
           offsetY="20px"
           transition={{
             enter: {
@@ -113,7 +105,7 @@ const AboutSection: FC = () => {
           </Heading>
         </SlideFade>
         <SlideFade
-          in={isOpen}
+          in={true}
           offsetY="20px"
           transition={{
             enter: {

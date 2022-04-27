@@ -21,7 +21,7 @@ const TitleSection: FC = () => {
           color="#3A3A3A"
           display="flex"
           as="h1"
-          fontSize={{ base: "14vw", sm: "5.85vw", mid: "100px" }}
+          fontSize={{ base: "14vw", sm: "6.4vw", mid: "100px" }}
           py={{ base: "8", mid: "6vh" }}
           fontWeight="black"
         >

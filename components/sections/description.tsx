@@ -37,9 +37,11 @@ const DescriptionSection: FC = () => {
             <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium">
               My Stack
             </Heading>
-            <Text color="brand" fontWeight="medium" textDecoration="underline" fontSize="md" pl="2">
-              <Link href="/contact">Projects</Link>
-            </Text>
+            <SlideFade in={true} offsetY="20px" delay={1.5}>
+              <Text color="brand" fontWeight="medium" textDecoration="underline" fontSize="md" pl="2">
+                <Link href="/contact">Projects</Link>
+              </Text>
+            </SlideFade>
           </HStack>
           <Grid pt="8" gap="8" templateColumns={{ base: "1fr 1fr", sm: "1fr 1fr 1fr 1fr", md: "1fr 1fr 1fr 1fr" }}>
             <GridItem>

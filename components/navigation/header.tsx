@@ -1,13 +1,19 @@
 import { Button, Heading, HStack, ListItem, Text, UnorderedList, useDisclosure } from "@chakra-ui/react";
+import { MotionConfig } from "framer-motion";
 import Link from "next/link";
 import { FC } from "react";
 import Menu from "./menu";
-
+import { motion } from "framer-motion";
 const Header: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <>
+    <motion.div
+      style={{ width: "100%" }}
+      initial={{ opacity: 0, y: "-80px" }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1, duration: 0.75, ease: [0.6, 0.01, -0.05, 0.95] }}
+    >
       <HStack justifyContent="space-between" alignItems="center" w="100%" pt={{ base: "4", md: "10" }}>
         <HStack>
           <svg xmlns="http://www.w3.org/2000/svg" width="46px" height="25px" fill="none" viewBox="0 0 46 25">
@@ -59,7 +65,7 @@ const Header: FC = () => {
       </HStack>
 
       <Menu isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
-    </>
+    </motion.div>
   );
 };
 
