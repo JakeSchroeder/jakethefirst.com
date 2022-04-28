@@ -33,7 +33,7 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
     const node = percentageTextRef.current;
 
     const controls = animate(0, 100, {
-      duration: 7,
+      duration: 5,
       onUpdate(value) {
         node!.textContent = `${value.toFixed(0)}/100`;
       },
@@ -56,7 +56,7 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
     >
       <Center w="100%" h="100%" bg="brand">
         <Container maxW="1440px" h="100%" w="100%" px={{ base: "4", sm: "10" }}>
-          <VStack w="100%" h="100%" justifyContent="space-between" py="10" color="white">
+          <VStack w="100%" h="100%" justifyContent="space-between" py={{ base: "6", md: "10" }} color="white">
             <motion.div
               key="overlay-header"
               style={{ width: "100%" }}
@@ -98,29 +98,31 @@ const Loader: FC<LoaderProps> = ({ setIsLoading }) => {
                 <Heading fontSize="xl" as="h4" fontWeight="medium" whiteSpace="nowrap">
                   UX Desginer
                 </Heading>
-                <motion.div
-                  style={{ display: "flex" }}
-                  initial={{
-                    width: "0%",
-                  }}
-                  animate={{
-                    width: "100%",
-                  }}
-                  transition={{
-                    delay: 1,
-                    duration: 7,
-                  }}
-                  onAnimationComplete={() => setIsLoading(false)}
-                >
-                  <Box
-                    order={{ base: 3, sm: 0 }}
-                    h="2px"
-                    bg="white"
-                    w="100%"
-                    mx={{ base: "0", sm: "8" }}
-                    mt={{ base: "4", sm: "0" }}
-                  ></Box>
-                </motion.div>
+                <Flex w="100%" justifyContent="center" order={{ base: 3, md: 0 }}>
+                  <motion.div
+                    style={{ display: "flex" }}
+                    initial={{
+                      width: "0%",
+                    }}
+                    animate={{
+                      width: "100%",
+                    }}
+                    transition={{
+                      delay: 1,
+                      duration: 5,
+                    }}
+                    onAnimationComplete={() => setIsLoading(false)}
+                  >
+                    <Box
+                      order={{ base: 3, sm: 0 }}
+                      h="2px"
+                      bg="white"
+                      w="100%"
+                      mx={{ base: "0", sm: "8" }}
+                      mt={{ base: "4", sm: "0" }}
+                    ></Box>
+                  </motion.div>
+                </Flex>
                 <Heading fontSize="xl" as="h4" fontWeight="medium" whiteSpace="nowrap">
                   Software Engineer
                 </Heading>

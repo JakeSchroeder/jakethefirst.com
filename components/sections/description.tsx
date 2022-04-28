@@ -16,15 +16,12 @@ const DescriptionSection: FC = () => {
       >
         <SlideFade in={true} offsetY="20px" delay={1}>
           <Text>
-            <Box as="span" display="inline" fontSize="lg" fontWeight="bold" pr="2">
-              I’m Jake,
-            </Box>
-            passionate about bringing together leading UX Design and effective Frontend Development to deliver highly
-            usable and pragmatic solutions. I am constantly working to improve my skills by exploring the latest design
-            trends, frameworks and technologies. My strength is in understanding business requirements and translating
-            them into well designed, valuable solutions with practical functionality, communicating professionalism and
-            a unique modern aesthetic that is both exciting and usable. With strong interpersonal instincts, I enjoy
-            working closely with business owners to fully.{" "}
+            Hey I'm passionate about bringing together leading UX Design and effective Frontend Development to deliver
+            highly usable and pragmatic solutions. I am constantly working to improve my skills by exploring the latest
+            design trends, frameworks and technologies. My strength is in understanding business requirements and
+            translating them into well designed, valuable solutions with practical functionality, communicating
+            professionalism and a unique modern aesthetic that is both exciting and usable. With strong interpersonal
+            instincts, I enjoy working closely with business owners to fully.{" "}
             <Box as="span" pl="2" color="brand" fontWeight="medium" textDecoration="underline">
               <Link href="/blog">More</Link>
             </Box>
@@ -39,7 +36,7 @@ const DescriptionSection: FC = () => {
             </Heading>
             <SlideFade in={true} offsetY="20px" delay={1.5}>
               <Text color="brand" fontWeight="medium" textDecoration="underline" fontSize="md" pl="2">
-                <Link href="/contact">Projects</Link>
+                <Link href="/projects">Projects</Link>
               </Text>
             </SlideFade>
           </HStack>

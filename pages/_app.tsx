@@ -1,11 +1,11 @@
 import type { AppProps } from "next/app";
-import { chakra, ChakraProvider, Container, Fade, Flex } from "@chakra-ui/react";
+import { chakra, ChakraProvider, Container } from "@chakra-ui/react";
 import theme from "../chakra";
 import Header from "../components/navigation/header";
 import Footer from "../components/navigation/footer";
-import { useEffect, useState } from "react";
-import Start from "../components/loading/start";
-import { AnimateSharedLayout, AnimatePresence, isValidMotionProp, motion } from "framer-motion";
+import { useState } from "react";
+
+import { AnimatePresence, isValidMotionProp, motion } from "framer-motion";
 import Loader from "../components/loading/loader";
 import Head from "next/head";
 
@@ -16,16 +16,10 @@ const ChakraAnimBox = chakra(motion.div, {
 function MyApp({ Component, pageProps, router }: AppProps) {
   const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsLoaded(true);
-  //   }, 500);
-  // }, []);
-
   return (
     <>
       <Head>
-        <meta name="viewport" content="initial-scale=1.0 , minimum-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ChakraProvider theme={theme}>
         <AnimatePresence>
@@ -34,18 +28,20 @@ function MyApp({ Component, pageProps, router }: AppProps) {
               <Loader setIsLoading={setIsLoading} />
             </motion.div>
           ) : (
-            <Container
-              maxW="1440px"
-              h="100%"
-              px={{ base: "4", sm: "10" }}
-              display="flex"
-              justifyContent="space-between"
-              flexDirection="column"
-            >
-              <Header />
-              <Component {...pageProps} />
-              <Footer />
-            </Container>
+            <>
+              <Container
+                maxW="1440px"
+                h="100%"
+                px={{ base: "4", sm: "10" }}
+                display="flex"
+                justifyContent="space-between"
+                flexDirection="column"
+              >
+                <Header />
+                <Component {...pageProps} />
+                <Footer />
+              </Container>
+            </>
           )}
         </AnimatePresence>
       </ChakraProvider>

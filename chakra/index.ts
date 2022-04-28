@@ -1,17 +1,10 @@
-// theme/index.js
 import { extendTheme } from "@chakra-ui/react";
 
-// Global style overrides
 import styles from "./styles";
 
 import fonts from "./fonts";
 
 import colors from "./colors";
-// Foundational style overrides
-// import borders from './foundations/borders'
-
-// Component style overrides
-// import Button from './components/button'
 
 const breakpoints = {
   sm: "580px",
@@ -28,12 +21,6 @@ const overrides = {
   fonts,
   colors,
   breakpoints,
-  // borders,
-  // Other foundational style overrides go here
-  // components: {
-  //   Button,
-  //   // Other components go here
-  // },
 };
 
 export default extendTheme(overrides);

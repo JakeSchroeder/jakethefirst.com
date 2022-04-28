@@ -76,7 +76,7 @@ const AboutSection: FC = () => {
             fontSize="md"
             textAlign="left"
           >
-            <Link href="/about">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </Text>
         </SlideFade>
       </GridItem>

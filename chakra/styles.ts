@@ -1,5 +1,8 @@
 const styles = {
   global: {
+    "::selection": {
+      background: "#D2DFFF",
+    },
     "html, body": {
       width: "100%",
       height: "100%",
