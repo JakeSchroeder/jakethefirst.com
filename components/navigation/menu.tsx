@@ -62,13 +62,13 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose, onOpen }) => {
                   <Link href="/projects">Projects</Link>
                 </ListItem>
                 <ListItem fontSize="3xl" fontWeight="medium">
-                  <Link href="/projects">About</Link>
+                  <Link href="/about">About</Link>
                 </ListItem>
                 <ListItem fontSize="3xl" fontWeight="medium">
-                  <Link href="/projects">Blog</Link>
+                  <Link href="/blog">Blog</Link>
                 </ListItem>
                 <ListItem fontSize="3xl" fontWeight="medium">
-                  <Link href="/projects">Contact</Link>
+                  <Link href="/contact">Contact</Link>
                 </ListItem>
               </UnorderedList>
             </Center>
