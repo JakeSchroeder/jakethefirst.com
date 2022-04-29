@@ -36,7 +36,19 @@ const Header: FC = () => {
           </Heading>
         </HStack>
         <UnorderedList listStyleType="none" display={["none", "none", "flex"]} textAlign="left" p="0" m="0">
-          <ListItem fontSize="md" fontWeight="normal">
+          <ListItem
+            position="relative"
+            fontSize="md"
+            fontWeight="normal"
+            _after={{
+              content: `"5"`,
+              position: "absolute",
+              top: "-2px",
+              right: "-6px",
+              fontSize: "10px",
+              fontWeight: "medium",
+            }}
+          >
             <Link href="/projects">Projects</Link>
           </ListItem>
           <ListItem fontSize="md" fontWeight="normal" ml="8">

@@ -51,8 +51,8 @@ const About: FC = () => {
       <Cursor />
       <Grid gap={{ base: 0, md: "12", xl: "20" }} py="10" templateColumns={{ base: "1fr", sm: "1fr", md: "1fr 1fr" }}>
         <GridItem>
-          <SlideFade in={true} offsetY="20px" delay={1}>
-            <Image src={picSrc} />
+          <SlideFade in={true} offsetY="20px" delay={0.5}>
+            <Image src={picSrc} priority />
             <Heading display={{ base: "none", md: "block" }} as="h4" fontSize="lg" fontWeight="normal" pt="6">
               - Wengen, Switzerland
             </Heading>
@@ -62,11 +62,11 @@ const About: FC = () => {
           <VStack h="100%" w="100%" justifyContent="space-between" alignItems="flex-start">
             <Box>
               <Heading as="h1" fontSize="md" fontWeight="medium" pb="6">
-                About
+                Hell World,
               </Heading>
               <Text fontSize="md">
-                Hell World, I started designing when I was 12 and wrote my first line of Java when I was 13. I’ve always
-                gravitated towards outlets for passion and creativity. Its why I ❤️ art, music, movies, cooking,
+                I started designing when I was 12 and wrote my first line of Java when I was 13. I’ve always gravitated
+                towards outlets for passion and creativity. <br /> <br /> Its why I ❤️ art, music, movies, cooking,
                 woodworking, and the prusuit of happiness. I live to learn. I found design and engineering and havent
                 looked back since. Currently, I am based in Chicago but looking for work in California, Texas, Idaho,
                 Washington, or Remote.
@@ -74,6 +74,7 @@ const About: FC = () => {
             </Box>
             <VStack w="100%">
               <ExperienceItem position="Desktop Engineer" company="Frontier Audio" start="Feb 2022" end="Present" />
+              <ExperienceItem position="Software Engineer" company="Vazer" start="Oct 2021" end="Jan 2021" />
               <ExperienceItem
                 position="Software Engineer Intern"
                 company="PriviChat"

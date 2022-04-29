@@ -33,7 +33,6 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose, onOpen }) => {
               <Heading as="h3" fontSize="lg" fontWeight="medium">
                 Jake Schroeder
               </Heading>
-
               <Button
                 ref={closeButtonRef}
                 onClick={() => {

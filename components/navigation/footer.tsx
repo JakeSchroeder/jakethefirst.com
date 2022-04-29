@@ -1,4 +1,5 @@
-import { Fade, Flex, SlideFade, Text } from "@chakra-ui/react";
+import { Fade, Flex, HStack, SlideFade, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { FC } from "react";
 
 const Footer: FC = () => {
@@ -17,9 +18,18 @@ const Footer: FC = () => {
         <Text fontSize="sm" textAlign={{ base: "center", md: "left" }}>
           Copyright © 2022 Jake Schroeder. All Rights Reserved.
         </Text>
-        <Text fontSize="sm" display={{ base: "none", md: "block" }}>
-          jakeschroeder.me
-        </Text>
+        <HStack spacing="4">
+          <Text fontSize="sm">
+            <Link href="https://twitter.com/Schrudmeister">Twitter</Link>
+          </Text>
+
+          <Text fontSize="sm">
+            <Link href="https://www.linkedin.com/in/jake-schroeder/">LinkedIn</Link>
+          </Text>
+          <Text fontSize="sm" display={{ base: "none", md: "block" }}>
+            jakeschroeder.me
+          </Text>
+        </HStack>
       </Flex>
     </Fade>
   );

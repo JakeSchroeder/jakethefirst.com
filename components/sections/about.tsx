@@ -1,6 +1,6 @@
 import { Box, Flex, Grid, GridItem, Heading, SlideFade, Text, useDisclosure } from "@chakra-ui/react";
 import Link from "next/link";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 
 const AboutSection: FC = () => {
   return (

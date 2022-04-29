@@ -5,8 +5,8 @@ const Cursor: FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
   const prevCursorPos = useRef({
-    x: 0,
-    y: 0,
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
   });
   function lerp(start: number, end: number, amt: number) {
     return (1 - amt) * start + amt * end;
