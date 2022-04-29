@@ -16,9 +16,9 @@ const DescriptionSection: FC = () => {
       >
         <SlideFade in={true} offsetY="20px" delay={1}>
           <Text>
-            Hey I'm passionate about bringing together leading UX Design and effective Frontend Development to deliver
-            highly usable and pragmatic solutions. I am constantly working to improve my skills by exploring the latest
-            design trends, frameworks and technologies. My strength is in understanding business requirements and
+            Hey I&apos;m passionate about bringing together leading UX Design and effective Frontend Development to
+            deliver highly usable and pragmatic solutions. I am constantly working to improve my skills by exploring the
+            latest design trends, frameworks and technologies. My strength is in understanding business requirements and
             translating them into well designed, valuable solutions with practical functionality, communicating
             professionalism and a unique modern aesthetic that is both exciting and usable. With strong interpersonal
             instincts, I enjoy working closely with business owners to fully.{" "}
