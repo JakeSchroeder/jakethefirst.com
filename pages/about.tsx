@@ -51,7 +51,16 @@ const About: FC = () => {
       <Cursor />
       <Grid gap={{ base: 0, md: "12", xl: "20" }} py="10" templateColumns={{ base: "1fr", sm: "1fr", md: "1fr 1fr" }}>
         <GridItem>
-          <SlideFade in={true} offsetY="20px" delay={0.5}>
+          <SlideFade
+            in={true}
+            transition={{
+              enter: {
+                duration: 0.3,
+                ease: "easeIn",
+              },
+            }}
+            offsetY="20px"
+          >
             <Image src={picSrc} priority />
             <Heading display={{ base: "none", md: "block" }} as="h4" fontSize="lg" fontWeight="normal" pt="6">
               - Wengen, Switzerland

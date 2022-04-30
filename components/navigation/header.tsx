@@ -43,10 +43,18 @@ const Header: FC = () => {
             _after={{
               content: `"5"`,
               position: "absolute",
-              top: "-2px",
-              right: "-6px",
+              top: "-6px",
+              right: "-12px",
               fontSize: "10px",
-              fontWeight: "medium",
+              fontWeight: "bold",
+              width: "11px",
+              height: "11px",
+              background: "blue",
+              color: "white",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              // borderRadius: "50%",
             }}
           >
             <Link href="/projects">Projects</Link>
