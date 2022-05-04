@@ -101,35 +101,41 @@ const About: FC = () => {
         templateColumns={{ base: "1fr", sm: "1fr", md: "1fr 1fr" }}
       >
         <GridItem>
-          <SlideFade
-            in={true}
-            transition={{
-              enter: {
-                duration: 0.3,
-                ease: "easeIn",
-              },
-            }}
-            offsetY="20px"
-          >
-            <Image
-              src={picSrc}
-              placeholder="blur"
-              priority
-              alt="Jake in Wengen, Switzerland"
-            />
-            <Heading
-              display={{ base: "none", md: "block" }}
-              as="h4"
-              fontSize="lg"
-              fontWeight="normal"
-              pt="6"
+          <Box h="40vh">
+            <SlideFade
+              in={true}
+              transition={{
+                enter: {
+                  duration: 0.3,
+                  ease: "easeIn",
+                },
+              }}
+              delay={0.2}
+              offsetY="20px"
             >
-              - Wengen, Switzerland
-            </Heading>
-          </SlideFade>
+              <Image
+                src={picSrc}
+                placeholder="blur"
+                priority
+                alt="Jake in Wengen, Switzerland"
+              />
+              <Heading
+                display={{ base: "none", md: "block" }}
+                as="h4"
+                fontSize="lg"
+                fontWeight="normal"
+                pt="6"
+              >
+                - Wengen, Switzerland
+              </Heading>
+            </SlideFade>
+          </Box>
         </GridItem>
         <GridItem pt={{ base: "8", md: "0" }}>
           <VStack
+            pt="8"
+            borderTop="1px"
+            borderColor="border"
             h="100%"
             w="100%"
             justifyContent="space-between"
@@ -141,16 +147,16 @@ const About: FC = () => {
               borderColor="border"
             >
               <Heading as="h1" fontSize="lg" fontWeight="medium" pb="6">
-                Hell World,
+                Hell World...
               </Heading>
               <Text fontSize="md">
-                I started designing when I was 12 and wrote my first line of
-                Java when I was 13. I’ve always gravitated towards outlets for
-                passion and creativity. <br /> <br /> Its why I ❤️ art, music,
-                movies, cooking, woodworking, and the prusuit of happiness. I
-                live to learn. I found design and engineering and havent looked
-                back since. Currently, I am based in Chicago but looking for
-                work in California, Texas, Idaho, Washington, or Remote.
+                I’ve always gravitated towards outlets for passion and
+                creativity. Its why I ❤️ art, music, movies, exploring outdoors,
+                cooking, woodworking, and the human condition. I live to learn.
+                I found software, design and engineering at the age of 12 and
+                havent looked back since. Currently, I am based in Chicago, IL
+                but looking for work in California, Texas, Idaho, Washington, or
+                Remote.
               </Text>
             </Box>
             <VStack w="100%">

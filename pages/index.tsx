@@ -9,11 +9,16 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Jake Schroeder | Home | User Experience Designer, Software Engineer</title>
-        <meta name="description" content="User Experience Designer, Software Engineer, Personal Website" />
+        <title>
+          Jake Schroeder | Home | User Experience Designer, Software Engineer
+        </title>
+        <meta
+          name="description"
+          content="User Experience Designer, Software Engineer, Personal Website"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Cursor />
+      {/* <Cursor /> */}
       <TitleSection />
       <AboutSection />
       <DescriptionSection />

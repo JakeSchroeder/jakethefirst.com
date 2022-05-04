@@ -5,8 +5,8 @@ const Cursor: FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
   const prevCursorPos = useRef({
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2,
+    x: window?.innerWidth / 2,
+    y: window?.innerHeight / 2,
   });
   function lerp(start: number, end: number, amt: number) {
     return (1 - amt) * start + amt * end;
@@ -31,7 +31,11 @@ const Cursor: FC = () => {
         if (cursorRef.current)
           cursorRef.current.setAttribute(
             "style",
-            `transform: translate3d(${lerp(prevCursorPos.current.x, e.clientX - 24, 0.001)}px, ${lerp(
+            `transform: translate3d(${lerp(
+              prevCursorPos.current.x,
+              e.clientX - 24,
+              0.001
+            )}px, ${lerp(
               prevCursorPos.current.y,
               e.clientY - 24,
               0.001

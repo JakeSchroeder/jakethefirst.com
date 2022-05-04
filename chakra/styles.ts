@@ -12,6 +12,12 @@ const styles = {
       width: "100%",
       height: "100%",
     },
+    ".animated": {
+      width: "0vw !important",
+
+      visibility: "hidden",
+      right: "-46px !important",
+    },
   },
 };
 
