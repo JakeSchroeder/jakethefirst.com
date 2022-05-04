@@ -1,4 +1,14 @@
-import { Box, Grid, GridItem, Heading, HStack, List, ListItem, SlideFade, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  GridItem,
+  Heading,
+  HStack,
+  List,
+  ListItem,
+  SlideFade,
+  Text,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import { FC } from "react";
 
@@ -16,14 +26,19 @@ const DescriptionSection: FC = () => {
       >
         <SlideFade in={true} offsetY="20px" delay={1}>
           <Text>
-            “Good decisions come from experience, and experience comes from bad decisions.” ~Unknown Hey I&apos;m
-            passionate about bringing together leading UX Design and effective Frontend Development to deliver highly
-            usable and pragmatic solutions. I am constantly working to improve my skills by exploring the latest design
-            trends, frameworks and technologies. My strength is in understanding business requirements and translating
-            them into well designed, valuable solutions with practical functionality, communicating professionalism and
-            a unique modern aesthetic that is both exciting and usable. With strong interpersonal instincts, I enjoy
-            working closely with business owners to fully.{" "}
-            <Box as="span" pl="2" color="brand" fontWeight="medium" textDecoration="underline">
+            “Good decisions come from experience, and experience comes from bad
+            decisions.” ~Unknown <br /> <br />
+            Hey I&apos;m passionate about bringing together leading UX Design
+            and effective Frontend Development to deliver highly usable and
+            pragmatic solutions. I am constantly working to improve my skills by
+            exploring the latest design trends, frameworks and technologies.
+            <Box
+              as="span"
+              pl="2"
+              color="brand"
+              fontWeight="medium"
+              textDecoration="underline"
+            >
               <Link href="/about">More</Link>
             </Box>
           </Text>
@@ -36,12 +51,26 @@ const DescriptionSection: FC = () => {
               My Stack
             </Heading>
             <SlideFade in={true} offsetY="20px" delay={1.5}>
-              <Text color="brand" fontWeight="medium" textDecoration="underline" fontSize="md" pl="2">
+              <Text
+                color="brand"
+                fontWeight="medium"
+                textDecoration="underline"
+                fontSize="md"
+                pl="2"
+              >
                 <Link href="/projects">Projects</Link>
               </Text>
             </SlideFade>
           </HStack>
-          <Grid pt="8" gap="8" templateColumns={{ base: "1fr 1fr", sm: "1fr 1fr 1fr 1fr", md: "1fr 1fr 1fr 1fr" }}>
+          <Grid
+            pt="8"
+            gap="8"
+            templateColumns={{
+              base: "1fr 1fr",
+              sm: "1fr 1fr 1fr 1fr",
+              md: "1fr 1fr 1fr 1fr",
+            }}
+          >
             <GridItem>
               <List>
                 <ListItem> Figma</ListItem>

@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           ) : (
             <>
               <Container
-                maxW="1440px"
+                maxW="1500px"
                 h="100%"
                 px={{ base: "4", sm: "10" }}
                 display="flex"

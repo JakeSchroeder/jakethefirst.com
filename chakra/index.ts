@@ -12,8 +12,8 @@ const breakpoints = {
   lg: "900px",
   xl: "1200px",
   "2xl": "1536px",
-  container: "1600px",
-  mid: "1366px",
+  container: "1500px",
+  mid: "1500px",
 };
 
 const overrides = {
