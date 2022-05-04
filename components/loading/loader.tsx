@@ -3,7 +3,9 @@ import { FC, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 const logoAnimation = {
-  hidden: { opacity: 0 },
+  hide: {
+    opacity: 0,
+  },
   show: {
     opacity: 1,
     transition: {
@@ -13,7 +15,7 @@ const logoAnimation = {
 };
 
 const logoAnimationPath = {
-  hidden: { opacity: 0, x: 10 },
+  hide: { opacity: 0, x: 10 },
   show: { opacity: 1, x: 0 },
 };
 
@@ -24,14 +26,20 @@ const Logo: FC<LogoProps> = ({ isLoading }) => {
   // const controls = useAnimation();
 
   // useEffect(() => {
-  //   if (isLoading) {
-  //     controls.start("show");
+  //   if (!isLoading) {
+  //     controls.start({
+  //       opacity: 1,
+  //       transition: {
+  //         staggerChildren: 0.01,
+  //       },
+  //     });
   //   }
+  //   console.log("is loading, " + isLoading);
   // }, [isLoading]);
 
   return (
     <motion.svg
-      initial="hidden"
+      initial="hide"
       animate="show"
       variants={logoAnimation}
       width="46"
@@ -134,6 +142,7 @@ const Loader: FC<LoaderProps> = ({ isLoading }) => {
       }}
       animate={{
         width: isLoading ? "100vw" : "0vw",
+        right: isLoading ? 0 : -40,
       }}
       transition={{
         duration: 1,
