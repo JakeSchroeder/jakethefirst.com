@@ -9,8 +9,8 @@ import {
   SlideFade,
   Text,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import { FC } from "react";
+import TransitionLink from "../navigation/transitionlink";
 
 const DescriptionSection: FC = () => {
   return (
@@ -24,7 +24,16 @@ const DescriptionSection: FC = () => {
         borderColor="border"
         pb={{ base: "8", mid: "0" }}
       >
-        <SlideFade in={true} offsetY="20px" delay={1}>
+        <SlideFade
+          in={true}
+          offsetY="20px"
+          transition={{
+            enter: {
+              delay: 0.5,
+              duration: 0.5,
+            },
+          }}
+        >
           <Text>
             “Good decisions come from experience, and experience comes from bad
             decisions.” ~Unknown <br /> <br />
@@ -39,13 +48,22 @@ const DescriptionSection: FC = () => {
               fontWeight="medium"
               textDecoration="underline"
             >
-              <Link href="/about">More</Link>
+              <TransitionLink href="/about">More</TransitionLink>
             </Box>
           </Text>
         </SlideFade>
       </GridItem>
       <GridItem colSpan={2} pt={{ base: "8", mid: "0" }}>
-        <SlideFade in={true} offsetY="20px" delay={1}>
+        <SlideFade
+          in={true}
+          offsetY="20px"
+          transition={{
+            enter: {
+              delay: 0.5,
+              duration: 0.5,
+            },
+          }}
+        >
           <HStack w="100%" alignItems="center">
             <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium">
               My Stack
@@ -58,7 +76,7 @@ const DescriptionSection: FC = () => {
                 fontSize="md"
                 pl="2"
               >
-                <Link href="/projects">Projects</Link>
+                <TransitionLink href="/projects">Projects</TransitionLink>
               </Text>
             </SlideFade>
           </HStack>

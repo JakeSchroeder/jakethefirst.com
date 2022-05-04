@@ -1,4 +1,13 @@
-import { Box, Flex, Grid, GridItem, Heading, SlideFade, Text, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  SlideFade,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import { FC } from "react";
 
@@ -6,7 +15,11 @@ const AboutSection: FC = () => {
   return (
     <Grid
       py={{ base: "8", md: "6vh" }}
-      templateColumns={{ base: "1fr 1fr", lg: "1.3fr 1fr 1fr", mid: "1.35fr 1fr 1fr" }}
+      templateColumns={{
+        base: "1fr 1fr",
+        lg: "1.3fr 1fr 1fr",
+        mid: "1.35fr 1fr 1fr",
+      }}
       borderTop={["0", "1px solid #C7C7C7"]}
       borderBottom="1px solid"
       borderColor="border"
@@ -23,7 +36,8 @@ const AboutSection: FC = () => {
           offsetY="20px"
           transition={{
             enter: {
-              delay: 1,
+              delay: 0.5,
+              duration: 0.5,
             },
           }}
         >
@@ -44,17 +58,27 @@ const AboutSection: FC = () => {
           </Heading>
         </SlideFade>
       </GridItem>
-      <GridItem colSpan={{ base: 2, sm: 1, md: 1, mid: 1 }} display="flex" alignItems="center">
+      <GridItem
+        colSpan={{ base: 2, sm: 1, md: 1, mid: 1 }}
+        display="flex"
+        alignItems="center"
+      >
         <SlideFade
           transition={{
             enter: {
-              delay: 1,
+              delay: 0.5,
+              duration: 0.5,
             },
           }}
           in={true}
           offsetY="20px"
         >
-          <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
+          <Heading
+            as="h2"
+            fontSize={{ base: "md" }}
+            fontWeight="medium"
+            textAlign="left"
+          >
             Seeking Employment
           </Heading>
         </SlideFade>
@@ -92,11 +116,17 @@ const AboutSection: FC = () => {
           offsetY="20px"
           transition={{
             enter: {
-              delay: 1,
+              delay: 0.5,
+              duration: 0.5,
             },
           }}
         >
-          <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
+          <Heading
+            as="h2"
+            fontSize={{ base: "md" }}
+            fontWeight="medium"
+            textAlign="left"
+          >
             &quot;Theoretical +
             <Box display={{ base: "none", mid: "none" }}>
               <br />

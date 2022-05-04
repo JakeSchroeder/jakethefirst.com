@@ -8,23 +8,24 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, isValidMotionProp, motion } from "framer-motion";
 import Entrance from "../components/loading/entrance";
 import Loader from "../components/loading/loader";
+import Cursor from "../components/navigation/cursor";
 
 const ChakraAnimBox = chakra(motion.div, {
   shouldForwardProp: isValidMotionProp,
 });
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    window.onload = () => {
-      document.querySelector(".loading-screen")?.classList.toggle("animated");
-    };
-  }, []);
-
-  // useEffect(() => {
-  //   document.querySelector(".loading-screen")?.classList.toggle("animated");
-  // }, [router.asPath]);
+    router.events.on("routeChangeStart", (e) => {
+      console.log("IS the route changing");
+      setIsLoading(true);
+    });
+    router.events.on("routeChangeComplete", (e) => {
+      setIsLoading(false);
+    });
+  }, [router.events]);
 
   return (
     <>
@@ -32,8 +33,29 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ChakraProvider theme={theme}>
-        <AnimatePresence>
-          {/* {isLoading ? (
+        <Cursor />
+        <Loader isLoading={isLoading} />
+        <Container
+          maxW="1500px"
+          h="100%"
+          px={{ base: "4", sm: "10" }}
+          display="flex"
+          justifyContent="space-between"
+          flexDirection="column"
+        >
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </Container>
+      </ChakraProvider>
+    </>
+  );
+}
+
+{
+  /*
+  <AnimatedPresence>
+  {isLoading ? (
             <motion.div key="loader">
               <Entrance setIsLoading={setIsLoading} />
             </motion.div>
@@ -53,40 +75,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
                 <Footer />
               </Container>
             </>
-          )} */}
-          <>
-            <Loader />
-            <Container
-              maxW="1500px"
-              h="100%"
-              px={{ base: "4", sm: "10" }}
-              display="flex"
-              justifyContent="space-between"
-              flexDirection="column"
-            >
-              <Header />
-              <Component {...pageProps} />
-              <Footer />
-            </Container>
-          </>
-        </AnimatePresence>
-      </ChakraProvider>
-    </>
-  );
-}
-
-{
-  /* <motion.div
-key={router.route}
-initial={{ x: 0 }}
-animate={{ x: "100%" }}
-transition={{ type: "spring", stiffness: 100, duration: 1000 }}
-style={{ position: "fixed", height: "100%", width: "100%", background: "blue", zIndex: "999" }}
->
-<Container maxW="1440px" h="100%" w="100%" px={{ base: "4", sm: "10" }}>
-  <Start />
-</Container>
-</motion.div> */
+          )} </AnimatedPresence> */
 }
 
 export default MyApp;

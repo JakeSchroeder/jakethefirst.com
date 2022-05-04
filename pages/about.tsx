@@ -94,7 +94,6 @@ const ExperienceItem: FC<ExperienceItemProps> = ({
 const About: FC = () => {
   return (
     <>
-      <Cursor />
       <Grid
         gap={{ base: 0, md: "12", xl: "20" }}
         py="7vh"

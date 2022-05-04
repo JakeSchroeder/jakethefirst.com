@@ -22,7 +22,9 @@ const Footer: FC = () => {
           </Text>
 
           <Text fontSize="sm">
-            <Link href="https://www.linkedin.com/in/jake-schroeder/">LinkedIn</Link>
+            <Link href="https://www.linkedin.com/in/jake-schroeder/">
+              LinkedIn
+            </Link>
           </Text>
           <Text fontSize="sm" display={{ base: "none", md: "block" }}>
             jakeschroeder.me

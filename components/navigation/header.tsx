@@ -13,6 +13,7 @@ import { FC } from "react";
 import Menu from "./menu";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import TransitionLink from "./transitionlink";
 
 const logo = (
   <svg
@@ -64,7 +65,7 @@ const Header: FC = () => {
         <HStack>
           {logo}
           <Heading as="h3" fontSize="lg" fontWeight="medium">
-            <Link href="/">Jake Schroeder</Link>
+            <TransitionLink href="/">Jake Schroeder</TransitionLink>
           </Heading>
         </HStack>
         <UnorderedList
@@ -92,7 +93,7 @@ const Header: FC = () => {
               router.asPath === "/projects" ? "black" : "blackAlpha.500"
             }
           >
-            <Link href="/projects">Projects</Link>
+            <TransitionLink href="/projects">Projects</TransitionLink>
           </ListItem>
           <ListItem
             fontSize="md"
@@ -100,7 +101,7 @@ const Header: FC = () => {
             ml="8"
             textColor={router.asPath === "/about" ? "black" : "blackAlpha.500"}
           >
-            <Link href="/about">About</Link>
+            <TransitionLink href="/about">About</TransitionLink>
           </ListItem>
 
           <ListItem
@@ -111,7 +112,7 @@ const Header: FC = () => {
               router.asPath === "/contact" ? "black" : "blackAlpha.500"
             }
           >
-            <Link href="/contact">Contact</Link>
+            <TransitionLink href="/contact">Contact</TransitionLink>
           </ListItem>
         </UnorderedList>
 

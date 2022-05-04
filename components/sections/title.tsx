@@ -16,7 +16,16 @@ const TitleSection: FC = () => {
 
   return (
     <Flex display={{ base: "none", sm: "flex" }}>
-      <SlideFade in={true} offsetY={"-20px"} delay={1}>
+      <SlideFade
+        in={true}
+        offsetY="20px"
+        transition={{
+          enter: {
+            delay: 0.5,
+            duration: 0.5,
+          },
+        }}
+      >
         <Heading
           color="#3A3A3A"
           display="flex"
@@ -26,15 +35,26 @@ const TitleSection: FC = () => {
           fontWeight="black"
         >
           Powered by&nbsp;
-          <Typewriter
-            words={["Inspiration.", "Creativity.", "Abstraction.", "Code."]}
-            loop={1}
-            cursor
-            cursorStyle="_"
-            typeSpeed={140}
-            deleteSpeed={100}
-            delaySpeed={1500}
-          />
+          <SlideFade
+            in={true}
+            offsetY="20px"
+            transition={{
+              enter: {
+                delay: 0.5,
+                duration: 0.5,
+              },
+            }}
+          >
+            <Typewriter
+              words={["Inspiration.", "Creativity.", "Abstraction.", "Code."]}
+              loop={1}
+              cursor
+              cursorStyle="_"
+              typeSpeed={140}
+              deleteSpeed={100}
+              delaySpeed={1500}
+            />
+          </SlideFade>
         </Heading>
       </SlideFade>
     </Flex>

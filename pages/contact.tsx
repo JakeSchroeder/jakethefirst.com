@@ -18,7 +18,6 @@ const Contact: FC = () => {
 
   return (
     <>
-      <Cursor />
       <Center>
         <Heading
           ref={headingRef}

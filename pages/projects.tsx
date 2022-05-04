@@ -63,7 +63,6 @@ const ProjectItem: FC<ProjectItemProps> = ({ index, name, roles }) => {
 const Projects: FC = () => {
   return (
     <>
-      <Cursor />
       <VStack h="100%" justifyContent="space=between">
         <HStack w="100%" justifyContent="space-between" py="6vh">
           <Heading
