@@ -61,7 +61,7 @@ const About: FC = () => {
             }}
             offsetY="20px"
           >
-            <Image src={picSrc} priority />
+            <Image src={picSrc} placeholder="blur" priority />
             <Heading display={{ base: "none", md: "block" }} as="h4" fontSize="lg" fontWeight="normal" pt="6">
               - Wengen, Switzerland
             </Heading>
@@ -69,8 +69,8 @@ const About: FC = () => {
         </GridItem>
         <GridItem pt={{ base: "8", md: "0" }}>
           <VStack h="100%" w="100%" justifyContent="space-between" alignItems="flex-start">
-            <Box>
-              <Heading as="h1" fontSize="md" fontWeight="medium" pb="6">
+            <Box pb={{ base: 8, md: 0 }} borderBottom="1px" borderColor="border">
+              <Heading as="h1" fontSize="lg" fontWeight="medium" pb="6">
                 Hell World,
               </Heading>
               <Text fontSize="md">
@@ -96,8 +96,8 @@ const About: FC = () => {
                 start="Jan 2020"
                 end="Aug 2020"
               />
-              <ExperienceItem position="Web Consultant" company="Helios IPM" start="May 2016" end="Feb 2019" />
-              <ExperienceItem position="Web Consultant" company="Helios IPM" start="May 2016" end="Feb 2019" />
+              <ExperienceItem position="Web Consultant" company="Helios IPM" start="May 2017" end="Feb 2019" />
+              <ExperienceItem position="Freelance" company="Isophex" start="May 2016" end="Jan 2017" />
               <Flex
                 pt="6"
                 w="100%"
