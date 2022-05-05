@@ -33,7 +33,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ChakraProvider theme={theme}>
-        <Cursor />
         <Loader isLoading={isLoading} />
         <Container
           maxW="1500px"
