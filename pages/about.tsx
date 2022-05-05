@@ -16,6 +16,7 @@ import Link from "next/link";
 import { FC } from "react";
 import picSrc from "../public/swiss.jpeg";
 import Cursor from "../components/navigation/cursor";
+import Head from "next/head";
 
 const arrow = (
   <svg
@@ -94,6 +95,15 @@ const ExperienceItem: FC<ExperienceItemProps> = ({
 const About: FC = () => {
   return (
     <>
+      <Head>
+        <title>
+          Jake Schroeder | About | User Experience Designer, Software Engineer
+        </title>
+        <meta
+          name="description"
+          content="User Experience Designer, Software Engineer, Personal Website"
+        />
+      </Head>
       <Grid
         gap={{ base: 0, md: "12", xl: "20" }}
         py="7vh"

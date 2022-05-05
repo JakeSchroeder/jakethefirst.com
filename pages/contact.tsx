@@ -1,10 +1,20 @@
 import { Center, Heading } from "@chakra-ui/react";
+import Head from "next/head";
 import { FC, useEffect, useRef } from "react";
 import Cursor from "../components/navigation/cursor";
 
 const Contact: FC = () => {
   return (
     <>
+      <Head>
+        <title>
+          Jake Schroeder | Contact | User Experience Designer, Software Engineer
+        </title>
+        <meta
+          name="description"
+          content="User Experience Designer, Software Engineer, Personal Website"
+        />
+      </Head>
       <Cursor />
       <Center>
         <Heading

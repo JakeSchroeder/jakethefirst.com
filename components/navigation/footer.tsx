@@ -6,7 +6,7 @@ const Footer: FC = () => {
   return (
     <Fade style={{ width: "100%" }} in={true} delay={1}>
       <Flex
-        py="6vh"
+        py={{ base: "8", md: "6vh" }}
         w="100%"
         flexDir={{ base: "column", md: "row" }}
         justifyContent="space-between"

@@ -8,6 +8,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import Head from "next/head";
 import { FC } from "react";
 import Cursor from "../components/navigation/cursor";
 
@@ -43,15 +44,20 @@ const ProjectItem: FC<ProjectItemProps> = ({ index, name, roles }) => {
       borderColor="border"
     >
       <HStack>
-        <Heading fontWeight="medium" fontSize="lg">
+        <Heading fontWeight="medium" fontSize="md">
           {index}
         </Heading>
-        <Heading fontWeight="medium" fontSize="lg">
+        <Heading fontWeight="medium" fontSize="md">
           {name}
         </Heading>
       </HStack>
       <HStack>
-        <Heading fontWeight="normal" fontSize="lg" mr="4">
+        <Heading
+          display={{ base: "none", md: "block" }}
+          fontWeight="normal"
+          fontSize="sm"
+          mr="4"
+        >
           {roles}
         </Heading>
         {sideArrow}
@@ -63,15 +69,31 @@ const ProjectItem: FC<ProjectItemProps> = ({ index, name, roles }) => {
 const Projects: FC = () => {
   return (
     <>
-      <VStack h="100%" justifyContent="space=between">
-        <HStack w="100%" justifyContent="space-between" py="6vh">
+      <Head>
+        <title>
+          Jake Schroeder | Projects | User Experience Designer, Software
+          Engineer
+        </title>
+        <meta
+          name="description"
+          content="User Experience Designer, Software Engineer, Personal Website"
+        />
+      </Head>
+      <VStack justifyContent="space-between">
+        <HStack
+          w="100%"
+          justifyContent="space-between"
+          py={{ base: "8", md: "6vh" }}
+          flexDir={{ base: "column", md: "row" }}
+        >
           <Heading
             w="100%"
             fontSize={{ base: "14vw", sm: "6.4vw", mid: "100px" }}
+            pb="8"
           >
             Projects
           </Heading>
-          <Text w="100%">
+          <Text w="100%" fontSize={{ base: "sm", md: "lg" }}>
             Due to the nature of the projects I&apos;ve worked on, I’m not able
             to show everything here in my portfolio. If you’d like to see more
             feel free to{" "}
@@ -80,8 +102,13 @@ const Projects: FC = () => {
             </Text>
           </Text>
         </HStack>
-        <Grid alignItems="center" h="100%" w="100%" templateColumns="1fr 1fr">
-          <GridItem mr="15%">
+        <Grid
+          alignItems="center"
+          h="100%"
+          w="100%"
+          templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+        >
+          <GridItem mr="15%" display={{ base: "none", md: "block" }}>
             <Box bg="#e0e0e0" h="50vh" w="100%"></Box>
           </GridItem>
           <GridItem>

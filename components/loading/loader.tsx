@@ -35,6 +35,7 @@ const Logo: FC<LogoProps> = ({ isLoading }) => {
     }
 
     console.log("is loading, " + isLoading);
+    /* eslint-disable */
   }, [isLoading]);
 
   return (

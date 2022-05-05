@@ -15,14 +15,15 @@ import TransitionLink from "../navigation/transitionlink";
 const DescriptionSection: FC = () => {
   return (
     <Grid
-      gap={{ base: "0", mid: "5%" }}
-      templateColumns={{ base: "1fr", mid: "1.3fr  1fr 1fr" }}
-      py={{ base: "8", mid: "6vh" }}
+      gap={{ base: "0", md: "5%" }}
+      templateColumns={{ base: "1fr", lg: "1.3fr  1fr 1fr" }}
+      py={{ base: "8", md: "6vh" }}
+      alignItems="center"
     >
       <GridItem
         borderBottom={{ base: "1px solid", md: "0", mid: "0" }}
         borderColor="border"
-        pb={{ base: "8", mid: "0" }}
+        pb={{ base: "8", lg: "0" }}
       >
         <SlideFade
           in={true}
@@ -53,7 +54,7 @@ const DescriptionSection: FC = () => {
           </Text>
         </SlideFade>
       </GridItem>
-      <GridItem colSpan={2} pt={{ base: "8", mid: "0" }}>
+      <GridItem colSpan={2} pt={{ base: "8", md: "0" }}>
         <SlideFade
           in={true}
           offsetY="20px"
