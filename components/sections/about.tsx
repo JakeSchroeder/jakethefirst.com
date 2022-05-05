@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { FC } from "react";
+import TransitionLink from "../navigation/transitionlink";
 
 const AboutSection: FC = () => {
   return (
@@ -100,7 +101,7 @@ const AboutSection: FC = () => {
             fontSize="md"
             textAlign="left"
           >
-            <Link href="/contact">Contact</Link>
+            <TransitionLink href="/contact">Contact</TransitionLink>
           </Text>
         </SlideFade>
       </GridItem>
@@ -152,7 +153,7 @@ const AboutSection: FC = () => {
             fontSize="md"
             textAlign="left"
           >
-            <Link href="/about">About</Link>
+            <TransitionLink href="/about">About</TransitionLink>
           </Text>
         </SlideFade>
       </GridItem>
