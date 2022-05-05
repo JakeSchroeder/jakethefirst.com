@@ -136,7 +136,7 @@ const Loader: FC<LoaderProps> = ({ isLoading }) => {
         position: "fixed",
         top: 0,
         right: 0,
-        zIndex: "999",
+        zIndex: "9999",
         height: "100vh",
         width: "100vw",
       }}
