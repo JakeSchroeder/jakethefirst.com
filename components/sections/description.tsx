@@ -18,7 +18,7 @@ const DescriptionSection: FC = () => {
       gap={{ base: "0", md: "5%" }}
       templateColumns={{ base: "1fr", lg: "1.3fr  1fr 1fr" }}
       py={{ base: "8", md: "6vh" }}
-      alignItems="center"
+      alignItems="flex-start"
     >
       <GridItem
         borderBottom={{ base: "1px solid", md: "0", mid: "0" }}
@@ -38,10 +38,10 @@ const DescriptionSection: FC = () => {
           <Text>
             “Good decisions come from experience, and experience comes from bad
             decisions.” ~Unknown <br /> <br />
-            Hey I&apos;m passionate about bringing together leading UX Design
-            and effective Frontend Development to deliver highly usable and
-            pragmatic solutions. I am constantly working to improve my skills by
-            exploring the latest design trends, frameworks and technologies.
+            Hey I&apos;m Jake - passionate about bringing together leading UX
+            Design and solid Engineering to deliver highly usable yet beautiful
+            solutions. I am constantly working to improve my skills by exploring
+            the latest design trends, frameworks and technologies.
             <Box
               as="span"
               pl="2"

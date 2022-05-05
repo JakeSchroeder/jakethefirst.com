@@ -79,6 +79,7 @@ const Projects: FC = () => {
           content="User Experience Designer, Software Engineer, Personal Website"
         />
       </Head>
+      <Cursor />
       <VStack justifyContent="space-between">
         <HStack
           w="100%"
@@ -97,7 +98,12 @@ const Projects: FC = () => {
             Due to the nature of the projects I&apos;ve worked on, I’m not able
             to show everything here in my portfolio. If you’d like to see more
             feel free to{" "}
-            <Text as="span" color="brand" fontWeight="medium">
+            <Text
+              as="span"
+              color="brand"
+              fontWeight="medium"
+              textDecor="underline"
+            >
               <a href="mailto://jake.schroeder001@gmail.com">email me.</a>
             </Text>
           </Text>

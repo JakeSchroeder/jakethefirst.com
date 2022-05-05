@@ -95,8 +95,9 @@ const Header: FC = () => {
               justifyContent: "center",
             }}
             textColor={
-              router.asPath === "/projects" ? "black" : "blackAlpha.500"
+              router.asPath === "/projects" ? "black" : "blackAlpha.700"
             }
+            textDecorationColor="blackAlpha.600"
             _hover={{ textDecor: "underline" }}
           >
             <TransitionLink href="/projects">Projects</TransitionLink>
@@ -105,8 +106,9 @@ const Header: FC = () => {
             fontSize="md"
             fontWeight="normal"
             ml="8"
-            textColor={router.asPath === "/about" ? "black" : "blackAlpha.500"}
+            textColor={router.asPath === "/about" ? "black" : "blackAlpha.700"}
             _hover={{ textDecor: "underline" }}
+            textDecorationColor="blackAlpha.600"
           >
             <TransitionLink href="/about">About</TransitionLink>
           </ListItem>
@@ -116,8 +118,9 @@ const Header: FC = () => {
             fontWeight="normal"
             ml="8"
             textColor={
-              router.asPath === "/contact" ? "black" : "blackAlpha.500"
+              router.asPath === "/contact" ? "black" : "blackAlpha.700"
             }
+            textDecorationColor="blackAlpha.600"
             _hover={{ textDecor: "underline" }}
           >
             <TransitionLink href="/contact">Contact</TransitionLink>

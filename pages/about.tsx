@@ -5,8 +5,6 @@ import {
   GridItem,
   Heading,
   HStack,
-  Icon,
-  ScaleFade,
   SlideFade,
   Text,
   VStack,
@@ -104,6 +102,7 @@ const About: FC = () => {
           content="User Experience Designer, Software Engineer, Personal Website"
         />
       </Head>
+      <Cursor />
       <Grid
         gap={{ base: 0, md: "12", xl: "20" }}
         py="7vh"
