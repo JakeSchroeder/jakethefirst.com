@@ -100,7 +100,7 @@ const About: FC = () => {
         templateColumns={{ base: "1fr", sm: "1fr", md: "1fr 1fr" }}
       >
         <GridItem>
-          <Box h="40vh">
+          <Box>
             <SlideFade
               in={true}
               transition={{

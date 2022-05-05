@@ -6,9 +6,7 @@ import {
   Heading,
   SlideFade,
   Text,
-  useDisclosure,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import { FC } from "react";
 import TransitionLink from "../navigation/transitionlink";
 

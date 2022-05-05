@@ -64,7 +64,12 @@ const Header: FC = () => {
       >
         <HStack>
           {logo}
-          <Heading as="h3" fontSize="lg" fontWeight="medium">
+          <Heading
+            as="h3"
+            fontSize="lg"
+            fontWeight="medium"
+            _hover={{ textDecor: "underline" }}
+          >
             <TransitionLink href="/">Jake Schroeder</TransitionLink>
           </Heading>
         </HStack>
@@ -92,6 +97,7 @@ const Header: FC = () => {
             textColor={
               router.asPath === "/projects" ? "black" : "blackAlpha.500"
             }
+            _hover={{ textDecor: "underline" }}
           >
             <TransitionLink href="/projects">Projects</TransitionLink>
           </ListItem>
@@ -100,6 +106,7 @@ const Header: FC = () => {
             fontWeight="normal"
             ml="8"
             textColor={router.asPath === "/about" ? "black" : "blackAlpha.500"}
+            _hover={{ textDecor: "underline" }}
           >
             <TransitionLink href="/about">About</TransitionLink>
           </ListItem>
@@ -111,6 +118,7 @@ const Header: FC = () => {
             textColor={
               router.asPath === "/contact" ? "black" : "blackAlpha.500"
             }
+            _hover={{ textDecor: "underline" }}
           >
             <TransitionLink href="/contact">Contact</TransitionLink>
           </ListItem>

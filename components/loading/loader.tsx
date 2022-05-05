@@ -23,24 +23,24 @@ interface LogoProps {
   isLoading: boolean;
 }
 const Logo: FC<LogoProps> = ({ isLoading }) => {
-  // const controls = useAnimation();
+  const controls = useAnimation();
 
-  // useEffect(() => {
-  //   if (!isLoading) {
-  //     controls.start({
-  //       opacity: 1,
-  //       transition: {
-  //         staggerChildren: 0.01,
-  //       },
-  //     });
-  //   }
-  //   console.log("is loading, " + isLoading);
-  // }, [isLoading]);
+  useEffect(() => {
+    if (isLoading) {
+      controls.set("hide");
+      controls.start("show");
+    } else {
+      controls.set("hide");
+      controls.start("show");
+    }
+
+    console.log("is loading, " + isLoading);
+  }, [isLoading]);
 
   return (
     <motion.svg
-      initial="hide"
-      animate="show"
+      initial={"hide"}
+      animate={controls}
       variants={logoAnimation}
       width="46"
       height="25"
