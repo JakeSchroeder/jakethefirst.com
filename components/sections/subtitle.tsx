@@ -10,7 +10,7 @@ import {
 import { FC } from "react";
 import TransitionLink from "../navigation/transitionlink";
 
-const AboutSection: FC = () => {
+const Subtitle: FC = () => {
   return (
     <Grid
       py={{ base: "8", md: "6vh" }}
@@ -159,4 +159,4 @@ const AboutSection: FC = () => {
   );
 };
 
-export default AboutSection;
+export default Subtitle;
