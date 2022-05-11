@@ -254,13 +254,14 @@ const Projects: FC = () => {
               <Box py="16">
                 <Grid templateColumns="1fr 1fr">
                   <GridItem>
-                    For over 6 months my roomate and I did a complete deep dive into make makes the web, the web. My
-                    goal was to onboard my roomate into the world of web development and show him to ropes. In doing so
+                    For over 6 months my roomate and I did a complete deep dive into what makes the web, the web. My
+                    goal was to onboard my roomate into the world of web development and show him the ropes. In doing so
                     we came across a number of difficulties and gaps of understanding regarding the tooling. Using
-                    pakcages like npm, node task runners, and other development tooling became a realstruggle. What we
-                    decided is that their should be a better way of doing development. Instead of relying on a local
-                    environment to match the libraries and frameworks make it all remote and version everything to a
-                    docker file that the library maintainers specify. Then you can make sure the tooling will work.
+                    packages like npm, node task runners, and other development tooling became a real struggle. We
+                    decided there should be a better way of doing development. Instead of relying on a local environment
+                    to match the libraries and frameworks make it all remote and version everything to a docker file
+                    that the library maintainers specify. Then you can make sure the tooling will work. Welcome to
+                    Vazer.
                   </GridItem>
                   <GridItem></GridItem>
                 </Grid>
@@ -295,9 +296,9 @@ const Projects: FC = () => {
                   </HStack>
 
                   <Text fontSize="md">
-                    Frontier{" "}
+                    Frontier Audio
                     <Box as="span" fontWeight="bold">
-                      Audio 01/04
+                      01/04
                     </Box>
                   </Text>
                 </VStack>
