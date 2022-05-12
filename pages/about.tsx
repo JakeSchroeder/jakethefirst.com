@@ -155,7 +155,7 @@ const About: FC = () => {
               borderColor="border"
             >
               <Heading as="h1" fontSize="lg" fontWeight="medium" pb="6">
-                Hell World...
+                Hello World...
               </Heading>
               <Text fontSize="md">
                 I’ve always gravitated towards outlets for passion and
