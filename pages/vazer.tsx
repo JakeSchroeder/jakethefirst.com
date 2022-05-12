@@ -167,3 +167,5 @@ const Vazer: FC = () => {
     </Container>
   );
 };
+
+export default Vazer;
