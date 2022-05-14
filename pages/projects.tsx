@@ -183,6 +183,7 @@ const Projects: FC = () => {
                   transform: currentProject.imgSrc === frontierThumb ? "scale(1)" : "scale(1.4)",
                   transition: "transform 4s cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
+                placeholder="blur"
                 objectFit="cover"
                 objectPosition="50% 50%"
                 layout="fill"
