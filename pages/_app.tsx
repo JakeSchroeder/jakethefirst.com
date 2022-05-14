@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <Loader isLoading={isLoading} />
         <Container
           maxW="1500px"
-          h="100%"
+          minH="100%"
           px={{ base: "4", sm: "10" }}
           display="flex"
           justifyContent="space-between"

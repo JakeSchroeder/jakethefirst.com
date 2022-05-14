@@ -22,7 +22,7 @@ const TransitionLink: FC<TransitionLinkProps> = ({ href, children, className }) 
 
   return (
     <Link href={href}>
-      <a onClick={transition} style={{ width: "100%", cursor: "pointer" }}>
+      <a onClick={transition} style={{ width: "100%", cursor: "pointer !important" }}>
         {children}
       </a>
     </Link>

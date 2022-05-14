@@ -7,25 +7,19 @@ const Contact: FC = () => {
   return (
     <>
       <Head>
-        <title>
-          Jake Schroeder | Contact | User Experience Designer, Software Engineer
-        </title>
-        <meta
-          name="description"
-          content="User Experience Designer, Software Engineer, Personal Website"
-        />
+        <title>Jake Schroeder | Contact | User Experience Designer, Software Engineer</title>
+        <meta name="description" content="User Experience Designer, Software Engineer, Personal Website" />
       </Head>
       <Cursor />
       <Center>
         <Heading
-          fontSize="4.9vw"
+          fontSize={{ base: "4.9vw", mid: "90px" }}
           as="h1"
+          fontWeight="black"
           textDecoration="underline"
           _hover={{ color: "brand" }}
         >
-          <a href="mailto:jake.schroeder001@gmail.com">
-            jake.schroeder001@gmail.com
-          </a>
+          <a href="mailto:jake.schroeder001@gmail.com">jake.schroeder001@gmail.com</a>
         </Heading>
       </Center>
     </>

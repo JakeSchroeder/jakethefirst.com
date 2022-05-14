@@ -9,6 +9,7 @@ import heliosThumb from "../public/thumbnail-helios.jpg";
 import frontierThumb from "../public/thumbnail-frontier.jpg";
 import vazerThumb from "../public/thumbnail-vazer.jpg";
 import isophexThumb from "../public/thumbnail-isophex.jpg";
+import TransitionLink from "../components/navigation/transitionlink";
 
 const sideArrow = (
   <svg
@@ -44,6 +45,7 @@ const BoxProject = styled(Box)`
   }
 `;
 interface ProjectItemProps {
+  link: string;
   index: number;
   name: string;
   roles: string;
@@ -54,6 +56,7 @@ interface ProjectItemProps {
 }
 
 const ProjectItem: FC<ProjectItemProps> = ({
+  link,
   onClick,
   currentProject,
   imgSrc,
@@ -63,63 +66,62 @@ const ProjectItem: FC<ProjectItemProps> = ({
   roles,
 }) => {
   return (
-    <BoxProject
-      as="a"
-      cursor="pointer"
-      onClick={() => {
-        onClick();
-      }}
-      onMouseEnter={() => {
-        setCurrentProject({
-          imgSrc: imgSrc,
-          alt: "",
-          index: index,
-        });
-      }}
-      w="100%"
-      transition="opacity .6s cubic-bezier(0.87, 0, 0.13, 1)"
-      className={`${index === currentProject.index ? `project-box active` : `project-box deactive`}`}
-    >
-      <HStackHover
-        className="project-item"
-        position="relative"
-        as="li"
-        justifyContent="space-between"
-        w="100%"
-        py="8"
-        mt="0 !important"
-        borderBottom="1px"
-        borderColor="border"
-        _after={{
-          content: '" "',
-          position: "absolute",
-          left: 0,
-          bottom: 0,
-          height: "1px",
-          width: "0",
-          background: "black",
-          transition: "width 0.6s cubic-bezier(0.87, 0, 0.13, 1)",
+    <TransitionLink href={link}>
+      <BoxProject
+        as="div"
+        cursor="pointer"
+        // onClick={() => {
+        //   onClick();
+        // }}
+        onMouseEnter={() => {
+          setCurrentProject({
+            imgSrc: imgSrc,
+            alt: "",
+            index: index,
+          });
         }}
+        w="100%"
+        transition="opacity .6s cubic-bezier(0.87, 0, 0.13, 1)"
+        className={`${index === currentProject.index ? `project-box active` : `project-box deactive`}`}
       >
-        <HStack>
-          <Heading fontWeight="medium" fontSize="md">
-            {index}
-          </Heading>
-          <Heading fontWeight="medium" fontSize="md">
-            {name}
-          </Heading>
-        </HStack>
-        <HStack>
-          <Heading display={{ base: "none", md: "block" }} fontWeight="normal" fontSize="sm" mr="4">
-            {roles}
-          </Heading>
-          {sideArrow}
-        </HStack>
-      </HStackHover>
-      {/* <TransitionLink href="/project/[id]">
-        
-      </TransitionLink> */}
-    </BoxProject>
+        <HStackHover
+          className="project-item"
+          position="relative"
+          as="li"
+          justifyContent="space-between"
+          w="100%"
+          py="8"
+          mt="0 !important"
+          borderBottom="1px"
+          borderColor="border"
+          _after={{
+            content: '" "',
+            position: "absolute",
+            left: 0,
+            bottom: 0,
+            height: "1px",
+            width: "0",
+            background: "black",
+            transition: "width 0.6s cubic-bezier(0.87, 0, 0.13, 1)",
+          }}
+        >
+          <HStack>
+            <Heading fontWeight="medium" fontSize="md">
+              {index}
+            </Heading>
+            <Heading fontWeight="medium" fontSize="md">
+              {name}
+            </Heading>
+          </HStack>
+          <HStack>
+            <Heading display={{ base: "none", md: "block" }} fontWeight="normal" fontSize="sm" mr="4">
+              {roles}
+            </Heading>
+            {sideArrow}
+          </HStack>
+        </HStackHover>
+      </BoxProject>
+    </TransitionLink>
   );
 };
 
@@ -258,6 +260,7 @@ const Projects: FC = () => {
           <GridItem>
             <VStack w="100%" justifyContent="flex-end" as="ul">
               <ProjectItem
+                link="/projects/frontier"
                 onClick={onOpen}
                 currentProject={currentProject}
                 setCurrentProject={setCurrentProject}
@@ -266,7 +269,9 @@ const Projects: FC = () => {
                 roles="Desktop Engineering, Design, Project Management"
                 imgSrc={frontierThumb}
               />
+
               <ProjectItem
+                link="/projects/vazer"
                 onClick={onOpen}
                 currentProject={currentProject}
                 setCurrentProject={setCurrentProject}
@@ -276,6 +281,7 @@ const Projects: FC = () => {
                 imgSrc={vazerThumb}
               />
               <ProjectItem
+                link="/projects/helios"
                 onClick={onOpen}
                 currentProject={currentProject}
                 setCurrentProject={setCurrentProject}
@@ -285,6 +291,7 @@ const Projects: FC = () => {
                 imgSrc={heliosThumb}
               />
               <ProjectItem
+                link="/projects/isophex"
                 onClick={onOpen}
                 currentProject={currentProject}
                 setCurrentProject={setCurrentProject}
