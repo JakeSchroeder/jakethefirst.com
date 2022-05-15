@@ -1,4 +1,4 @@
-import { Center, Heading } from "@chakra-ui/react";
+import { Center, Heading, SlideFade } from "@chakra-ui/react";
 import Head from "next/head";
 import { FC, useEffect, useRef } from "react";
 import Cursor from "../components/navigation/cursor";
@@ -12,15 +12,27 @@ const Contact: FC = () => {
       </Head>
       <Cursor />
       <Center>
-        <Heading
-          fontSize={{ base: "4.9vw", mid: "90px" }}
-          as="h1"
-          fontWeight="black"
-          textDecoration="underline"
-          _hover={{ color: "brand" }}
+        <SlideFade
+          style={{ width: "100%" }}
+          in={true}
+          offsetY="20px"
+          transition={{
+            enter: {
+              delay: 0.5,
+              duration: 0.5,
+            },
+          }}
         >
-          <a href="mailto:jake.schroeder001@gmail.com">jake.schroeder001@gmail.com</a>
-        </Heading>
+          <Heading
+            fontSize={{ base: "4.9vw", mid: "90px" }}
+            as="h1"
+            fontWeight="black"
+            textDecoration="underline"
+            _hover={{ color: "brand" }}
+          >
+            <a href="mailto:jake.schroeder001@gmail.com">jake.schroeder001@gmail.com</a>
+          </Heading>
+        </SlideFade>
       </Center>
     </>
   );
