@@ -42,19 +42,20 @@ const Project: FC<ProjectProps> = ({
       <Cursor />
       <Box w="100%" pt="6vh">
         <Box px="0" pb="16" display="flex" borderBottom="1px" borderColor="border">
-          <Grid templateColumns="1fr 1fr 1fr 1fr" alignItems="center">
+          <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr 1fr" }} alignItems="center">
             <GridItem>
-              <Heading fontSize="6xl">{name}</Heading>
+              <Heading fontSize="6xl" mr="6">
+                {name}
+              </Heading>
             </GridItem>
-            <GridItem>
+            <GridItem pb={{ base: "4", lg: "0" }}>
               <Text cursor="pointer" fontSize="md" fontWeight="normal" textDecor="underline">
                 <a target="_blank" href={link} rel="noreferrer">
                   {link}
                 </a>
               </Text>
             </GridItem>
-
-            <GridItem colSpan={2}>
+            <GridItem colSpan={{ base: 1, lg: 2 }}>
               <Text fontSize="md" fontWeight="normal">
                 {description}
               </Text>
@@ -69,7 +70,7 @@ const Project: FC<ProjectProps> = ({
             </Heading>
           </Flex>
           <Box borderBottom="1px" borderColor="border" py="16">
-            <Grid templateColumns="1fr 1fr 1fr 1fr">
+            <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr 1fr" }} gap={{ base: "6", lg: "0" }}>
               <GridItem>
                 <Heading fontSize="xl" mb="4">
                   Project Timeline
@@ -105,7 +106,7 @@ const Project: FC<ProjectProps> = ({
             </Grid>
           </Box>
           <Box py="16">
-            <Grid templateColumns="1fr 1fr">
+            <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }}>
               <GridItem>{subDescription}</GridItem>
               <GridItem></GridItem>
             </Grid>
