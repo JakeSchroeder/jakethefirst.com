@@ -1,21 +1,4 @@
 import { FC } from "react";
-import {
-  Box,
-  Container,
-  Flex,
-  Grid,
-  GridItem,
-  Heading,
-  HStack,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  Text,
-} from "@chakra-ui/react";
 
 import vazer1 from "../../public/vazer1.jpg";
 import vazer2 from "../../public/vazer2.jpg";

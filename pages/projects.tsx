@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Heading, HStack, Text, useDisclosure, VStack } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, HStack, Modal, SlideFade, Text, useDisclosure, VStack } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import Head from "next/head";
 import Image, { StaticImageData } from "next/image";
@@ -10,6 +10,7 @@ import frontierThumb from "../public/thumbnail-frontier.jpg";
 import vazerThumb from "../public/thumbnail-vazer.jpg";
 import isophexThumb from "../public/thumbnail-isophex.jpg";
 import TransitionLink from "../components/navigation/transitionlink";
+import { useRouter } from "next/router";
 
 const sideArrow = (
   <svg
@@ -140,6 +141,9 @@ const Projects: FC = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef(null);
+
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -147,7 +151,6 @@ const Projects: FC = () => {
         <meta name="description" content="User Experience Designer, Software Engineer, Personal Website" />
       </Head>
       <Cursor />
-
       <VStack justifyContent="space-between">
         <HStack
           w="100%"
@@ -155,16 +158,40 @@ const Projects: FC = () => {
           py={{ base: "8", md: "6vh" }}
           flexDir={{ base: "column", md: "row" }}
         >
-          <Heading w="100%" fontSize={{ base: "14vw", sm: "6.4vw", mid: "100px" }} pb="8">
-            Projects
-          </Heading>
-          <Text w="100%" fontSize={{ base: "sm", md: "lg" }}>
-            Due to the nature of the projects I&apos;ve worked on, I’m not able to show everything here in my portfolio.
-            If you’d like to see more feel free to{" "}
-            <Text as="span" color="brand" fontWeight="medium" textDecor="underline">
-              <a href="mailto://jake.schroeder001@gmail.com">email me.</a>
+          <SlideFade
+            style={{ width: "100%" }}
+            in={true}
+            offsetY="20px"
+            transition={{
+              enter: {
+                delay: 0.5,
+                duration: 0.5,
+              },
+            }}
+          >
+            <Heading w="100%" fontSize={{ base: "14vw", sm: "6.4vw", mid: "100px" }} pb="8">
+              Projects
+            </Heading>
+          </SlideFade>
+          <SlideFade
+            style={{ width: "100%" }}
+            in={true}
+            offsetY="20px"
+            transition={{
+              enter: {
+                delay: 0.5,
+                duration: 0.5,
+              },
+            }}
+          >
+            <Text w="100%" fontSize={{ base: "sm", md: "lg" }}>
+              Due to the nature of the projects I&apos;ve worked on, I’m not able to show everything here in my
+              portfolio. If you’d like to see more feel free to{" "}
+              <Text as="span" color="brand" fontWeight="medium" textDecor="underline">
+                <a href="mailto://jake.schroeder001@gmail.com">email me.</a>
+              </Text>
             </Text>
-          </Text>
+          </SlideFade>
         </HStack>
         <Grid h="100%" w="100%" templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
           <GridItem position="relative" w="90%" h="500px" overflow="hidden" display={{ base: "none", md: "block" }}>
@@ -191,6 +218,7 @@ const Projects: FC = () => {
                 alt="Frontier Screen Preview"
               />
             </Box>
+
             <Box
               position="absolute"
               top="0"
@@ -260,47 +288,94 @@ const Projects: FC = () => {
           </GridItem>
           <GridItem>
             <VStack w="100%" justifyContent="flex-end" as="ul">
-              <ProjectItem
-                link="/projects/frontier"
-                onClick={onOpen}
-                currentProject={currentProject}
-                setCurrentProject={setCurrentProject}
-                index={1}
-                name="Frontier Audio"
-                roles="Desktop Engineering, Design, Project Management"
-                imgSrc={frontierThumb}
-              />
-
-              <ProjectItem
-                link="/projects/vazer"
-                onClick={onOpen}
-                currentProject={currentProject}
-                setCurrentProject={setCurrentProject}
-                index={2}
-                name="Vazer"
-                roles="Web Design, Systems Design, Software Engineering"
-                imgSrc={vazerThumb}
-              />
-              <ProjectItem
-                link="/projects/helios"
-                onClick={onOpen}
-                currentProject={currentProject}
-                setCurrentProject={setCurrentProject}
-                index={3}
-                name="Helios IPM"
-                roles="Web Design, Fullstack Web Development"
-                imgSrc={heliosThumb}
-              />
-              <ProjectItem
-                link="/projects/isophex"
-                onClick={onOpen}
-                currentProject={currentProject}
-                setCurrentProject={setCurrentProject}
-                index={4}
-                name="Isophex"
-                roles="Web Design, Fullstack Web Development, Freelance"
-                imgSrc={isophexThumb}
-              />
+              <SlideFade
+                style={{ width: "100%" }}
+                in={true}
+                offsetY="20px"
+                transition={{
+                  enter: {
+                    delay: 0.5,
+                    duration: 0.5,
+                  },
+                }}
+              >
+                <ProjectItem
+                  link="/projects/frontier"
+                  onClick={onOpen}
+                  currentProject={currentProject}
+                  setCurrentProject={setCurrentProject}
+                  index={1}
+                  name="Frontier Audio"
+                  roles="Desktop Engineering, Design, Project Management"
+                  imgSrc={frontierThumb}
+                />
+              </SlideFade>
+              <SlideFade
+                style={{ width: "100%" }}
+                in={true}
+                offsetY="20px"
+                transition={{
+                  enter: {
+                    delay: 0.55,
+                    duration: 0.5,
+                  },
+                }}
+              >
+                <ProjectItem
+                  link="/projects/vazer"
+                  onClick={onOpen}
+                  currentProject={currentProject}
+                  setCurrentProject={setCurrentProject}
+                  index={2}
+                  name="Vazer"
+                  roles="Web Design, Systems Design, Software Engineering"
+                  imgSrc={vazerThumb}
+                />
+              </SlideFade>
+              <SlideFade
+                style={{ width: "100%" }}
+                in={true}
+                offsetY="20px"
+                transition={{
+                  enter: {
+                    delay: 0.6,
+                    duration: 0.5,
+                  },
+                }}
+              >
+                <ProjectItem
+                  link="/projects/helios"
+                  onClick={onOpen}
+                  currentProject={currentProject}
+                  setCurrentProject={setCurrentProject}
+                  index={3}
+                  name="Helios IPM"
+                  roles="Web Design, Fullstack Web Development"
+                  imgSrc={heliosThumb}
+                />
+              </SlideFade>
+              <SlideFade
+                style={{ width: "100%" }}
+                in={true}
+                offsetY="20px"
+                transition={{
+                  enter: {
+                    delay: 0.65,
+                    duration: 0.5,
+                  },
+                }}
+              >
+                <ProjectItem
+                  link="/projects/isophex"
+                  onClick={onOpen}
+                  currentProject={currentProject}
+                  setCurrentProject={setCurrentProject}
+                  index={4}
+                  name="Isophex"
+                  roles="Web Design, Fullstack Web Development, Freelance"
+                  imgSrc={isophexThumb}
+                />
+              </SlideFade>
             </VStack>
           </GridItem>
         </Grid>

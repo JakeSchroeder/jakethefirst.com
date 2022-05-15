@@ -48,7 +48,7 @@ const Project: FC<ProjectProps> = ({
             </GridItem>
             <GridItem>
               <Text cursor="pointer" fontSize="md" fontWeight="normal" textDecor="underline">
-                <a target="_blank" href="https://vazer.io" rel="noreferrer">
+                <a target="_blank" href={link} rel="noreferrer">
                   {link}
                 </a>
               </Text>
@@ -112,7 +112,7 @@ const Project: FC<ProjectProps> = ({
           </Box>
           {images.map((image, index) => (
             <Box py="16" key={index}>
-              <Image layout="responsive" src={image} alt="Vazer Home Screen" />
+              <Image priority placeholder="blur" layout="responsive" src={image} alt="Vazer Home Screen" />
             </Box>
           ))}
         </Box>
