@@ -6,7 +6,7 @@ import isophex2 from "../../public/isophex2.jpg";
 const Isophex: FC = () => {
   return (
     <Project
-      order="01/04"
+      order="04/04"
       name="Isophex"
       link="https://isophex.com"
       description="Digital Studio Based in New York, New York and Chicago, IL Design, Working to solve your problems with creative design solutions."
