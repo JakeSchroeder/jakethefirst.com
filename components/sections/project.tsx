@@ -39,7 +39,7 @@ const Project: FC<ProjectProps> = ({
 }) => {
   return (
     <>
-      <Cursor />
+      {/* <Cursor /> */}
       <Box w="100%" pt="6vh">
         <Box px="0" pb="16" display="flex" borderBottom="1px" borderColor="border">
           <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr 1fr" }} alignItems="center">

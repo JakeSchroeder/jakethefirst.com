@@ -177,7 +177,9 @@ const Projects: FC = () => {
         <meta name="description" content="User Experience Designer, Software Engineer, Personal Website" />
       </Head>
       <Cursor />
+
       <Modal
+        motionPreset="none"
         isOpen={!!router.query.project}
         onClose={() => {
           router.push("/projects");
