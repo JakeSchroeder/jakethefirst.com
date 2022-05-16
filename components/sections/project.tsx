@@ -121,20 +121,21 @@ const Project: FC<ProjectProps> = ({
           <HStack w="100%" justifyContent="space-between">
             <VStack>
               <HStack>
-                <svg
-                  style={{ transform: "rotate(-180deg)" }}
-                  width="52"
-                  height="52"
-                  viewBox="0 0 52 52"
+                <Box
+                  transform="rotate(-180deg)"
+                  as="svg"
+                  w={{ base: "24px", md: "52px" }}
+                  h={{ base: "24px", md: "52px" }}
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 52 52"
                 >
                   <path
                     d="M1.98887e-06 29.25L39.65 29.25L21.45 47.45L26 52L52 26L26 -2.27299e-06L21.45 4.55L39.65 22.75L2.55712e-06 22.75L1.98887e-06 29.25Z"
                     fill="black"
                   ></path>
-                </svg>
-                <Text fontSize="5xl" fontWeight="bold">
+                </Box>
+                <Text fontSize={{ base: "xl", md: "5xl" }} fontWeight="bold">
                   Prev
                 </Text>
               </HStack>
@@ -150,15 +151,22 @@ const Project: FC<ProjectProps> = ({
 
             <VStack>
               <HStack>
-                <Text fontSize="5xl" fontWeight="bold">
+                <Text fontSize={{ base: "xl", md: "5xl" }} fontWeight="bold">
                   Next
                 </Text>
-                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <Box
+                  as="svg"
+                  w={{ base: "24px", md: "52px" }}
+                  h={{ base: "24px", md: "52px" }}
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 52 52"
+                >
                   <path
                     d="M1.98887e-06 29.25L39.65 29.25L21.45 47.45L26 52L52 26L26 -2.27299e-06L21.45 4.55L39.65 22.75L2.55712e-06 22.75L1.98887e-06 29.25Z"
                     fill="black"
                   ></path>
-                </svg>
+                </Box>
               </HStack>
 
               <Text fontSize="md">

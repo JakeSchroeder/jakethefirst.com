@@ -185,6 +185,7 @@ const Projects: FC = () => {
       >
         <ModalOverlay />
         <ModalContent
+          mt="6vh"
           maxW="100%"
           marginBottom="0"
           borderBottomLeftRadius="0"
