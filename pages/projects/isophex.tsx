@@ -22,7 +22,7 @@ const Isophex: FC = () => {
         contributors={["Jake Schroeder", "Sam Bartlett", "Thomas Maloney"]}
         myContribution={[
           "Business Development",
-          "Client ",
+          "Client Outreach",
           "Fullstack Engineering",
           "Marketing Site",
           "Product Research",

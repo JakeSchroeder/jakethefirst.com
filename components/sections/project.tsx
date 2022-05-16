@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box, Container, Flex, Grid, GridItem, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, GridItem, Heading, HStack, SlideFade, Text, VStack } from "@chakra-ui/react";
 import Image, { StaticImageData } from "next/image";
 import Cursor from "../navigation/cursor";
 import TransitionLink from "../navigation/transitionlink";
@@ -39,7 +39,7 @@ const Project: FC<ProjectProps> = ({
 }) => {
   return (
     <>
-      {/* <Cursor /> */}
+      <Cursor />
       <Box w="100%" pt="6vh">
         <Box px="0" pb="16" display="flex" borderBottom="1px" borderColor="border">
           <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr 1fr" }} alignItems="center">
@@ -113,7 +113,18 @@ const Project: FC<ProjectProps> = ({
           </Box>
           {images.map((image, index) => (
             <Box py="16" key={index}>
-              <Image priority placeholder="blur" layout="responsive" src={image} alt="Vazer Home Screen" />
+              <SlideFade
+                in={true}
+                transition={{
+                  enter: {
+                    duration: 0.5,
+                    delay: 0.5,
+                  },
+                }}
+                offsetY="20px"
+              >
+                <Image priority placeholder="blur" layout="responsive" src={image} alt="Vazer Home Screen" />
+              </SlideFade>
             </Box>
           ))}
         </Box>
