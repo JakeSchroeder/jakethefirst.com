@@ -179,7 +179,7 @@ const Projects: FC = () => {
       <Cursor />
 
       <Modal
-        motionPreset="none"
+        motionPreset="slideInBottom"
         isOpen={!!router.query.project}
         onClose={() => {
           router.push("/projects");
@@ -278,7 +278,6 @@ const Projects: FC = () => {
                 alt="Frontier Screen Preview"
               />
             </Box>
-
             <Box
               position="absolute"
               top="0"
