@@ -7,9 +7,10 @@ interface TransitionLinkProps {
   href: string;
   children: ReactNode | ReactNode[];
   className?: string;
+  as?: string;
 }
 
-const TransitionLink: FC<TransitionLinkProps> = ({ href, children, className }) => {
+const TransitionLink: FC<TransitionLinkProps> = ({ href, as, children, className }) => {
   const router = useRouter();
 
   const transition = (e: MouseEvent<HTMLAnchorElement>): void => {
@@ -21,7 +22,7 @@ const TransitionLink: FC<TransitionLinkProps> = ({ href, children, className }) 
   };
 
   return (
-    <Link href={href}>
+    <Link href={href} as={as}>
       <a onClick={transition} style={{ width: "100%", cursor: "pointer !important" }}>
         {children}
       </a>

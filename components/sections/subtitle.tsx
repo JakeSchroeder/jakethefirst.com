@@ -1,12 +1,4 @@
-import {
-  Box,
-  Flex,
-  Grid,
-  GridItem,
-  Heading,
-  SlideFade,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Heading, SlideFade, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import TransitionLink from "../navigation/transitionlink";
 
@@ -57,30 +49,7 @@ const Subtitle: FC = () => {
           </Heading>
         </SlideFade>
       </GridItem>
-      <GridItem
-        colSpan={{ base: 2, sm: 1, md: 1, mid: 1 }}
-        display="flex"
-        alignItems="center"
-      >
-        <SlideFade
-          transition={{
-            enter: {
-              delay: 0.5,
-              duration: 0.5,
-            },
-          }}
-          in={true}
-          offsetY="20px"
-        >
-          <Heading
-            as="h2"
-            fontSize={{ base: "md" }}
-            fontWeight="medium"
-            textAlign="left"
-          >
-            Seeking Employment
-          </Heading>
-        </SlideFade>
+      <GridItem colSpan={{ base: 2, sm: 1, md: 1, mid: 1 }} display="flex" alignItems="center">
         <SlideFade
           in={true}
           offsetY="20px"
@@ -102,6 +71,20 @@ const Subtitle: FC = () => {
             <TransitionLink href="/contact">Contact</TransitionLink>
           </Text>
         </SlideFade>
+        <SlideFade
+          transition={{
+            enter: {
+              delay: 0.5,
+              duration: 0.5,
+            },
+          }}
+          in={true}
+          offsetY="20px"
+        >
+          <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
+            Seeking Employment
+          </Heading>
+        </SlideFade>
       </GridItem>
 
       <GridItem
@@ -120,12 +103,7 @@ const Subtitle: FC = () => {
             },
           }}
         >
-          <Heading
-            as="h2"
-            fontSize={{ base: "md" }}
-            fontWeight="medium"
-            textAlign="left"
-          >
+          <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
             &quot;Theoretical +
             <Box display={{ base: "none", mid: "none" }}>
               <br />
