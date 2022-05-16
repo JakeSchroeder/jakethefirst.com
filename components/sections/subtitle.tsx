@@ -51,6 +51,20 @@ const Subtitle: FC = () => {
       </GridItem>
       <GridItem colSpan={{ base: 2, sm: 1, md: 1, mid: 1 }} display="flex" alignItems="center">
         <SlideFade
+          transition={{
+            enter: {
+              delay: 0.5,
+              duration: 0.5,
+            },
+          }}
+          in={true}
+          offsetY="20px"
+        >
+          <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
+            Seeking Employment
+          </Heading>
+        </SlideFade>
+        <SlideFade
           in={true}
           offsetY="20px"
           transition={{
@@ -70,20 +84,6 @@ const Subtitle: FC = () => {
           >
             <TransitionLink href="/contact">Contact</TransitionLink>
           </Text>
-        </SlideFade>
-        <SlideFade
-          transition={{
-            enter: {
-              delay: 0.5,
-              duration: 0.5,
-            },
-          }}
-          in={true}
-          offsetY="20px"
-        >
-          <Heading as="h2" fontSize={{ base: "md" }} fontWeight="medium" textAlign="left">
-            Seeking Employment
-          </Heading>
         </SlideFade>
       </GridItem>
 
