@@ -179,7 +179,7 @@ const Projects: FC = () => {
       <Cursor />
 
       <Modal
-        motionPreset="none"
+        motionPreset="slideInBottom"
         isOpen={!!router.query.project}
         onClose={() => {
           router.push("/projects");
