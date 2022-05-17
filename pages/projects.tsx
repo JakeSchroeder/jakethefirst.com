@@ -229,7 +229,7 @@ const Projects: FC = () => {
               },
             }}
           >
-            <Heading w="100%" fontSize={{ base: "14vw", sm: "6.4vw", mid: "100px" }} pb="8">
+            <Heading w="100%" fontSize={{ base: "12vw", sm: "5vw", mid: "100px" }} pb="8">
               Projects
             </Heading>
           </SlideFade>

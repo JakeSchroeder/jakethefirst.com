@@ -44,7 +44,7 @@ const Project: FC<ProjectProps> = ({
         <Box px="0" pb="16" display="flex" borderBottom="1px" borderColor="border">
           <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr 1fr" }} alignItems="center">
             <GridItem>
-              <Heading fontSize="6xl" mr="6">
+              <Heading fontSize={{ base: "4xl", xl: "6xl" }} mr="6">
                 {name}
               </Heading>
             </GridItem>
@@ -64,12 +64,26 @@ const Project: FC<ProjectProps> = ({
         </Box>
 
         <Box px="0" height="100%">
-          <Flex borderBottom="1px" borderColor="border">
-            <Heading py="8" fontSize="4xl">
+          <Flex
+            py="8"
+            borderBottom="1px"
+            borderColor="border"
+            justifyContent="space-between"
+            alignItems="center"
+            flexDirection={{ base: "column", md: "row" }}
+          >
+            <Heading fontSize="xl">Project Overview</Heading>
+            <Heading fontSize="xl" pt={{ base: "6", md: "0" }}>
               {order}
             </Heading>
           </Flex>
-          <Box borderBottom="1px" borderColor="border" py="16">
+          <Box py={{ base: "6", md: "16" }}>
+            <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }}>
+              <GridItem>{subDescription}</GridItem>
+              <GridItem></GridItem>
+            </Grid>
+          </Box>
+          <Box borderBottom="1px" borderColor="border" py={{ base: "6", md: "16" }}>
             <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr 1fr" }} gap={{ base: "6", lg: "0" }}>
               <GridItem>
                 <Heading fontSize="xl" mb="4">
@@ -105,14 +119,9 @@ const Project: FC<ProjectProps> = ({
               </GridItem>
             </Grid>
           </Box>
-          <Box py="16">
-            <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }}>
-              <GridItem>{subDescription}</GridItem>
-              <GridItem></GridItem>
-            </Grid>
-          </Box>
+
           {images.map((image, index) => (
-            <Box py="16" key={index}>
+            <Box py={{ base: "6", md: "16" }} key={index}>
               <SlideFade
                 in={true}
                 transition={{
@@ -128,7 +137,7 @@ const Project: FC<ProjectProps> = ({
             </Box>
           ))}
         </Box>
-        <Box borderTop="1px" borderColor="border" py="16">
+        <Box borderTop="1px" borderColor="border" py={{ base: "6", md: "16" }}>
           <HStack w="100%" justifyContent="space-between">
             <VStack>
               <HStack>
