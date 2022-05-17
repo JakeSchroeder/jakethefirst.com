@@ -18,13 +18,21 @@ const Footer: FC = () => {
         </Text>
         <HStack spacing="4">
           <Text fontSize="sm">
-            <Link href="https://twitter.com/Schrudmeister">Twitter</Link>
+            <a target="_blank" rel="noreferrer" href="https://github.com/jakeschroeder/jakeschroeder.me">
+              GitHub
+            </a>
           </Text>
 
           <Text fontSize="sm">
-            <Link href="https://www.linkedin.com/in/jake-schroeder/">
+            <a target="_blank" rel="noreferrer" href="https://twitter.com/Schrudmeister">
+              Twitter
+            </a>
+          </Text>
+
+          <Text fontSize="sm">
+            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/jake-schroeder/">
               LinkedIn
-            </Link>
+            </a>
           </Text>
           <Text fontSize="sm" display={{ base: "none", md: "block" }}>
             jakeschroeder.me

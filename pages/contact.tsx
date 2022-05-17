@@ -29,6 +29,7 @@ const Contact: FC = () => {
             fontWeight="black"
             textDecoration="underline"
             _hover={{ color: "brand" }}
+            textAlign="center"
           >
             <a href="mailto:jake.schroeder001@gmail.com">jake.schroeder001@gmail.com</a>
           </Heading>

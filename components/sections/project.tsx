@@ -41,22 +41,22 @@ const Project: FC<ProjectProps> = ({
     <>
       <Cursor />
       <Box w="100%" pt="6vh">
-        <Box px="0" pb="16" display="flex" borderBottom="1px" borderColor="border">
-          <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr 1fr" }} alignItems="center">
+        <Box px="0" pb={{ base: "8", lg: "16" }} display="flex" borderBottom="1px" borderColor="border">
+          <Grid templateColumns={{ base: "1fr 1fr", lg: "1fr 1fr 1fr 1fr" }} alignItems="center">
             <GridItem>
               <Heading fontSize={{ base: "4xl", xl: "6xl" }} mr="6">
                 {name}
               </Heading>
             </GridItem>
-            <GridItem pb={{ base: "4", lg: "0" }}>
+            <GridItem>
               <Text cursor="pointer" fontSize="md" fontWeight="normal" textDecor="underline">
                 <a target="_blank" href={link} rel="noreferrer">
                   {link}
                 </a>
               </Text>
             </GridItem>
-            <GridItem colSpan={{ base: 1, lg: 2 }}>
-              <Text fontSize="md" fontWeight="normal">
+            <GridItem colSpan={{ base: 2, lg: 2 }}>
+              <Text mt={{ base: "8", lg: "0" }} fontSize="md" fontWeight="normal">
                 {description}
               </Text>
             </GridItem>
@@ -69,7 +69,7 @@ const Project: FC<ProjectProps> = ({
             borderBottom="1px"
             borderColor="border"
             justifyContent="space-between"
-            alignItems="center"
+            // alignItems={{base: "flex", md: "center"}}
             flexDirection={{ base: "column", md: "row" }}
           >
             <Heading fontSize="xl">Project Overview</Heading>
@@ -77,7 +77,7 @@ const Project: FC<ProjectProps> = ({
               {order}
             </Heading>
           </Flex>
-          <Box py={{ base: "6", md: "16" }}>
+          <Box py={{ base: "6", md: "16" }} borderBottom="1px solid" borderColor="border">
             <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }}>
               <GridItem>{subDescription}</GridItem>
               <GridItem></GridItem>
