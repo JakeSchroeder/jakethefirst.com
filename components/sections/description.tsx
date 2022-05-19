@@ -1,14 +1,4 @@
-import {
-  Box,
-  Grid,
-  GridItem,
-  Heading,
-  HStack,
-  List,
-  ListItem,
-  SlideFade,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, HStack, List, ListItem, SlideFade, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import TransitionLink from "../navigation/transitionlink";
 
@@ -36,19 +26,11 @@ const DescriptionSection: FC = () => {
           }}
         >
           <Text>
-            “Good decisions come from experience, and experience comes from bad
-            decisions.” ~Unknown <br /> <br />
-            Hey I&apos;m Jake - passionate about bringing together leading UX
-            Design and solid Engineering to deliver highly usable yet beautiful
-            solutions. I am constantly working to improve my skills by exploring
-            the latest design trends, frameworks and technologies.
-            <Box
-              as="span"
-              pl="2"
-              color="brand"
-              fontWeight="medium"
-              textDecoration="underline"
-            >
+            “Good decisions come from experience, and experience comes from bad decisions.” ~Unknown <br /> <br />
+            Hey I&apos;m Jake - passionate about bringing together leading UX Design and solid Engineering to deliver
+            highly usable yet beautiful solutions. I am constantly working to improve my skills by exploring the latest
+            design trends, frameworks and technologies.
+            <Box as="span" pl="2" color="brand" fontWeight="medium" textDecoration="underline">
               <TransitionLink href="/about">More</TransitionLink>
             </Box>
           </Text>
@@ -70,13 +52,7 @@ const DescriptionSection: FC = () => {
               My Stack
             </Heading>
             <SlideFade in={true} offsetY="20px" delay={1.5}>
-              <Text
-                color="brand"
-                fontWeight="medium"
-                textDecoration="underline"
-                fontSize="md"
-                pl="2"
-              >
+              <Text color="brand" fontWeight="medium" textDecoration="underline" fontSize="md" pl="2">
                 <TransitionLink href="/projects">Projects</TransitionLink>
               </Text>
             </SlideFade>
