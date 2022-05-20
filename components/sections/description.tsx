@@ -40,7 +40,7 @@ const DescriptionSection: FC = () => {
             decisions.” ~Unknown <br /> <br />
             Hey I&apos;m Jake - I mostly live in the frontend, designing and engineering usable software.
             I specialize in Typescript, React, and Node.js and mainly reach for Next.js when I can.
-            I live in awe of what have been able to accomplish with software... thanks to the old integrated circuit.
+            I live in awe of what we have been able to accomplish with software... thanks to the ol' integrated circuit.
             <Box
               as="span"
               pl="2"
