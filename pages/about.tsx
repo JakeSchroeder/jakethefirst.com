@@ -112,9 +112,9 @@ const About: FC = () => {
                 }}
               >
                 <Text fontSize="md">
-                  I’ve always gravitated towards outlets for my passions and creativity. Its why I ❤️ art, music,
+                  I’ve always gravitated towards outlets for my passions and creativity. It's why I ❤️ art, music,
                   movies, exploring the outdoors, cooking, woodworking, and being human. I live to learn. I found
-                  design, engineering, and software at the age of 12 and havent looked back since. Currently, I am based
+                  design, engineering, and software at the age of 12 and haven't looked back since. Currently, I am based
                   in Chicago, IL but looking for work in California, Texas, Idaho, Washington, or Remote.
                 </Text>
               </SlideFade>
