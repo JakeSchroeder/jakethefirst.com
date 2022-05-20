@@ -27,9 +27,9 @@ const DescriptionSection: FC = () => {
         >
           <Text>
             “Good decisions come from experience, and experience comes from bad decisions.” ~Unknown <br /> <br />
-            Hey I&apos;m Jake - passionate about bringing together leading UX Design and solid Engineering to deliver
-            highly usable yet beautiful solutions. I am constantly working to improve my skills by exploring the latest
-            design trends, frameworks and technologies.
+            Hey I&apos;m Jake - I mostly live in the frontend, designing and engineering solid software interfaces. I
+            specialize in Typescript, React, and Node.js and mainly reach for Next.js when I can. We&apos;e been able to
+            accomplish a lot with software... thanks to the old integrated circuit.
             <Box as="span" pl="2" color="brand" fontWeight="medium" textDecoration="underline">
               <TransitionLink href="/about">More</TransitionLink>
             </Box>
