@@ -85,7 +85,7 @@ const About: FC = () => {
             alignItems="flex-start"
           >
             <Box pb="8" borderBottom={{ base: "1px", md: 0 }} borderColor="border">
-              <SlideFade
+              {/* <SlideFade
                 style={{ width: "100%" }}
                 in={true}
                 offsetY="20px"
@@ -99,7 +99,7 @@ const About: FC = () => {
                 <Heading as="h1" fontSize="lg" fontWeight="medium" pb="6">
                   Hello World...
                 </Heading>
-              </SlideFade>
+              </SlideFade> */}
               <SlideFade
                 style={{ width: "100%" }}
                 in={true}
@@ -112,6 +112,9 @@ const About: FC = () => {
                 }}
               >
                 <Text fontSize="md">
+                  <Box as="span" fontWeight="medium" mr="2">
+                    Hello World...
+                  </Box>
                   I got my start as many peeps in tech did, at the young age of 12 playing video games and nerding out
                   about computer hardware with buddies at recess. I quickly found Minecraft (the greatest sandbox game
                   in history) and learned how to mod it, create private servers, and manage digital communities.
