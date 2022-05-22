@@ -112,10 +112,13 @@ const About: FC = () => {
                 }}
               >
                 <Text fontSize="md">
-                  I’ve always gravitated towards outlets for my passions and creativity. Its why I ❤️ art, music,
-                  movies, exploring the outdoors, cooking, woodworking, and being human. I live to learn. I found
-                  design, engineering, and software at the age of 12 and havent looked back since. Currently, I am based
-                  in Chicago, IL but looking for work in California, Texas, Idaho, Washington, or Remote.
+                  I got my start as many peeps in tech did, at the young age of 12 playing video games and nerding out
+                  about computer hardware with buddies at recess. I quickly found Minecraft (the greatest sandbox game
+                  in history) and learned how to mod it, create private servers, and manage digital communities.
+                  It&apos;s funny looking back now but this is how I got my start in design, engineering, and a love for
+                  software. My process today, is very similar to back then, I try to find an outlet for my passion,
+                  creativity, and problem solving and then go all in. It&apos;s why I ❤️ code, art, music, movies,
+                  exploring the outdoors, cooking, woodworking, and finally, being human.
                 </Text>
               </SlideFade>
             </Box>

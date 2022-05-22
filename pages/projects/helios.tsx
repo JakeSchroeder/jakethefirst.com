@@ -24,7 +24,9 @@ const Helios: FC = () => {
         projectType="Consulting"
         contributors={["Jake Schroeder"]}
         myContribution={["Graphic Design", "Fullstack Engineering", "Marketing Site", "Product Research"]}
-        subDescription="Increase quality, improve efficiency, reduce costs. Industry leading SaaS platform integrated with expert global IP support services. Docketing, filing, maintenance and portfolio analytics in a monthly subscription."
+        subDescription={[
+          "Increase quality, improve efficiency, reduce costs. Industry leading SaaS platform integrated with expert global IP support services. Docketing, filing, maintenance and portfolio analytics in a monthly subscription.",
+        ]}
         images={[helios1, helios2, helios3, helios4]}
         nextProject="Isophex"
         nextProjectLink="/projects/isophex"

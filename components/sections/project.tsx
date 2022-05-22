@@ -13,7 +13,7 @@ interface ProjectProps {
   projectType: string;
   contributors: string[];
   myContribution: string[];
-  subDescription: string;
+  subDescription: string[];
   nextProject: string;
   nextProjectLink: string;
   prevProject: string;
@@ -79,7 +79,13 @@ const Project: FC<ProjectProps> = ({
           </Flex>
           <Box py={{ base: "6", md: "16" }} borderBottom="1px solid" borderColor="border">
             <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }}>
-              <GridItem>{subDescription}</GridItem>
+              <GridItem>
+                {subDescription.map((item, index) => (
+                  <Text key={`description--${index}`} as="p" pb="4">
+                    {item}
+                  </Text>
+                ))}
+              </GridItem>
               <GridItem></GridItem>
             </Grid>
           </Box>

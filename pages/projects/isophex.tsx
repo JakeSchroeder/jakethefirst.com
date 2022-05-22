@@ -27,7 +27,9 @@ const Isophex: FC = () => {
           "Marketing Site",
           "Product Research",
         ]}
-        subDescription="Design is the foundation of a company’s or person's digital identity. Whether that be their logo, website, or social media presence; all incorporate fundamentals of design. When developing or extending a client’s digital identity its vital that we understand the individuals or company’s vision and brand."
+        subDescription={[
+          "Design is the foundation of a company’s or person's digital identity. Whether that be their logo, website, or social media presence; all incorporate fundamentals of design. When developing or extending a client’s digital identity its vital that we understand the individuals or company’s vision and brand.",
+        ]}
         images={[isophex2, isophex1]}
         nextProject="Vazer"
         nextProjectLink="/projects/vazer"
