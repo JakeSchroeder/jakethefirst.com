@@ -115,11 +115,11 @@ const About: FC = () => {
                   <Box as="span" fontWeight="medium" mr="2">
                     Hello World...
                   </Box>
-                  I got my start as many peeps did, in tech, at the young age of 12 playing video games and nerding out
-                  about computer hardware with buddies at recess. I quickly discovered Minecraft (the greatest sandbox game
+                  I got my start in tech at the young age of 12 nerding out
+                  about computer hardware with buddies at recess. I quickly discovered video games and specifically Minecraft (the greatest sandbox game
                   in history) and learned how to mod it, create private servers, and manage digital communities.
                   It&apos;s funny looking back now but this is how I got my start in design, engineering, and a love for
-                  software. My process today is very similar to back then, I try to find an outlet for my passion,
+                  building software. My process today is very similar to back then, I try to find an outlet for my passion,
                   creativity, and problem solving and then go all in. It&apos;s why I ❤️ code, art, music, movies,
                   exploring the outdoors, cooking, woodworking, and finally, improving as a human.
                 </Text>
@@ -133,12 +133,25 @@ const About: FC = () => {
                 offsetY="20px"
                 transition={{
                   enter: {
+                    delay: 0.45,
+                    duration: 0.45,
+                  },
+                }}
+              >
+                <ExperienceItem position="DevRel Engineer" company="Axiom" start="June 2022" end="Present" />
+              </SlideFade>
+              <SlideFade
+                style={{ width: "100%" }}
+                in={true}
+                offsetY="20px"
+                transition={{
+                  enter: {
                     delay: 0.5,
                     duration: 0.5,
                   },
                 }}
               >
-                <ExperienceItem position="Desktop Engineer" company="Frontier Audio" start="Feb 2022" end="Present" />
+                <ExperienceItem position="Desktop Engineer" company="Frontier Audio" start="Feb 2022" end="June 2022" />
               </SlideFade>
               <SlideFade
                 style={{ width: "100%" }}
