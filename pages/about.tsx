@@ -116,12 +116,12 @@ const About: FC = () => {
                     Hello World...
                   </Box>
                   I got my start in tech at the young age of 12 nerding out
-                  about computer hardware with buddies at recess. I quickly discovered video games and specifically Minecraft (the greatest sandbox game
+                  on computers with buddies at recess. I quickly discovered PC video games and specifically Minecraft (the greatest sandbox game
                   in history) and learned how to mod it, create private servers, and manage digital communities.
                   It&apos;s funny looking back now but this is how I got my start in design, engineering, and a love for
                   building software. My process today is very similar to back then, I try to find an outlet for my passion,
                   creativity, and problem solving and then go all in. It&apos;s why I ❤️ code, art, music, movies,
-                  exploring the outdoors, cooking, woodworking, and finally, improving as a human.
+                  exploring the outdoors, cooking, woodworking, and finally, improving as a human being.
                 </Text>
               </SlideFade>
             </Box>
@@ -140,7 +140,7 @@ const About: FC = () => {
               >
                 <ExperienceItem position="DevRel Engineer" company="Axiom" start="June 2022" end="Present" />
               </SlideFade>
-              <SlideFade
+              {/*<SlideFade
                 style={{ width: "100%" }}
                 in={true}
                 offsetY="20px"
@@ -152,8 +152,8 @@ const About: FC = () => {
                 }}
               >
                 <ExperienceItem position="Desktop Engineer" company="Frontier Audio" start="Feb 2022" end="June 2022" />
-              </SlideFade>
-              <SlideFade
+              </SlideFade>*/}
+              {/*<SlideFade
                 style={{ width: "100%" }}
                 in={true}
                 offsetY="20px"
@@ -165,7 +165,7 @@ const About: FC = () => {
                 }}
               >
                 <ExperienceItem position="Software Engineer" company="Vazer" start="Oct 2021" end="Jan 2021" />
-              </SlideFade>
+              </SlideFade>*/}
               <SlideFade
                 style={{ width: "100%" }}
                 in={true}
@@ -196,7 +196,7 @@ const About: FC = () => {
                 }}
               >
                 <ExperienceItem
-                  position="Full-Stack Engineer"
+                  position="Student Employee"
                   company="Divergent Design Lab"
                   start="Jan 2020"
                   end="Aug 2020"
@@ -226,7 +226,7 @@ const About: FC = () => {
                   },
                 }}
               >
-                <ExperienceItem position="Freelance" company="Isophex" start="May 2016" end="Jan 2017" />
+                <ExperienceItem position="Freelance" company="Isophex" start="May 2016" end="Feb 2019" />
               </SlideFade>
               <Flex
                 pt="6"
