@@ -115,11 +115,11 @@ const About: FC = () => {
                   <Box as="span" fontWeight="medium" mr="2">
                     Hello World...
                   </Box>
-                  I got my start in tech at the young age of 12 nerding out
-                  on computers with buddies at recess. I quickly discovered PC video games and specifically Minecraft (the greatest sandbox game
-                  in history) and learned how to mod it, create private servers, and manage digital communities.
-                  It&apos;s funny looking back now but this is how I got my start in design, engineering, and a love for
-                  building software. My process today is very similar to back then, I try to find an outlet for my passion,
+                  I got my start in tech at the young age of 12 nerding out on computers with buddies at recess. I
+                  quickly discovered PC video games and specifically Minecraft (the greatest sandbox game in history)
+                  and learned how to mod it, create private servers, and manage digital communities. It&apos;s funny
+                  looking back now but this is how I got my start in design, engineering, and a love for building
+                  software. My process today is very similar to back then, I try to find an outlet for my passion,
                   creativity, and problem solving and then go all in. It&apos;s why I ❤️ code, art, music, movies,
                   exploring the outdoors, cooking, woodworking, and finally, improving as a human being.
                 </Text>
@@ -138,7 +138,7 @@ const About: FC = () => {
                   },
                 }}
               >
-                <ExperienceItem position="DevRel Engineer" company="Axiom" start="June 2022" end="Present" />
+                <ExperienceItem position="Design Engineer" company="Axiom" start="June 2022" end="Present" />
               </SlideFade>
               {/*<SlideFade
                 style={{ width: "100%" }}
