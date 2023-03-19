@@ -45,7 +45,7 @@ export const Recorder: FC = () => {
           x: e.clientX,
           y: e.clientY,
         });
-      }, 10);
+      }, 50);
     });
   }, []);
 
@@ -93,7 +93,7 @@ export const Replayer: FC = () => {
       cursorRef.current.style.left = event.x + "px";
       cursorRef.current.style.top = event.y + "px";
       i++;
-    }, 10);
+    }, 50);
   };
 
   return (
