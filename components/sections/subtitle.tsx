@@ -129,7 +129,9 @@ const Subtitle: FC = () => {
             fontSize="md"
             textAlign="left"
           >
-            <TransitionLink href="/about">About</TransitionLink>
+            <TransitionLink href="/about" id="about-link">
+              About
+            </TransitionLink>
           </Text>
         </SlideFade>
       </GridItem>

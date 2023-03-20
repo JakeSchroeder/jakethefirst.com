@@ -8,9 +8,10 @@ interface TransitionLinkProps {
   children: ReactNode | ReactNode[];
   className?: string;
   as?: string;
+  id?: string;
 }
 
-const TransitionLink: FC<TransitionLinkProps> = ({ href, as, children, className }) => {
+const TransitionLink: FC<TransitionLinkProps> = ({ href, as, children, id, className }) => {
   const router = useRouter();
 
   const transition = (e: MouseEvent<HTMLAnchorElement>): void => {
@@ -23,7 +24,14 @@ const TransitionLink: FC<TransitionLinkProps> = ({ href, as, children, className
 
   return (
     <Link href={href} as={as}>
-      <a onClick={transition} style={{ width: "100%", cursor: "pointer !important" }}>
+      <a
+        id={id}
+        onClick={(e) => {
+          transition(e);
+          console.log("click");
+        }}
+        style={{ width: "100%", cursor: "pointer !important" }}
+      >
         {children}
       </a>
     </Link>

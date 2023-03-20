@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
 import { FC, ReactNode, useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../../pages/_app";
-import { Box, Button, Slider, SliderFilledTrack, SliderThumb, SliderTrack } from "@chakra-ui/react";
+import { Box, Button, Input, Slider, SliderFilledTrack, SliderThumb, SliderTrack } from "@chakra-ui/react";
 
 function handleSaveHistory(history: any) {
   let json = JSON.stringify(history);
@@ -47,6 +47,14 @@ export const Recorder: FC = () => {
         });
       }, 50);
     });
+    document.addEventListener("click", (e) => {
+      sessionHistory.current.push({
+        sessionId,
+        type: "click",
+        x: e.clientX,
+        y: e.clientY,
+      });
+    });
   }, []);
 
   return (
@@ -83,17 +91,40 @@ export const Replayer: FC = () => {
   };
 
   const playSessionHistory = () => {
-    let i = 0;
-    let interval = setInterval(() => {
-      if (i >= history.current.length) {
-        clearInterval(interval);
-        return;
-      }
+    for (let i = 0; i < history.current.length; i++) {
       let event = history.current[i];
-      cursorRef.current.style.left = event.x + "px";
-      cursorRef.current.style.top = event.y + "px";
-      i++;
-    }, 50);
+      if (event.type === "mousemove") {
+        cursorRef.current.style.left = event.x + "px";
+        cursorRef.current.style.top = event.y + "px";
+      } else {
+        let clickEvent = new MouseEvent("click", {
+          clientX: event.x,
+          clientY: event.y,
+        });
+        document.querySelector("#about-link")!.dispatchEvent(clickEvent);
+      }
+    }
+
+    // let i = 0;
+    // let interval = setInterval(() => {
+    //   if (i >= history.current.length) {
+    //     clearInterval(interval);
+    //     return;
+    //   }
+    //   let event = history.current[i];
+    //   if (event.type === "mousemove") {
+    //     cursorRef.current.style.left = event.x + "px";
+    //     cursorRef.current.style.top = event.y + "px";
+    //   } else {
+    //     let clickEvent = new MouseEvent("click", {
+    //       clientX: event.x,
+    //       clientY: event.y,
+    //     });
+    //     document.querySelector("#about-link")!.dispatchEvent(clickEvent);
+    //   }
+
+    //   i++;
+    // }, 50);
   };
 
   return (
@@ -132,7 +163,7 @@ export const Replayer: FC = () => {
       >
         &gt;
       </Button>
-
+      <Input zIndex={100} position="absolute" bottom="0" h="32px" left="80px" min={0} max={100} type="range" />
       <Box ref={cursorRef} position="absolute" w="10px" h="10px" bg="green" />
     </>
   );
@@ -142,16 +173,14 @@ export const EventManager: FC<{ children: ReactNode }> = ({ children }) => {
   const { auth } = useContext(AuthContext);
   return (
     <>
-      <Box>
-        <Slider aria-label="slider-ex-2" colorScheme="pink" defaultValue={30}>
-          <SliderTrack>
-            <SliderFilledTrack />
-          </SliderTrack>
-          <SliderThumb />
-        </Slider>
-      </Box>
       {false ? <Recorder /> : <Replayer />}
       {children}
     </>
   );
 };
+
+//loop over session history
+//keep track of posiiton in loop
+//send event to synthesizer (curosr, click, scroll, etc)
+//do the event
+//finish and trigger a callback to increment the loop
